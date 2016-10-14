@@ -27,6 +27,11 @@ func _fixed_process(delta):
 		velocity.x=0
 	if(!Input.is_action_pressed("ui_up") && !Input.is_action_pressed("ui_down")):
 		velocity.y=0        
-		
+	
 	var movement = velocity*delta
-	move(movement)
+	movement =move(movement)
+	if (is_colliding()):
+		var n = get_collision_normal()
+		movement = n.slide(movement)
+		velocity = n.slide(velocity)
+		move(movement)
