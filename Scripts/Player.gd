@@ -1,21 +1,28 @@
 extends KinematicBody2D
 
 # member variables here, example:
-# var a=2
-# var b="textvar"
+
+var laser = preload("res://scenes/laser.xml")
+var lasercount=0
+
 var acceleration = 4000
 var maxspeed = 400
 var velocity = Vector2()
 var slowspeed= 0
+
+
 func _ready():
     # Called every time the node is added to the scene.
     # Initialization here
     set_fixed_process(true)
 
 func _fixed_process(delta):
+
+
     var mousepos = get_global_mouse_pos()
     look_at(mousepos)
-
+    if (Input.is_action_pressed("ui_fire")):
+        get_parent().get_node("laser").fire()
     if(Input.is_action_pressed("ui_left")):
         if(velocity.x > -maxspeed):
             velocity.x -= delta*acceleration
@@ -60,3 +67,4 @@ func _fixed_process(delta):
 
     var movement = velocity*delta
     move(movement)
+
