@@ -7,8 +7,7 @@ var timer
 
 
 func _ready():
-	# Called every time the node is added to the scene.
-	# Initialization here
+
 	timer = get_node("LaserTTL")
 	timer.set_wait_time(2)
 	timer.connect("timeout",self,"_timeout")
