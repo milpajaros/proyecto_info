@@ -7,14 +7,15 @@ var acceleration = 4000
 var maxspeed = 400
 var velocity = Vector2()
 var slowspeed= 0
-
+var shootcd = 0.5
+var actualcd = 0
 
 
 func _ready():
 	set_fixed_process(true)
 
 func _fixed_process(delta):
-
+	actualcd -= delta
 	var mousepos = get_global_mouse_pos()
 	look_at(mousepos)
 	
@@ -42,7 +43,9 @@ func _fixed_process(delta):
 		var n = get_collision_normal()
 		movement = n.slide(movement)
 		velocity = n.slide(velocity)
-	if(Input.is_action_pressed("ui_accept")):
+
+	if(Input.is_action_pressed("ui_accept") && (actualcd <= 0)):
+		actualcd = shootcd
 		laser = laser_scene.instance()
 		var playerpos = get_node("PlayerSprite").get_pos()
 		var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()
