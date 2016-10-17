@@ -12,7 +12,6 @@ var slowspeed= 0
 
 func _ready():
 	set_fixed_process(true)
-	set_process_input(true)
 
 func _fixed_process(delta):
 
@@ -43,11 +42,7 @@ func _fixed_process(delta):
 		var n = get_collision_normal()
 		movement = n.slide(movement)
 		velocity = n.slide(velocity)
-		move(movement)
-	var mousepos = get_global_mouse_pos()
-	
-func _input(event):
-	if (event.is_action_pressed("ui_accept")):
+	if(Input.is_action_pressed("ui_accept")):
 		laser = laser_scene.instance()
 		var playerpos = get_node("PlayerSprite").get_pos()
 		var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()
