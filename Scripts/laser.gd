@@ -18,6 +18,14 @@ func _ready():
 func _fixed_process(delta):
 	
 	move_local_y(speed*delta, true)
+	if(is_colliding()):
+		print("ouch")
 	
 func _timeout():
+	hide()
+	self.queue_free()
+
+func _hit():
+	print("chupate esa")
+	hide()
 	self.queue_free()

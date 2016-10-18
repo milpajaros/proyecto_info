@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Textures/Player/frame0.png" type="Texture" id=2]
@@ -8,18 +8,19 @@
 [ext_resource path="res://Textures/Player/frame4.png" type="Texture" id=6]
 [ext_resource path="res://Textures/Player/frame5.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/PlayerAnimationScript.gd" type="Script" id=8]
-[ext_resource path="res://Textures/Circulo.png" type="Texture" id=9]
+[ext_resource path="res://Textures/Planet.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/Enemy.xml" type="PackedScene" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ { "frames":[ ExtResource( 2 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ], "loop":true, "name":"default", "speed":6.0 } ]
 
-[sub_resource type="CircleShape2D" id=2]
+[sub_resource type="CircleShape2D" id=3]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -78,17 +79,17 @@ transform/scale = Vector2( 0.1, 0.1 )
 transform/pos = Vector2( -1.19748, -22.1533 )
 transform/rot = 180.0
 transform/scale = Vector2( 2, 2 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "default"
 script/script = ExtResource( 8 )
 
 [node name="Planet" type="StaticBody2D" parent="."]
 
 transform/pos = Vector2( -3218.81, -1220.12 )
-transform/scale = Vector2( 100, 100 )
+transform/scale = Vector2( 75, 75 )
 input/pickable = false
-shapes/0/shape = SubResource( 2 )
-shapes/0/transform = Matrix32( 3.4, 0, 0, 3.4, -0.0181191, -0.0737408 )
+shapes/0/shape = SubResource( 3 )
+shapes/0/transform = Matrix32( 3.4, 0, 0, 3.4, -0.0386311, -0.114752 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -99,15 +100,19 @@ bounce = 0.0
 
 [node name="PlanetSprite" type="Sprite" parent="Planet"]
 
-transform/scale = Vector2( 0.1, 0.1 )
+transform/scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 9 )
 
 [node name="PlanetHitbox" type="CollisionShape2D" parent="Planet"]
 
-transform/pos = Vector2( -0.0181191, -0.0737408 )
+transform/pos = Vector2( -0.0386311, -0.114752 )
 transform/scale = Vector2( 3.4, 3.4 )
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 trigger = false
 _update_shape_index = 0
+
+[node name="Enemy" parent="." instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 340.658, 37.6834 )
 
 
