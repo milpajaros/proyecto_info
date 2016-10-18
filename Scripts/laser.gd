@@ -2,7 +2,7 @@
 extends KinematicBody2D
 var laser = preload("res://scenes/laser_scene.xml")
 
-var speed = 500
+var speed = 1000
 var timer
 
 
