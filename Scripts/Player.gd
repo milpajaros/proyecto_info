@@ -50,7 +50,7 @@ func _fixed_process(delta):
 	if(Input.is_action_pressed("ui_accept") && (actualcd <= 0)):
 		actualcd = shootcd #reinicia el CD
 		laser = laser_scene.instance()
-		var playerpos = get_node("PlayerSprite").get_pos()
+		var playerpos = get_node("PlayerAnimation").get_pos()
 		var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()
 		var laserHolder = get_node("LaserHolder")
 		laserHolder.add_child(laser)
