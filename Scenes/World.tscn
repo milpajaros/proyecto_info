@@ -85,6 +85,7 @@ script/script = ExtResource( 8 )
 
 [node name="Planet" type="StaticBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( -3218.81, -1220.12 )
 transform/scale = Vector2( 75, 75 )
 input/pickable = false
