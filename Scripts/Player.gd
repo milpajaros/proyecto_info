@@ -54,5 +54,6 @@ func _fixed_process(delta):
 		var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()
 		var laserHolder = get_node("LaserHolder")
 		laserHolder.add_child(laser)
+		laser.set_meta("aliado",1)
 		laser.set_pos(LaserSpawnPoint)
 		laser.look_at(get_global_mouse_pos())
