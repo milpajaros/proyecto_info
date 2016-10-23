@@ -6,30 +6,79 @@ var laserenemigo = preload("res://Textures/laserRed.png")
 # var a=2
 # var b="textvar"
 var laser
-var enemycd = 0.30
+var enemycd = 0.5
 var actualcd = 0
+var DistanciaProxima = 200
+
+const SPEED = 200
+var speed = SPEED
+var hp = 10
+var timer
+var dead = false
+var distancia
+
 func _ready():
+	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
+		hp -=1;
 		body._hit()
-		print("Muerooooo")
-		hide()
-		queue_free()
-		
+
 func _fixed_process(delta):
 	actualcd -= delta
-	look_at(get_parent().get_node("Player").get_pos())
-	var distancia=get_pos().distance_to(get_parent().get_node("Player").get_pos())
-	if((distancia < 1000) && (actualcd<=0 )):
+	distancia=get_pos().distance_to(get_parent().get_node("Player").get_pos())
+	if(distancia < 1000):
+		_chase(delta)
+	if(distancia <500):
+		_fire()
+	if(hp <= 0):
+		if(!dead):
+			dead = true
+			_die()
+
+func _fire():
+	if(actualcd<=0 ):
 		actualcd = enemycd #reinicia el CD
 		laser = laser_scene.instance()
 		laser.get_node("LaserSprite").set_texture(laserenemigo)
 		var enemypos = get_pos()
+		laser.set_meta("enemigo",1)
 		var LaserSpawnPoint = get_pos()
 		var laser_holder = get_node("Laser_holder")
 		laser_holder.add_child(laser)
 		
 		laser.set_pos(LaserSpawnPoint)
 		laser.look_at(get_parent().get_node("Player").get_pos())
+
+func _chase(delta):
+	if(!dead):
+		look_at(get_parent().get_node("Player").get_pos())
+	var player = get_parent().get_node("Player")
+	var movement = Vector2(player.get_pos().x-get_pos().x,player.get_pos().y-get_pos().y)
+	movement = movement.normalized()
+	if(distancia < DistanciaProxima):
+		var n = movement.tangent()
+		movement = movement.slide(n)
+	
+	movement = move(movement*delta*speed)
+	if (is_colliding()):
+		var n = get_collision_normal()
+		movement = n.slide(movement)
+		move(movement)
+
+func _die():
+	speed = 0
+	timer = get_node("EnemyTimer")
+	timer.set_wait_time(1)
+	timer.connect("timeout",self,"_timeout")
+	timer.start()
+	get_node("EnemySprite").set_hidden(true)
+	get_node("ExplosionAnimation").set_hidden(false)
+	get_node("ExplosionAnimation").set_frame(0)
+	get_node("ExplosionAnimation").play("default")
+	
+func _timeout():
+	hide()
+	self.queue_free()

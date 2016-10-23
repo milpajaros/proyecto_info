@@ -7,7 +7,8 @@ var timer
 
 
 func _ready():
-
+	get_node("HitAnimation").set_hidden(true)
+	get_node("EnemyHitAnimation").set_hidden(true)
 	timer = get_node("LaserTTL")
 	timer.set_wait_time(2)
 	timer.connect("timeout",self,"_timeout")
@@ -26,6 +27,16 @@ func _timeout():
 	self.queue_free()
 
 func _hit():
-	print("chupate esa")
-	hide()
-	self.queue_free()
+	speed = 0
+	get_node("LaserSprite").set_hidden(true)
+	if(get_meta("enemigo")):
+		get_node("EnemyHitAnimation").set_hidden(false)
+		get_node("EnemyHitAnimation").set_frame(0)
+		get_node("EnemyHitAnimation").play("default")
+	else:
+		get_node("HitAnimation").set_hidden(false)
+		get_node("HitAnimation").set_frame(0)
+		get_node("HitAnimation").play("default")
+	timer.set_wait_time(0.5)
+	timer.connect("timeout",self,"_timeout")
+	timer.start()
