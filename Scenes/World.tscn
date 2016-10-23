@@ -117,7 +117,6 @@ _update_shape_index = 0
 
 [node name="Enemy" parent="." instance=ExtResource( 11 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 340.658, 37.6834 )
 
 [node name="Enemy_spawn_point" type="Node2D" parent="Enemy"]
