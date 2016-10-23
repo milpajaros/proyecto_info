@@ -9,7 +9,7 @@ var laser
 var enemycd = 0.5
 var actualcd = 0
 var DistanciaProxima = 200
-
+var player
 const SPEED = 200
 var speed = SPEED
 var hp = 10
@@ -20,6 +20,7 @@ var distancia
 func _ready():
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
+	player = get_tree().get_root().get_node("Root/Player")
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
@@ -28,7 +29,7 @@ func _on_Area_body_enter( body ):
 
 func _fixed_process(delta):
 	actualcd -= delta
-	distancia=get_pos().distance_to(get_parent().get_node("Player").get_pos())
+	distancia= get_pos().distance_to(player.get_pos())
 	if(distancia < 1000):
 		_chase(delta)
 	if(distancia <500):
@@ -50,12 +51,12 @@ func _fire():
 		laser_holder.add_child(laser)
 		
 		laser.set_pos(LaserSpawnPoint)
-		laser.look_at(get_parent().get_node("Player").get_pos())
+		laser.look_at(player.get_pos())
 
 func _chase(delta):
 	if(!dead):
-		look_at(get_parent().get_node("Player").get_pos())
-	var player = get_parent().get_node("Player")
+		look_at(player.get_pos())
+	#var player = get_parent().get_node("Player")
 	var movement = Vector2(player.get_pos().x-get_pos().x,player.get_pos().y-get_pos().y)
 	movement = movement.normalized()
 	if(distancia < DistanciaProxima):

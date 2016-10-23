@@ -14,6 +14,7 @@ var actualcd = 0
 func _ready():
 	set_fixed_process(true)
 
+
 func _fixed_process(delta):
 	actualcd -= delta
 	var mousepos = get_global_mouse_pos()
