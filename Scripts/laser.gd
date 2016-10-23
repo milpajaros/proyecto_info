@@ -3,8 +3,8 @@ extends KinematicBody2D
 var laser = preload("res://scenes/laser_scene.xml")
 
 var speed = 1000
+var dead = false
 var timer
-
 
 func _ready():
 	get_node("HitAnimation").set_hidden(true)
