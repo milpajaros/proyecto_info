@@ -3,8 +3,8 @@ extends KinematicBody2D
 var laser = preload("res://scenes/laser_scene.xml")
 
 var speed = 1000
-var dead = false
 var timer
+
 
 func _ready():
 	get_node("HitAnimation").set_hidden(true)
@@ -29,7 +29,7 @@ func _timeout():
 func _hit():
 	speed = 0
 	get_node("LaserSprite").set_hidden(true)
-	if(get_meta("enemigo")):
+	if(has_meta("enemigo")):
 		get_node("EnemyHitAnimation").set_hidden(false)
 		get_node("EnemyHitAnimation").set_frame(0)
 		get_node("EnemyHitAnimation").play("default")
@@ -38,5 +38,5 @@ func _hit():
 		get_node("HitAnimation").set_frame(0)
 		get_node("HitAnimation").play("default")
 	timer.set_wait_time(0.5)
-	timer.connect("timeout",self,"_timeout")
+
 	timer.start()
