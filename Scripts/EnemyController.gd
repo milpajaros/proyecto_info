@@ -24,8 +24,7 @@ func _ready():
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
-		hp -=1;
-		body._hit()
+		body._hit(body.dmg,self)
 
 func _fixed_process(delta):
 	actualcd -= delta

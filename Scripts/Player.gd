@@ -11,6 +11,7 @@ var shootcd = 0.15 #tiempo entre disparo y disparo
 var actualcd = 0
 
 
+
 func _ready():
 	set_fixed_process(true)
 

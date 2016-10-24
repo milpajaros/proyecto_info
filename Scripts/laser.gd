@@ -4,9 +4,11 @@ var laser = preload("res://scenes/laser_scene.xml")
 
 var speed = 1000
 var timer
+var dmg = 1
 
 
 func _ready():
+	set_meta("arma", 1)
 	get_node("HitAnimation").set_hidden(true)
 	get_node("EnemyHitAnimation").set_hidden(true)
 	timer = get_node("LaserTTL")
@@ -26,7 +28,8 @@ func _timeout():
 	hide()
 	self.queue_free()
 
-func _hit():
+func _hit(dmg, body):
+	body.hp = body.hp - dmg
 	speed = 0
 	get_node("LaserSprite").set_hidden(true)
 	if(has_meta("enemigo")):
