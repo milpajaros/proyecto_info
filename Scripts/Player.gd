@@ -14,6 +14,7 @@ var dead = false
 var hp = 10
 
 
+
 func _ready():
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
