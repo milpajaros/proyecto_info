@@ -28,7 +28,7 @@ func _timeout():
 	hide()
 	self.queue_free()
 
-func _hit(dmg, body):
+func _hit(body):
 	body.hp = body.hp - dmg
 	speed = 0
 	get_node("LaserSprite").set_hidden(true)

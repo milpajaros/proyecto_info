@@ -24,7 +24,7 @@ func _ready():
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
-		body._hit(body.dmg,self)
+		body._hit(self)
 
 func _fixed_process(delta):
 	actualcd -= delta
@@ -44,7 +44,7 @@ func _fire():
 		laser = laser_scene.instance()
 		laser.get_node("LaserSprite").set_texture(laserenemigo)
 		var enemypos = get_pos()
-		laser.set_meta("enemigo",1)
+		laser.set_meta("aliado",0)
 		var LaserSpawnPoint = get_pos()
 		var laser_holder = get_node("Laser_holder")
 		laser_holder.add_child(laser)
@@ -69,6 +69,7 @@ func _chase(delta):
 		move(movement)
 
 func _die():
+	hp = 0
 	speed = 0
 	timer = get_node("EnemyTimer")
 	timer.set_wait_time(1)

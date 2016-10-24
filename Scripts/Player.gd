@@ -3,7 +3,10 @@ extends KinematicBody2D
 const MAX_HP = 10
 #variables para el disparo
 onready var laser_scene = preload("res://scenes/laser_scene.xml")
+onready var nuke_scene = preload("res://scenes/nuke.tscn")
 var laser
+var nuke
+
 
 var acceleration = 4000 #aceleración del player
 var maxspeed = 400 #velocidad máxima
@@ -12,6 +15,7 @@ var shootcd = 0.15 #tiempo entre disparo y disparo
 var actualcd = 0
 var dead = false
 var hp = 10
+var nukeammo = 40
 
 
 
@@ -71,13 +75,20 @@ func _fixed_process(delta):
 		laser.set_meta("aliado",1)
 		laser.set_pos(LaserSpawnPoint)
 		laser.look_at(get_global_mouse_pos())
+		
+	if (Input.is_action_pressed("ui_nuke") && nukeammo>0):
+		nukeammo -=1
+		nuke = nuke_scene.instance()
+		get_parent().get_node("Nuke_holder").add_child(nuke)
+		
 
 func _on_BulletHitArea_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("enemigo")):
 		hp -=1;
-		body._hit()
+		body._hit(self)
 
-func _die():
+func die():
+	hp= 0
 	acceleration = 0
 	velocity = Vector2(0,0)
 	get_node("PlayerAnimation").set_hidden(true)
