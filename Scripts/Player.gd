@@ -32,10 +32,10 @@ func _fixed_process(delta):
 		look_at(mousepos) #la nave apunta al raton
 		
 	if(hp <= 0):
-		actualcd = delta
+		actualcd = 1
 		if(!dead):
 			dead = true
-			_die()
+			die()
 	
 	#deteccion de movimiento
 	if(Input.is_action_pressed("ui_left")):
@@ -67,14 +67,7 @@ func _fixed_process(delta):
 	#mecanica del disparo
 	if(Input.is_action_pressed("ui_accept") && (actualcd <= 0)):
 		actualcd = shootcd #reinicia el CD
-		laser = laser_scene.instance()
-		var playerpos = get_node("PlayerAnimation").get_pos()
-		var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()
-		var laserHolder = get_node("LaserHolder")
-		laserHolder.add_child(laser)
-		laser.set_meta("aliado",1)
-		laser.set_pos(LaserSpawnPoint)
-		laser.look_at(get_global_mouse_pos())
+		_fire()
 		
 	if (Input.is_action_pressed("ui_nuke") && nukeammo>0):
 		nukeammo -=1
@@ -84,7 +77,6 @@ func _fixed_process(delta):
 
 func _on_BulletHitArea_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("enemigo")):
-		hp -=1;
 		body._hit(self)
 
 func die():
@@ -95,3 +87,14 @@ func die():
 	get_node("ExplosionAnimation").set_hidden(false)
 	get_node("ExplosionAnimation").set_frame(0)
 	get_node("ExplosionAnimation").play("default")
+	
+func _fire():
+	laser = laser_scene.instance()
+	var playerpos = get_node("PlayerAnimation").get_pos()
+	var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()
+	var laserHolder = get_node("LaserHolder")
+	laserHolder.add_child(laser)
+	laser.set_meta("aliado",1)
+	laser.set_pos(LaserSpawnPoint)
+	laser.look_at(get_global_mouse_pos())
+	laser.ttl = 1

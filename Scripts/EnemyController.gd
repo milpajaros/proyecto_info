@@ -18,6 +18,7 @@ var dead = false
 var distancia
 
 func _ready():
+	actualcd = 2
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
 	player = get_tree().get_root().get_node("Root/Player")
@@ -39,12 +40,12 @@ func _fixed_process(delta):
 			_die()
 
 func _fire():
-	if(actualcd<=0 ):
+	if(actualcd<=0 && !dead):
 		actualcd = enemycd #reinicia el CD
 		laser = laser_scene.instance()
 		laser.get_node("LaserSprite").set_texture(laserenemigo)
 		var enemypos = get_pos()
-		laser.set_meta("aliado",0)
+		laser.set_meta("enemigo",0)
 		var LaserSpawnPoint = get_pos()
 		var laser_holder = get_node("Laser_holder")
 		laser_holder.add_child(laser)
@@ -55,7 +56,6 @@ func _fire():
 func _chase(delta):
 	if(!dead):
 		look_at(player.get_pos())
-	#var player = get_parent().get_node("Player")
 	var movement = Vector2(player.get_pos().x-get_pos().x,player.get_pos().y-get_pos().y)
 	movement = movement.normalized()
 	if(distancia < DistanciaProxima):
@@ -71,6 +71,7 @@ func _chase(delta):
 func _die():
 	hp = 0
 	speed = 0
+	get_node("EnemyHitbox").queue_free()
 	timer = get_node("EnemyTimer")
 	timer.set_wait_time(1)
 	timer.connect("timeout",self,"_timeout")

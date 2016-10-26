@@ -5,20 +5,23 @@ var laser = preload("res://scenes/laser_scene.xml")
 var speed = 1000
 var timer
 var dmg = 1
-
+var ttl = 2
+var timerset = false
 
 func _ready():
+	timer = get_node("LaserTTL")
 	set_meta("arma", 1)
 	get_node("HitAnimation").set_hidden(true)
 	get_node("EnemyHitAnimation").set_hidden(true)
-	timer = get_node("LaserTTL")
-	timer.set_wait_time(2)
-	timer.connect("timeout",self,"_timeout")
-	timer.start()
 	
 	set_fixed_process(true)
 
 func _fixed_process(delta):
+	if(timerset == false):
+		timer.set_wait_time(ttl)
+		timer.connect("timeout",self,"_timeout")
+		timer.start()
+		timerset= true
 	
 	move_local_y(speed*delta, true)
 	if(is_colliding()):
