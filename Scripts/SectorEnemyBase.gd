@@ -48,6 +48,7 @@ func _on_DamageArea_body_enter( body ):
 
 func _die():
 	hp = 0
+	get_parent().sectors -= 1
 	timer = get_node("ExplosionHolder/ExplosionTimer")
 	timer.set_wait_time(3)
 	timer.connect("timeout",self,"_explosiontimeout")
@@ -57,5 +58,7 @@ func _die():
 		if(N.has_method("play")):
 			N.set_frame(0)
 			N.play("default")
+
 func _explosiontimeout():
+	hide()
 	queue_free()
