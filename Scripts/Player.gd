@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MAX_HP = 20
+
 #variables para el disparo
 onready var laser_scene = preload("res://scenes/laser_scene.xml")
 onready var nuke_scene = preload("res://scenes/nuke.tscn")
@@ -11,12 +11,12 @@ var nuke
 var acceleration = 4000 #aceleración del player
 var maxspeed = 400 #velocidad máxima
 var velocity = Vector2() #vector velocidad
-var shootcd = 0.15 #tiempo entre disparo y disparo
+var shootcd = 0.25 #tiempo entre disparo y disparo
 var actualcd = 0
 var dead = false
-var hp = 20
 var nukeammo = 40
-
+var maxhp = 20
+var hp = maxhp
 
 
 func _ready():
@@ -25,7 +25,7 @@ func _ready():
 
 
 func _fixed_process(delta):
-	get_parent().get_node("GUI/HPBar").set_val(hp*100/MAX_HP)
+	get_parent().get_node("GUI/HPBar").set_val(hp*100/maxhp)
 	actualcd -= delta
 	var mousepos = get_global_mouse_pos()
 	if(!dead):

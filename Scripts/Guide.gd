@@ -1,0 +1,20 @@
+
+extends Node2D
+
+# member variables here, example:
+# var a=2
+# var b="textvar"
+var bosspos
+
+func _ready():
+	set_hidden(true)
+	bosspos = get_tree().get_root().get_node("Root/Boss/Center").get_pos()
+	set_process(true)
+
+func _process(delta):
+	look_at(bosspos)
+	var distancia = get_parent().get_pos().distance_to(bosspos)
+	if(distancia > 1500):
+		set_hidden(false)
+	else:
+		set_hidden(true)

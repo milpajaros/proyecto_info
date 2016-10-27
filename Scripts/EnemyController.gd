@@ -70,7 +70,6 @@ func _chase(delta):
 func _die():
 	hp = 0
 	speed = 0
-	get_node("EnemyHitbox").queue_free()
 	timer = get_node("EnemyTimer")
 	timer.set_wait_time(1)
 	timer.connect("timeout",self,"_timeout")

@@ -7,14 +7,14 @@ var sectors = 3
 var bossmode = false
 var dead = false
 var timer
-var hp = 200
+var hp = 400
 var attackmode = 0
 var playerpos
 var actualcd = 0
 var enemycd = 1
 var bulletTTL = 2
 var variation = 0
-var phasetime = 10
+var phasetime = 5
 
 func _ready():
 	playerpos = get_parent().get_node("Player").get_pos()
@@ -73,9 +73,9 @@ func _nextphase():
 	if(attackmode == 3):
 		enemycd= 0.05
 	if(attackmode == 4):
-		enemycd= 1.5
+		enemycd= 1
 	if(attackmode == 5):
-		enemycd= 0.1
+		enemycd= 0.3
 
 func _die():
 	attackmode = 10
@@ -115,8 +115,8 @@ func _patron3():
 		variation = randi()%360
 func _patron4():
 	if(actualcd <= 0):
-		for n in range(90):
-			_firerot((variation+n))
+		for n in range(30):
+			_firerot((variation+n*3))
 		actualcd = enemycd #reinicia el CD
 		variation+= (randi()%4 * 90)
 func _patron5():

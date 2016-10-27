@@ -30,11 +30,11 @@ func _process(delta):
 func _timeout():
 	if(nwave> 0):
 		var enemy= enemy_scene.instance()
-		get_node("EnemySpawnPoint/EnemyHolder").add_child(enemy)
 		enemy.set_pos(get_node("EnemySpawnPoint").get_global_pos())
 		timer.set_wait_time(1)
 		timer.start()
 		nwave -=1
+		get_node("EnemySpawnPoint/EnemyHolder").add_child(enemy)
 	else:
 		timer.set_wait_time(15)
 		timer.start()
@@ -49,7 +49,6 @@ func _on_DamageArea_body_enter( body ):
 func _die():
 	hp = 0
 	get_node("DamageArea").queue_free()
-	get_parent().sectors -= 1
 	timer = get_node("ExplosionHolder/ExplosionTimer")
 	timer.set_wait_time(3)
 	timer.connect("timeout",self,"_explosiontimeout")
@@ -59,7 +58,10 @@ func _die():
 		if(N.has_method("play")):
 			N.set_frame(0)
 			N.play("default")
+	for N in get_node("EnemySpawnPoint/EnemyHolder").get_children():
+		N._die()
 
 func _explosiontimeout():
+	get_parent().sectors -= 1
 	hide()
 	queue_free()
