@@ -95,7 +95,6 @@ func _fire():
 	var laserHolder = get_node("LaserHolder")
 	laser.set_meta("aliado",1)
 	laser.set_pos(LaserSpawnPoint)
-	laser.dmg = 2
 	laser.look_at(get_global_mouse_pos())
 	laser.ttl = 1
 	laserHolder.add_child(laser)

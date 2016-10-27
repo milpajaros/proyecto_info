@@ -4,7 +4,7 @@ onready var enemy_scene = preload("res://scenes/enemy.xml")
 var RotSpeed = 200
 var timer
 var nwave= 3
-var hp = 100
+var hp = 50
 var dead = false
 
 func _ready():

@@ -7,7 +7,7 @@ var sectors = 3
 var bossmode = false
 var dead = false
 var timer
-var hp = 400
+var hp = 200
 var attackmode = 0
 var playerpos
 var actualcd = 0
@@ -67,15 +67,15 @@ func _nextphase():
 	if(attackmode == 0):
 		enemycd= 1
 	if(attackmode == 1):
-		enemycd = 0.1
+		enemycd = 0
 	if(attackmode == 2):
 		enemycd= 0.1
 	if(attackmode == 3):
-		enemycd= 0.05
+		enemycd= 0
 	if(attackmode == 4):
 		enemycd= 1
 	if(attackmode == 5):
-		enemycd= 0.3
+		enemycd= 0.4
 
 func _die():
 	attackmode = 10
@@ -126,7 +126,7 @@ func _patron5():
 		for n in range(2):
 			_firerot(-(variation+90+n*180))
 		actualcd = enemycd #reinicia el CD
-		variation+= 3.6
+		variation+= 7.2
 
 func _fireat(shootat):
 	var laser = laser_scene.instance()
