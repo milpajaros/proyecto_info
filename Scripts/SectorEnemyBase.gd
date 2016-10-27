@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var enemy_scene = preload("res://scenes/enemy.xml")
-var RotSpeed = 100
+var RotSpeed = 200
 var timer
 var nwave= 3
 var hp = 100
@@ -48,6 +48,7 @@ func _on_DamageArea_body_enter( body ):
 
 func _die():
 	hp = 0
+	get_node("DamageArea").queue_free()
 	get_parent().sectors -= 1
 	timer = get_node("ExplosionHolder/ExplosionTimer")
 	timer.set_wait_time(3)

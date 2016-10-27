@@ -47,11 +47,10 @@ func _fire():
 		var enemypos = get_pos()
 		laser.set_meta("enemigo",0)
 		var LaserSpawnPoint = get_pos()
-		var laser_holder = get_node("Laser_holder")
-		laser_holder.add_child(laser)
-		
+		var laser_holder = get_node("LaserHolder")
 		laser.set_pos(LaserSpawnPoint)
 		laser.look_at(player.get_pos())
+		laser_holder.add_child(laser)
 
 func _chase(delta):
 	if(!dead):

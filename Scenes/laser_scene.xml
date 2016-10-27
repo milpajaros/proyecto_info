@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="16" version="2.1" version_name="Godot Engine v2.1.stable.official">
-	<ext_resource path="res://Textures/LaserHit/frameBlue3.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://Textures/LaserHit/frameRed2.png" type="Texture" index="9"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameRed4.png" type="Texture" index="11"></ext_resource>
-	<ext_resource path="res://Textures/LaserHit/frameRed3.png" type="Texture" index="10"></ext_resource>
-	<ext_resource path="res://Textures/Laser.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://Textures/LaserHit/frameBlue0.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Textures/LaserHit/frameBlue1.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Textures/LaserHit/frameBlue3.png" type="Texture" index="5"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameBlue2.png" type="Texture" index="4"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameRed0.png" type="Texture" index="7"></ext_resource>
-	<ext_resource path="res://Textures/LaserHit/frameRed2.png" type="Texture" index="9"></ext_resource>
-	<ext_resource path="res://Textures/LaserHit/frameBlue1.png" type="Texture" index="3"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameRed1.png" type="Texture" index="8"></ext_resource>
+	<ext_resource path="res://Textures/LaserHit/frameRed3.png" type="Texture" index="10"></ext_resource>
+	<ext_resource path="res://Textures/LaserHit/frameBlue0.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Textures/Laser.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameBlue4.png" type="Texture" index="6"></ext_resource>
 	<ext_resource path="res://Scripts/laser.gd" type="Script" index="0"></ext_resource>
-	<resource type="RectangleShape2D" path="local://1">
+	<resource type="CircleShape2D" path="local://4">
 		<real name="custom_solver_bias"> 0 </real>
-		<vector2 name="extents"> 13.6114, 10 </vector2>
+		<real name="radius"> 10 </real>
 
 	</resource>
 	<resource type="SpriteFrames" path="local://2">
@@ -117,8 +117,8 @@
 				<vector2> 0.514053, -0.25702 </vector2>
 				<vector2> 0.75, 0.75 </vector2>
 				<bool> False </bool>
-				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<matrix32> 0.833785, -0, 0, 1.35598, -0.773677, -1.07662 </matrix32>
+				<resource  resource_type="Shape2D" path="local://4">  </resource>
+				<matrix32> 0.491138, -0, 0, 0.672402, 0, 4.75497 </matrix32>
 				<bool> True </bool>
 				<int> 1 </int>
 				<real> 0.08 </real>
@@ -126,8 +126,8 @@
 				<real> 180 </real>
 				<vector2> 2, 2 </vector2>
 				<resource  external="1">  </resource>
-				<vector2> -0.773677, -1.07662 </vector2>
-				<vector2> 0.833785, 1.35598 </vector2>
+				<vector2> 0, 4.75497 </vector2>
+				<vector2> 0.491138, 0.672402 </vector2>
 				<int> 0 </int>
 				<real> 1 </real>
 				<vector2> 1.1655, 6.29368 </vector2>

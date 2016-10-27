@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-const MAX_HP = 10
+const MAX_HP = 20
 #variables para el disparo
 onready var laser_scene = preload("res://scenes/laser_scene.xml")
 onready var nuke_scene = preload("res://scenes/nuke.tscn")
@@ -14,7 +14,7 @@ var velocity = Vector2() #vector velocidad
 var shootcd = 0.15 #tiempo entre disparo y disparo
 var actualcd = 0
 var dead = false
-var hp = 10
+var hp = 20
 var nukeammo = 40
 
 
@@ -93,8 +93,9 @@ func _fire():
 	var playerpos = get_node("PlayerAnimation").get_pos()
 	var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()
 	var laserHolder = get_node("LaserHolder")
-	laserHolder.add_child(laser)
 	laser.set_meta("aliado",1)
 	laser.set_pos(LaserSpawnPoint)
+	laser.dmg = 2
 	laser.look_at(get_global_mouse_pos())
 	laser.ttl = 1
+	laserHolder.add_child(laser)
