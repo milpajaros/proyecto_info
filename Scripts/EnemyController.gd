@@ -12,7 +12,8 @@ var DistanciaProxima = 200
 var player
 const SPEED = 200
 var speed = SPEED
-var hp = 5
+var maxhp = 5
+var hp = maxhp
 var timer
 var dead = false
 var distancia
@@ -28,6 +29,8 @@ func _on_Area_body_enter( body ):
 		body._hit(self)
 
 func _fixed_process(delta):
+	get_node("Hpholder/HP").set_val(hp*100/maxhp)
+	get_node("Hpholder").set_rot(-get_rot())
 	actualcd -= delta
 	distancia= get_pos().distance_to(player.get_pos())
 	if(distancia < 1000):
