@@ -4,7 +4,8 @@ onready var enemy_scene = preload("res://scenes/enemy.xml")
 var RotSpeed = 200
 var timer
 var nwave= 3
-var hp = 50
+var maxhp = 50
+var hp = maxhp
 var dead = false
 
 func _ready():
@@ -16,6 +17,8 @@ func _ready():
 	set_process(true)
 	
 func _process(delta):
+	get_node("Hpholder/HP").set_val(hp*100/maxhp)
+	get_node("Hpholder").set_rot(-get_rot())
 	look_at(get_parent().get_pos())
 	if(get_pos().distance_to(get_parent().get_node("Center").get_pos()) < 250):
 		move_local_y(-delta)

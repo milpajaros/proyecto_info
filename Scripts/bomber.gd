@@ -1,19 +1,16 @@
-
 extends KinematicBody2D
-onready var laser_scene = preload("res://scenes/laser_scene.xml")
-var laserenemigo = preload("res://Textures/laserRed.png")
-# member variables here, example:
-# var a=2
-# var b="textvar"
-var laser
-var enemycd = 0.5
+onready var bomb_scene = preload("res://scenes/bomb_scene.xml")
+var bombenemigo = preload("res://Textures/bomb.png")
+#PONER UN SPRITE
+
+var bomb
+var enemycd = 1
 var actualcd = 0
 var DistanciaProxima = 200
 var player
 const SPEED = 200
 var speed = SPEED
-var maxhp = 5
-var hp = maxhp
+var hp = 5
 var timer
 var dead = false
 var distancia
@@ -23,6 +20,7 @@ func _ready():
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
 	player = get_tree().get_root().get_node("Root/Player")
+
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
@@ -45,15 +43,14 @@ func _fixed_process(delta):
 func _fire():
 	if(actualcd<=0 && !dead):
 		actualcd = enemycd #reinicia el CD
-		laser = laser_scene.instance()
-		laser.get_node("LaserSprite").set_texture(laserenemigo)
+		bomb = bomb_scene.instance()
+		bomb.get_node("Sprite").set_texture(bombenemigo)
 		var enemypos = get_pos()
-		laser.set_meta("enemigo",0)
-		var LaserSpawnPoint = get_pos()
-		var laser_holder = get_node("LaserHolder")
-		laser.set_pos(LaserSpawnPoint)
-		laser.look_at(player.get_pos())
-		laser_holder.add_child(laser)
+		bomb.set_meta("enemigo",0)
+		var bombSpawnPoint = get_pos()
+		var bomb_holder = get_node("BombHolder")
+		bomb.set_pos(bombSpawnPoint)
+		bomb_holder.add_child(laser)
 
 func _chase(delta):
 	if(!dead):

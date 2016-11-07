@@ -7,7 +7,8 @@ var sectors = 3
 var bossmode = false
 var dead = false
 var timer
-var hp = 200
+var maxhp = 200
+var hp = maxhp
 var attackmode = 0
 var playerpos
 var actualcd = 0
@@ -15,14 +16,18 @@ var enemycd = 1
 var bulletTTL = 2
 var variation = 0
 var phasetime = 5
+var dmg = 0.5
 
 func _ready():
+	get_parent().get_node("GUI/BossHP").set_hidden(true)
 	playerpos = get_parent().get_node("Player").get_pos()
 	get_node("Center/ExplosionHolder").set_hidden(true)
 	set_fixed_process(true)
 
 func _fixed_process(delta):
+	get_parent().get_node("GUI/BossHP").set_val(hp*100/maxhp)
 	if((sectors <=0) && !bossmode ):
+		get_parent().get_node("GUI/BossHP").set_hidden(false)
 		print("bossmode on")
 		bossmode = true
 		get_node("Center/BossExtendedHitbox").queue_free()
@@ -75,9 +80,10 @@ func _nextphase():
 	if(attackmode == 4):
 		enemycd= 1
 	if(attackmode == 5):
-		enemycd= 0.4
+		enemycd= 0.2
 
 func _die():
+	get_parent().get_node("GUI/BossHP").set_hidden(true)
 	attackmode = 10
 	timer = get_node("BossTimer")
 	timer.set_wait_time(5)
@@ -95,9 +101,9 @@ func _timeout():
 func _patron0():
 	if(actualcd <= 0):
 		for n in range(36):
-			_firerot((variation+n)*10)
+			_firerot((variation+n)*5)
 		actualcd = enemycd #reinicia el CD
-		variation+= 0.25
+		variation+= 0.75
 func _patron1():
 	if(actualcd <= 0):
 		_fireat(playerpos)
@@ -117,7 +123,7 @@ func _patron4():
 	if(actualcd <= 0):
 		for n in range(30):
 			_firerot((variation+n*3))
-		actualcd = enemycd #reinicia el CD
+		actualcd = enemycd * 2 #reinicia el CD
 		variation+= (randi()%4 * 90)
 func _patron5():
 	if(actualcd <= 0):
@@ -138,7 +144,10 @@ func _fireat(shootat):
 	laser.set_pos(LaserSpawnPoint)
 	laser.look_at(shootat)
 	laser.ttl = bulletTTL
+	laser.speed = 500
+	laser.dmg = dmg
 	laser_holder.add_child(laser)
+	
 
 func _firerot(rotation):
 	var laser = laser_scene.instance()
@@ -150,4 +159,7 @@ func _firerot(rotation):
 	laser.set_pos(LaserSpawnPoint)
 	laser.rotate(deg2rad(rotation))
 	laser.ttl = bulletTTL
+	laser.speed = 500
+	laser.dmg = dmg
 	laser_holder.add_child(laser)
+	
