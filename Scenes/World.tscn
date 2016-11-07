@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=1]
+[gd_scene load_steps=57 format=1]
 
 [ext_resource path="res://Scripts/Boss.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/SectorEnemyBase.gd" type="Script" id=2]
@@ -102,100 +102,126 @@ points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
 animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ], "loop":true, "name":"default", "speed":7.0 } ]
 
-[sub_resource type="ConvexPolygonShape2D" id=14]
+[sub_resource type="StyleBoxFlat" id=14]
 
-custom_solver_bias = 0.0
-points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 0, 1, 0.0859375, 1 )
+light_color = Color( 0, 1, 0.15625, 1 )
+dark_color = Color( 0, 1, 0.132813, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
 
-[sub_resource type="ConvexPolygonShape2D" id=15]
+[sub_resource type="StyleBoxFlat" id=15]
 
-custom_solver_bias = 0.0
-points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+bg_color = Color( 1, 0, 0, 1 )
+light_color = Color( 1, 0, 0, 1 )
+dark_color = Color( 1, 0, 0, 1 )
+border_size = 0
+border_blend = true
+draw_bg = true
 
 [sub_resource type="ConvexPolygonShape2D" id=16]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
+points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
 
 [sub_resource type="ConvexPolygonShape2D" id=17]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
+points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=18]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
+points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
 
-[sub_resource type="SpriteFrames" id=19]
+[sub_resource type="ConvexPolygonShape2D" id=19]
 
-animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ], "loop":true, "name":"default", "speed":7.0 } ]
+custom_solver_bias = 0.0
+points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=20]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
-[sub_resource type="ConvexPolygonShape2D" id=21]
+[sub_resource type="SpriteFrames" id=21]
 
-custom_solver_bias = 0.0
-points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
+animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ], "loop":true, "name":"default", "speed":7.0 } ]
 
 [sub_resource type="ConvexPolygonShape2D" id=22]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
+points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
 
 [sub_resource type="ConvexPolygonShape2D" id=23]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
+points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=24]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
+points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
 
 [sub_resource type="ConvexPolygonShape2D" id=25]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=26]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
+points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
 [sub_resource type="ConvexPolygonShape2D" id=27]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
+points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
 
 [sub_resource type="ConvexPolygonShape2D" id=28]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
+points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=29]
 
 custom_solver_bias = 0.0
+points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
+
+[sub_resource type="ConvexPolygonShape2D" id=30]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
+
+custom_solver_bias = 0.0
 points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
-[sub_resource type="CircleShape2D" id=30]
+[sub_resource type="CircleShape2D" id=32]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="CircleShape2D" id=31]
+[sub_resource type="CircleShape2D" id=33]
 
 custom_solver_bias = 0.0
 radius = 10.0
 
-[sub_resource type="SpriteFrames" id=32]
+[sub_resource type="SpriteFrames" id=34]
 
 animations = [ { "frames":[ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ], "loop":true, "name":"default", "speed":6.0 } ]
 
-[sub_resource type="SpriteFrames" id=33]
+[sub_resource type="SpriteFrames" id=35]
 
 animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ], "loop":true, "name":"default", "speed":7.0 } ]
 
@@ -220,6 +246,29 @@ margin/left = 0.0
 margin/top = 34.0
 margin/right = 370.0
 margin/bottom = 0.0
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
+[node name="BossHP" type="ProgressBar" parent="GUI"]
+
+anchor/left = 3
+anchor/right = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 512.0
+margin/top = 0.0
+margin/right = -513.0
+margin/bottom = 20.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
 range/min = 0.0
@@ -278,6 +327,7 @@ trigger = false
 
 [node name="DamageArea" type="Area2D" parent="Boss/Sector1"]
 
+editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 8 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
@@ -310,6 +360,7 @@ trigger = false
 
 [node name="EnemySpawnPoint" type="Node2D" parent="Boss/Sector1"]
 
+editor/display_folded = true
 transform/pos = Vector2( -0.286056, -28.2391 )
 transform/scale = Vector2( 0.0228441, 0.0242376 )
 
@@ -321,6 +372,11 @@ one_shot = false
 autostart = false
 
 [node name="EnemyHolder" type="Node" parent="Boss/Sector1/EnemySpawnPoint"]
+
+[node name="Hpholder" type="Node2D" parent="Boss/Sector1/EnemySpawnPoint"]
+
+transform/pos = Vector2( -48.153, 883.504 )
+transform/scale = Vector2( 6.46363, 3.36128 )
 
 [node name="ExplosionHolder" type="Node2D" parent="Boss/Sector1"]
 
@@ -369,6 +425,32 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="Hpholder" type="Node2D" parent="Boss/Sector1"]
+
+transform/pos = Vector2( 0.308256, -4.0825 )
+transform/scale = Vector2( 0.133333, 0.133333 )
+
+[node name="HP" type="ProgressBar" parent="Boss/Sector1/Hpholder"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -79.0
+margin/top = -82.0
+margin/right = 81.0
+margin/bottom = -66.0
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
 [node name="Sector2" type="KinematicBody2D" parent="Boss"]
 
 editor/display_folded = true
@@ -416,19 +498,19 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 0.104214, -0.0601654 )
 input/pickable = true
-shapes/0/shape = SubResource( 14 )
+shapes/0/shape = SubResource( 16 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 15 )
+shapes/1/shape = SubResource( 17 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 16 )
+shapes/2/shape = SubResource( 18 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 17 )
+shapes/3/shape = SubResource( 19 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 18 )
+shapes/4/shape = SubResource( 20 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/4/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -498,7 +580,7 @@ animation = "default"
 transform/pos = Vector2( -75.5781, 31.5891 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 19 )
+frames = SubResource( 21 )
 animation = "default"
 
 [node name="ExplosionTimer" type="Timer" parent="Boss/Sector2/ExplosionHolder"]
@@ -508,6 +590,33 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="Hpholder" type="Node2D" parent="Boss/Sector2"]
+
+transform/pos = Vector2( -0.0655937, -4.05468 )
+transform/rot = 120.0
+transform/scale = Vector2( 0.133333, 0.133333 )
+
+[node name="HP" type="ProgressBar" parent="Boss/Sector2/Hpholder"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -79.776
+margin/top = -82.3978
+margin/right = 80.224
+margin/bottom = -66.3978
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
 [node name="Sector3" type="KinematicBody2D" parent="Boss"]
 
 editor/display_folded = true
@@ -515,19 +624,19 @@ transform/pos = Vector2( -216.506, 125 )
 transform/rot = 120.0
 transform/scale = Vector2( 7.5, 7.5 )
 input/pickable = false
-shapes/0/shape = SubResource( 20 )
+shapes/0/shape = SubResource( 22 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 21 )
+shapes/1/shape = SubResource( 23 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 22 )
+shapes/2/shape = SubResource( 24 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 23 )
+shapes/3/shape = SubResource( 25 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 24 )
+shapes/4/shape = SubResource( 26 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/4/trigger = false
 collision/layers = 1
@@ -553,19 +662,19 @@ trigger = false
 [node name="DamageArea" type="Area2D" parent="Boss/Sector3"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 25 )
+shapes/0/shape = SubResource( 27 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 26 )
+shapes/1/shape = SubResource( 28 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 27 )
+shapes/2/shape = SubResource( 29 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 28 )
+shapes/3/shape = SubResource( 30 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 29 )
+shapes/4/shape = SubResource( 31 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/4/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -645,15 +754,42 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
+[node name="Hpholder" type="Node2D" parent="Boss/Sector3"]
+
+transform/pos = Vector2( 0.783359, -4.33806 )
+transform/rot = -120.0
+transform/scale = Vector2( 0.133333, 0.133333 )
+
+[node name="HP" type="ProgressBar" parent="Boss/Sector3/Hpholder"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -78.068
+margin/top = -82.7984
+margin/right = 81.932
+margin/bottom = -66.7984
+custom_styles/fg = SubResource( 14 )
+custom_styles/bg = SubResource( 15 )
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+percent/visible = true
+
 [node name="Center" type="StaticBody2D" parent="Boss"]
 
 editor/display_folded = true
 transform/scale = Vector2( 5, 5 )
 input/pickable = false
-shapes/0/shape = SubResource( 30 )
+shapes/0/shape = SubResource( 32 )
 shapes/0/transform = Matrix32( 2.5, 0, 0, 2.5, -0.0386311, -0.114752 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 30 )
+shapes/1/shape = SubResource( 32 )
 shapes/1/transform = Matrix32( 6, 0, 0, 6, -0.0386311, -0.114752 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -674,7 +810,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( -0.0386311, -0.114752 )
 transform/scale = Vector2( 2.5, 2.5 )
-shape = SubResource( 30 )
+shape = SubResource( 32 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -683,7 +819,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( -0.0386311, -0.114752 )
 transform/scale = Vector2( 6, 6 )
-shape = SubResource( 30 )
+shape = SubResource( 32 )
 trigger = false
 _update_shape_index = 1
 __meta__ = { "_edit_lock_":true }
@@ -691,8 +827,9 @@ __meta__ = { "_edit_lock_":true }
 [node name="DamageArea" type="Area2D" parent="Boss/Center"]
 
 editor/display_folded = true
+transform/pos = Vector2( 0.119751, 0.239496 )
 input/pickable = true
-shapes/0/shape = SubResource( 30 )
+shapes/0/shape = SubResource( 32 )
 shapes/0/transform = Matrix32( 2.5, 0, 0, 2.5, -0.0386353, -0.114752 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -704,7 +841,7 @@ angular_damp = 1.0
 
 transform/pos = Vector2( -0.0386353, -0.114752 )
 transform/scale = Vector2( 2.5, 2.5 )
-shape = SubResource( 30 )
+shape = SubResource( 32 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -760,9 +897,10 @@ autostart = false
 
 [node name="Player" type="KinematicBody2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 888.259, 312.583 )
 input/pickable = false
-shapes/0/shape = SubResource( 31 )
+shapes/0/shape = SubResource( 33 )
 shapes/0/transform = Matrix32( -4, 3.49691e-07, -3.49691e-07, -4, 0, -8 )
 shapes/0/trigger = false
 collision/layers = 1
@@ -794,7 +932,7 @@ drag_margin/bottom = 0.05
 transform/pos = Vector2( 0, -8 )
 transform/rot = 180.0
 transform/scale = Vector2( 4, 4 )
-shape = SubResource( 31 )
+shape = SubResource( 33 )
 trigger = false
 _update_shape_index = 0
 
@@ -810,7 +948,7 @@ transform/scale = Vector2( 0.1, 0.1 )
 transform/pos = Vector2( -0.19748, -21.1533 )
 transform/rot = 180.0
 transform/scale = Vector2( 2, 2 )
-frames = SubResource( 32 )
+frames = SubResource( 34 )
 animation = "default"
 script/script = ExtResource( 19 )
 
@@ -818,7 +956,7 @@ script/script = ExtResource( 19 )
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 31 )
+shapes/0/shape = SubResource( 33 )
 shapes/0/transform = Matrix32( -4, 3.49691e-07, -3.49691e-07, -4, 0, -8 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -831,7 +969,7 @@ angular_damp = 1.0
 transform/pos = Vector2( 0, -8 )
 transform/rot = -180.0
 transform/scale = Vector2( 4, 4 )
-shape = SubResource( 31 )
+shape = SubResource( 33 )
 trigger = false
 _update_shape_index = 0
 
@@ -839,7 +977,7 @@ _update_shape_index = 0
 
 transform/pos = Vector2( 1.76048, 3.96116 )
 transform/scale = Vector2( 5, 5 )
-frames = SubResource( 33 )
+frames = SubResource( 35 )
 animation = "default"
 
 [node name="Arrow" type="Node2D" parent="Player"]

@@ -1,37 +1,15 @@
 [gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://Scripts/menu.gd" type="Script" id=1]
-[ext_resource path="res://Textures/fondo.png" type="Texture" id=2]
+[ext_resource path="res://Textures/marcador.png" type="Texture" id=2]
 [ext_resource path="res://Textures/botonJugar.png" type="Texture" id=3]
-[ext_resource path="res://Textures/botonAjustes.png" type="Texture" id=4]
-[ext_resource path="res://Textures/botonSalir.png" type="Texture" id=5]
-[ext_resource path="res://Textures/bomb.png" type="Texture" id=6]
+[ext_resource path="res://Textures/fondo.png" type="Texture" id=4]
+[ext_resource path="res://Textures/botonAjustes.png" type="Texture" id=5]
+[ext_resource path="res://Textures/botonSalir.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D"]
 
 script/script = ExtResource( 1 )
-
-[node name="Fondo" type="Sprite" parent="."]
-
-transform/pos = Vector2( 499.801, 308.498 )
-transform/scale = Vector2( 1.9933, 1.1873 )
-texture = ExtResource( 2 )
-
-[node name="Jugar" type="Sprite" parent="."]
-
-transform/pos = Vector2( 496.207, 280.401 )
-transform/scale = Vector2( 5, 5 )
-texture = ExtResource( 3 )
-
-[node name="Opciones" type="Sprite" parent="Jugar"]
-
-transform/pos = Vector2( 0, 20 )
-texture = ExtResource( 4 )
-
-[node name="Salir" type="Sprite" parent="Jugar/Opciones"]
-
-transform/pos = Vector2( 0, 20 )
-texture = ExtResource( 5 )
 
 [node name="seleccionado" type="KinematicBody2D" parent="."]
 
@@ -42,8 +20,52 @@ collision/margin = 0.08
 
 [node name="Sprite" type="Sprite" parent="seleccionado"]
 
-transform/pos = Vector2( 498.872, 277.25 )
-transform/scale = Vector2( 2.74046, 1 )
+transform/pos = Vector2( 497.083, 279.19 )
+transform/scale = Vector2( 4.80061, 3.05394 )
+texture = ExtResource( 2 )
+
+[node name="Jugar" type="Sprite" parent="."]
+
+transform/pos = Vector2( 496.207, 280.401 )
+transform/scale = Vector2( 5, 5 )
+texture = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground"]
+
+transform/pos = Vector2( 514.032, 300.258 )
+transform/scale = Vector2( 2.00467, 1.17259 )
+texture = ExtResource( 4 )
+
+[node name="Opciones" type="Sprite" parent="."]
+
+transform/pos = Vector2( 496.207, 380.401 )
+transform/scale = Vector2( 5, 5 )
+texture = ExtResource( 5 )
+
+[node name="Salir" type="Sprite" parent="."]
+
+transform/pos = Vector2( 496.207, 480.401 )
+transform/scale = Vector2( 5, 5 )
 texture = ExtResource( 6 )
 
 
