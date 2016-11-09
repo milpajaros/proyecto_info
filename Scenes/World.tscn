@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=1]
+[gd_scene load_steps=59 format=1]
 
 [ext_resource path="res://Scripts/Boss.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/SectorEnemyBase.gd" type="Script" id=2]
@@ -21,6 +21,8 @@
 [ext_resource path="res://Scripts/PlayerAnimationScript.gd" type="Script" id=19]
 [ext_resource path="res://Scripts/Guide.gd" type="Script" id=20]
 [ext_resource path="res://Textures/arrow.png" type="Texture" id=21]
+[ext_resource path="res://Scripts/ingamebg.gd" type="Script" id=22]
+[ext_resource path="res://Textures/fondo.png" type="Texture" id=23]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -990,6 +992,34 @@ script/script = ExtResource( 20 )
 transform/pos = Vector2( 0, 100 )
 transform/rot = 90.0
 texture = ExtResource( 21 )
+
+[node name="Background" type="ParallaxBackground" parent="."]
+
+layer = -1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+scroll/offset = Vector2( 0, 0 )
+scroll/base_offset = Vector2( 0, 0 )
+scroll/base_scale = Vector2( 1, 1 )
+scroll/limit_begin = Vector2( 0, 0 )
+scroll/limit_end = Vector2( 0, 0 )
+scroll/ignore_camera_zoom = true
+script/script = ExtResource( 22 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
+
+motion/scale = Vector2( 1, 1 )
+motion/offset = Vector2( 0, 0 )
+motion/mirroring = Vector2( 1024, 1024 )
+
+[node name="Sprite" type="Sprite" parent="Background/ParallaxLayer"]
+
+transform/pos = Vector2( 858.846, 288.554 )
+transform/scale = Vector2( 2, 2 )
+texture = ExtResource( 23 )
+region = true
+region_rect = Rect2( 0, 0, 2048, 2048 )
 
 [connection signal="body_enter" from="Boss/Sector1/DamageArea" to="Boss/Sector1" method="_on_DamageArea_body_enter"]
 

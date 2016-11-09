@@ -37,6 +37,8 @@ motion/mirroring = Vector2( 1024, 1024 )
 
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 
+transform/pos = Vector2( 1.22766, -1.22778 )
+transform/scale = Vector2( 1, 1 )
 texture = ExtResource( 2 )
 centered = false
 region = true
@@ -107,6 +109,22 @@ shortcut = null
 textures/normal = ExtResource( 10 )
 textures/pressed = ExtResource( 11 )
 textures/hover = ExtResource( 12 )
+
+[node name="PopupPanel" type="PopupPanel" parent="."]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 120.0
+margin/top = 284.0
+margin/right = -491.0
+margin/bottom = -283.0
+popup/exclusive = false
 
 [connection signal="pressed" from="ButtonContainer/Play" to="ButtonContainer" method="_on_Play_pressed"]
 

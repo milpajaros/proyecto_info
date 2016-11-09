@@ -7,8 +7,11 @@ var nwave= 3
 var maxhp = 50
 var hp = maxhp
 var dead = false
+var distancia
+var player
 
 func _ready():
+	player = get_tree().get_root().get_node("Root/Player")
 	get_node("ExplosionHolder").set_hidden(true)
 	timer = get_node("EnemySpawnPoint/EnemySpawnrate")
 	timer.set_wait_time(5)
@@ -31,7 +34,8 @@ func _process(delta):
 			_die()
 
 func _timeout():
-	if(nwave> 0):
+	distancia= get_pos().distance_to(player.get_pos())
+	if(nwave> 0 && distancia<10000):
 		var enemy= enemy_scene.instance()
 		enemy.set_pos(get_node("EnemySpawnPoint").get_global_pos())
 		timer.set_wait_time(1)

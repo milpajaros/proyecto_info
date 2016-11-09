@@ -14,8 +14,11 @@ func _on_Play_pressed():
 
 
 func _on_Settings_pressed():
-	pass # replace with function body
-
+	var popup = get_parent().get_node("PopupPanel")
+	if(popup.is_hidden()):
+		popup.set_hidden(false)
+	else:
+		popup.set_hidden(true)
 
 func _on_Exit_pressed():
 	get_tree().quit()

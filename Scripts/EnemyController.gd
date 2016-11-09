@@ -20,6 +20,10 @@ var distancia
 
 func _ready():
 	actualcd = 2
+	timer = get_node("EnemyTimer")
+	timer.set_wait_time(60)
+	timer.connect("timeout",self,"_timeout")
+	timer.start()
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
 	player = get_tree().get_root().get_node("Root/Player")
@@ -73,9 +77,7 @@ func _chase(delta):
 func _die():
 	hp = 0
 	speed = 0
-	timer = get_node("EnemyTimer")
 	timer.set_wait_time(1)
-	timer.connect("timeout",self,"_timeout")
 	timer.start()
 	get_node("EnemySprite").set_hidden(true)
 	get_node("ExplosionAnimation").set_hidden(false)
