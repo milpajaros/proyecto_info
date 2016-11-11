@@ -45,16 +45,22 @@ func _fixed_process(delta):
 
 func _rampage():
 	if(attackmode == 0):
+		enemycd= 1
 		_patron0()
 	if(attackmode == 1):
+		enemycd = 0
 		_patron1()
 	if(attackmode == 2):
+		enemycd= 0.15
 		_patron2()
 	if(attackmode == 3):
+		enemycd= 0.1
 		_patron3()
 	if(attackmode == 4):
+		enemycd= 1.5
 		_patron4()
 	if(attackmode == 5):
+		enemycd= 0.25
 		_patron5()
 
 func _on_DamageArea_body_enter( body ):
@@ -69,18 +75,6 @@ func _nextphase():
 	timer = get_node("BossTimer")
 	timer.set_wait_time(phasetime)
 	timer.start()
-	if(attackmode == 0):
-		enemycd= 1
-	if(attackmode == 1):
-		enemycd = 0
-	if(attackmode == 2):
-		enemycd= 0.15
-	if(attackmode == 3):
-		enemycd= 0.1
-	if(attackmode == 4):
-		enemycd= 1.5
-	if(attackmode == 5):
-		enemycd= 0.25
 
 func _die():
 	get_parent().get_node("GUI/BossHP").set_hidden(true)
@@ -94,6 +88,7 @@ func _die():
 		if(N.has_method("play")):
 			N.set_frame(0)
 			N.play("default")
+
 func _timeout():
 	hide()
 	queue_free()
@@ -104,10 +99,12 @@ func _patron0():#circulo
 			_firerot(variation+(n*20))
 		actualcd = enemycd #reinicia el CD
 		variation+= 10
+
 func _patron1():#apuntando al jugador
 	if(actualcd <= 0):
 		_fireat(playerpos)
 		actualcd = enemycd #reinicia el CD
+
 func _patron2():#el molinillo
 	if(actualcd <= 0):
 		for n in range(4):
@@ -119,12 +116,14 @@ func _patron3():#disparos aleatorios
 		_firerot(variation)
 		actualcd = enemycd #reinicia el CD
 		variation = randi()%360
+
 func _patron4():#disparo que cubre 90grados
 	if(actualcd <= 0):
 		for n in range(30):
 			_firerot((variation+n*3))
 		actualcd = enemycd #reinicia el CD
 		variation+= (randi()%4 * 90)
+
 func _patron5(): #disparos haciendo como una X que se cierra
 	if(actualcd <= 0):
 		for n in range(2):

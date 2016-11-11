@@ -1,28 +1,29 @@
-[gd_scene load_steps=59 format=1]
+[gd_scene load_steps=60 format=1]
 
-[ext_resource path="res://Scripts/Boss.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/SectorEnemyBase.gd" type="Script" id=2]
-[ext_resource path="res://Textures/SectorEnemyStation.png" type="Texture" id=3]
-[ext_resource path="res://Textures/Explosion/frame0.png" type="Texture" id=4]
-[ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" id=5]
-[ext_resource path="res://Textures/Explosion/frame2.png" type="Texture" id=6]
-[ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" id=7]
-[ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" id=8]
-[ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" id=9]
-[ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" id=10]
-[ext_resource path="res://Textures/EnemyStation.png" type="Texture" id=11]
-[ext_resource path="res://Scripts/Player.gd" type="Script" id=12]
-[ext_resource path="res://Textures/Player/frame0.png" type="Texture" id=13]
-[ext_resource path="res://Textures/Player/frame1.png" type="Texture" id=14]
-[ext_resource path="res://Textures/Player/frame2.png" type="Texture" id=15]
-[ext_resource path="res://Textures/Player/frame3.png" type="Texture" id=16]
-[ext_resource path="res://Textures/Player/frame4.png" type="Texture" id=17]
-[ext_resource path="res://Textures/Player/frame5.png" type="Texture" id=18]
-[ext_resource path="res://Scripts/PlayerAnimationScript.gd" type="Script" id=19]
-[ext_resource path="res://Scripts/Guide.gd" type="Script" id=20]
-[ext_resource path="res://Textures/arrow.png" type="Texture" id=21]
-[ext_resource path="res://Scripts/ingamebg.gd" type="Script" id=22]
-[ext_resource path="res://Textures/fondo.png" type="Texture" id=23]
+[ext_resource path="res://Scenes/bomber.xml" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Boss.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/SectorEnemyBase.gd" type="Script" id=3]
+[ext_resource path="res://Textures/SectorEnemyStation.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Explosion/frame0.png" type="Texture" id=5]
+[ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" id=6]
+[ext_resource path="res://Textures/Explosion/frame2.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" id=9]
+[ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" id=11]
+[ext_resource path="res://Textures/EnemyStation.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=13]
+[ext_resource path="res://Textures/Player/frame0.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Player/frame1.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Player/frame2.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Player/frame3.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Player/frame4.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Player/frame5.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/PlayerAnimationScript.gd" type="Script" id=20]
+[ext_resource path="res://Scripts/Guide.gd" type="Script" id=21]
+[ext_resource path="res://Textures/arrow.png" type="Texture" id=22]
+[ext_resource path="res://Scripts/ingamebg.gd" type="Script" id=23]
+[ext_resource path="res://Textures/fondo.png" type="Texture" id=24]
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -102,7 +103,7 @@ points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
 [sub_resource type="SpriteFrames" id=13]
 
-animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ], "loop":true, "name":"default", "speed":7.0 } ]
+animations = [ { "frames":[ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ], "loop":true, "name":"default", "speed":7.0 } ]
 
 [sub_resource type="StyleBoxFlat" id=14]
 
@@ -157,7 +158,7 @@ points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
 [sub_resource type="SpriteFrames" id=21]
 
-animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ], "loop":true, "name":"default", "speed":7.0 } ]
+animations = [ { "frames":[ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ], "loop":true, "name":"default", "speed":7.0 } ]
 
 [sub_resource type="ConvexPolygonShape2D" id=22]
 
@@ -221,13 +222,17 @@ radius = 10.0
 
 [sub_resource type="SpriteFrames" id=34]
 
-animations = [ { "frames":[ ExtResource( 13 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ], "loop":true, "name":"default", "speed":6.0 } ]
+animations = [ { "frames":[ ExtResource( 14 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ], "loop":true, "name":"default", "speed":6.0 } ]
 
 [sub_resource type="SpriteFrames" id=35]
 
-animations = [ { "frames":[ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ], "loop":true, "name":"default", "speed":7.0 } ]
+animations = [ { "frames":[ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ], "loop":true, "name":"default", "speed":7.0 } ]
 
 [node name="Root" type="Node"]
+
+[node name="Bomber" parent="." instance=ExtResource( 1 )]
+
+transform/pos = Vector2( 2344.02, -136.578 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -285,7 +290,8 @@ percent/visible = true
 
 [node name="Boss" type="Node2D" parent="."]
 
-script/script = ExtResource( 1 )
+editor/display_folded = true
+script/script = ExtResource( 2 )
 
 [node name="Sector1" type="KinematicBody2D" parent="Boss"]
 
@@ -311,12 +317,12 @@ shapes/4/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 2 )
+script/script = ExtResource( 3 )
 
 [node name="SectorSprite" type="Sprite" parent="Boss/Sector1"]
 
 transform/rot = 180.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Hitbox" type="CollisionPolygon2D" parent="Boss/Sector1"]
@@ -479,12 +485,12 @@ shapes/4/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 2 )
+script/script = ExtResource( 3 )
 
 [node name="SectorSprite" type="Sprite" parent="Boss/Sector2"]
 
 transform/rot = 180.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Hitbox" type="CollisionPolygon2D" parent="Boss/Sector2"]
@@ -645,12 +651,12 @@ shapes/4/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 2 )
+script/script = ExtResource( 3 )
 
 [node name="SectorSprite" type="Sprite" parent="Boss/Sector3"]
 
 transform/rot = 180.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="Hitbox" type="CollisionPolygon2D" parent="Boss/Sector3"]
@@ -806,7 +812,7 @@ __meta__ = { "_edit_lock_":true }
 [node name="BossSprite" type="Sprite" parent="Boss/Center"]
 
 transform/scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 11 )
+texture = ExtResource( 12 )
 __meta__ = { "_edit_lock_":true }
 
 [node name="BossHitbox" type="CollisionShape2D" parent="Boss/Center"]
@@ -909,7 +915,7 @@ shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
-script/script = ExtResource( 12 )
+script/script = ExtResource( 13 )
 
 [node name="PlayerCamera" type="Camera2D" parent="Player"]
 
@@ -953,7 +959,7 @@ transform/rot = 180.0
 transform/scale = Vector2( 2, 2 )
 frames = SubResource( 34 )
 animation = "default"
-script/script = ExtResource( 19 )
+script/script = ExtResource( 20 )
 
 [node name="BulletHitArea" type="Area2D" parent="Player"]
 
@@ -985,13 +991,13 @@ animation = "default"
 
 [node name="Arrow" type="Node2D" parent="Player"]
 
-script/script = ExtResource( 20 )
+script/script = ExtResource( 21 )
 
 [node name="ArrowSprite" type="Sprite" parent="Player/Arrow"]
 
 transform/pos = Vector2( 0, 100 )
 transform/rot = 90.0
-texture = ExtResource( 21 )
+texture = ExtResource( 22 )
 
 [node name="Background" type="ParallaxBackground" parent="."]
 
@@ -1005,19 +1011,19 @@ scroll/base_scale = Vector2( 1, 1 )
 scroll/limit_begin = Vector2( 0, 0 )
 scroll/limit_end = Vector2( 0, 0 )
 scroll/ignore_camera_zoom = true
-script/script = ExtResource( 22 )
+script/script = ExtResource( 23 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Background"]
 
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
-motion/mirroring = Vector2( 1024, 1024 )
+motion/mirroring = Vector2( 2048, 2048 )
 
 [node name="Sprite" type="Sprite" parent="Background/ParallaxLayer"]
 
 transform/pos = Vector2( 858.846, 288.554 )
 transform/scale = Vector2( 2, 2 )
-texture = ExtResource( 23 )
+texture = ExtResource( 24 )
 region = true
 region_rect = Rect2( 0, 0, 2048, 2048 )
 

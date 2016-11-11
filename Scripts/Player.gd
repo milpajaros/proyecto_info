@@ -22,6 +22,7 @@ var hp = maxhp
 func _ready():
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
+	set_meta("aliado",1)
 
 
 func _fixed_process(delta):
