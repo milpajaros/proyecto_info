@@ -8,7 +8,7 @@ var bosspos
 
 func _ready():
 	set_hidden(true)
-	bosspos = get_tree().get_root().get_node("Root/Boss/Center").get_pos()
+	bosspos = global.root.get_node("Center", true, false).get_pos()
 	set_process(true)
 
 func _process(delta):

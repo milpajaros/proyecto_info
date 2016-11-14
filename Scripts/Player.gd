@@ -26,7 +26,7 @@ func _ready():
 
 
 func _fixed_process(delta):
-	get_parent().get_node("GUI/HPBar").set_val(hp*100/maxhp)
+	get_tree().get_root().find_node("HPbar", true, false).set_val(hp*100/maxhp)
 	actualcd -= delta
 	var mousepos = get_global_mouse_pos()
 	if(!dead):
@@ -51,7 +51,15 @@ func _fixed_process(delta):
 	if(Input.is_action_pressed("ui_down")):
 		if(velocity.y < maxspeed):
 			velocity.y += delta*acceleration
-	
+	if(Input.is_action_pressed("ui_shift")):
+		maxspeed = 200
+		if (velocity.x > maxspeed):
+			velocity.x = maxspeed
+		if (velocity.y > maxspeed):
+			velocity.y = maxspeed
+	if(!Input.is_action_pressed("ui_shift")):
+		maxspeed = 400
+
 	#condicion de parada
 	if(!Input.is_action_pressed("ui_left") && !Input.is_action_pressed("ui_right")):
 		velocity.x=0

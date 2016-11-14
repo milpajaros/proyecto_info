@@ -17,17 +17,19 @@ var bulletTTL = 2
 var variation = 0
 var phasetime = 5
 var dmg = 1
+var hpbar
 
 func _ready():
-	get_parent().get_node("GUI/BossHP").set_hidden(true)
-	playerpos = get_parent().get_node("Player").get_pos()
+	hpbar = global.root.find_node("HPBoss",true,false)
+	hpbar.set_hidden(true)
+	playerpos = global.root.find_node("Player",true,false).get_pos()
 	get_node("Center/ExplosionHolder").set_hidden(true)
 	set_fixed_process(true)
 
 func _fixed_process(delta):
-	get_parent().get_node("GUI/BossHP").set_val(hp*100/maxhp)
+	hpbar.set_val(hp*100/maxhp)
 	if((sectors <=0) && !bossmode ):
-		get_parent().get_node("GUI/BossHP").set_hidden(false)
+		hpbar.set_hidden(false)
 		print("bossmode on")
 		bossmode = true
 		get_node("Center/BossExtendedHitbox").queue_free()
@@ -77,7 +79,7 @@ func _nextphase():
 	timer.start()
 
 func _die():
-	get_parent().get_node("GUI/BossHP").set_hidden(true)
+	hpbar.set_hidden(true)
 	attackmode = 10
 	timer = get_node("BossTimer")
 	timer.set_wait_time(5)

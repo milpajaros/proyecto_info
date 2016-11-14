@@ -15,12 +15,14 @@ var hp = maxhp
 var timer
 var dead = false
 var distancia
+var playerpos
 
 func _ready():
 	actualcd = 2
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
-	player = get_tree().get_root().get_node("Root/Player")
+	player = global.root.find_node("Player", true, false)
+
 
 
 func _on_Area2D_body_enter( body ):

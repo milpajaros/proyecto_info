@@ -55,6 +55,7 @@ func _on_DamageArea_body_enter( body ):
 
 func _die():
 	hp = 0
+	get_node("Hpholder").set_hidden(true)
 	get_node("DamageArea").queue_free()
 	timer = get_node("ExplosionHolder/ExplosionTimer")
 	timer.set_wait_time(3)
