@@ -22,6 +22,7 @@ var hp = maxhp
 func _ready():
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
+	set_meta("aliado",1)
 
 
 func _fixed_process(delta):
@@ -50,7 +51,15 @@ func _fixed_process(delta):
 	if(Input.is_action_pressed("ui_down")):
 		if(velocity.y < maxspeed):
 			velocity.y += delta*acceleration
-	
+	if(Input.is_action_pressed("ui_shift")):
+		maxspeed = 200
+		if (velocity.x > maxspeed):
+			velocity.x = maxspeed
+		if (velocity.y > maxspeed):
+			velocity.y = maxspeed
+	if(!Input.is_action_pressed("ui_shift")):
+		maxspeed = 400
+
 	#condicion de parada
 	if(!Input.is_action_pressed("ui_left") && !Input.is_action_pressed("ui_right")):
 		velocity.x=0
@@ -74,6 +83,8 @@ func _fixed_process(delta):
 		nuke = nuke_scene.instance()
 		get_parent().get_node("Nuke_holder").add_child(nuke)
 		
+	if(Input.is_action_pressed("ui_exit")):
+		get_tree().quit()
 
 func _on_BulletHitArea_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("enemigo")):

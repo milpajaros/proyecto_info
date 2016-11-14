@@ -4,25 +4,28 @@ var bombenemigo = preload("res://Textures/bomb.png")
 #PONER UN SPRITE
 
 var bomb
-var enemycd = 1
+var enemycd = 5
 var actualcd = 0
 var DistanciaProxima = 200
 var player
 const SPEED = 200
 var speed = SPEED
-var hp = 5
+var maxhp =5
+var hp = maxhp
 var timer
 var dead = false
 var distancia
+var playerpos
 
 func _ready():
 	actualcd = 2
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
-	player = get_tree().get_root().get_node("Root/Player")
+	player = get_tree().get_root().find_node("Player", true, false)
 
 
-func _on_Area_body_enter( body ):
+
+func _on_Area2D_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
 		body._hit(self)
 
@@ -48,9 +51,9 @@ func _fire():
 		var enemypos = get_pos()
 		bomb.set_meta("enemigo",0)
 		var bombSpawnPoint = get_pos()
-		var bomb_holder = get_node("BombHolder")
+		var bomb_holder = get_node("bombHolder")
 		bomb.set_pos(bombSpawnPoint)
-		bomb_holder.add_child(laser)
+		bomb_holder.add_child(bomb)
 
 func _chase(delta):
 	if(!dead):
