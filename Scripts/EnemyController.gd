@@ -26,7 +26,7 @@ func _ready():
 	timer.start()
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
-	player = get_tree().get_root().get_node("Root/Player")
+	player = global.root.find_node("Player",true,false)
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
@@ -52,7 +52,7 @@ func _fire():
 		laser = laser_scene.instance()
 		laser.get_node("LaserSprite").set_texture(laserenemigo)
 		var enemypos = get_pos()
-		laser.set_meta("enemigo",0)
+		laser.set_meta("enemigo",1)
 		var LaserSpawnPoint = get_pos()
 		var laser_holder = get_node("LaserHolder")
 		laser.set_pos(LaserSpawnPoint)
@@ -75,6 +75,7 @@ func _chase(delta):
 		move(movement)
 
 func _die():
+	get_node("Hpholder").set_hidden(true)
 	hp = 0
 	speed = 0
 	timer.set_wait_time(1)

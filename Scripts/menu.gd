@@ -10,7 +10,7 @@ func _process(delta):
 	pass
 
 func _on_Play_pressed():
-	get_tree().change_scene("res://Scenes/World.tscn")
+	  get_node("/root/global").goto_scene("res://Scenes/World.tscn")
 
 
 func _on_Settings_pressed():

@@ -26,7 +26,7 @@ func _ready():
 
 
 func _fixed_process(delta):
-	get_parent().get_node("GUI/HPBar").set_val(hp*100/maxhp)
+	get_tree().get_root().find_node("HPbar", true, false).set_val(hp*100/maxhp)
 	actualcd -= delta
 	var mousepos = get_global_mouse_pos()
 	if(!dead):
