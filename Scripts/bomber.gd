@@ -30,6 +30,10 @@ func _on_Area2D_body_enter( body ):
 		body._hit(self)
 
 func _fixed_process(delta):
+	if((actualcd <0) && (get_node("bombsrpite").is_hidden()) && !dead):
+		get_node("bombsrpite").set_hidden(false)
+	if((actualcd>0) && (!get_node("bombsrpite").is_hidden()) && !dead):
+		get_node("bombsrpite").set_hidden(true)
 	get_node("Hpholder/HP").set_val(hp*100/maxhp)
 	get_node("Hpholder").set_rot(-get_rot())
 	actualcd -= delta
@@ -72,12 +76,14 @@ func _chase(delta):
 
 func _die():
 	hp = 0
+	get_node("Hpholder").set_hidden(true)
+	dead = true
 	speed = 0
-	timer = get_node("EnemyTimer")
+	timer = get_node("Timer")
 	timer.set_wait_time(1)
 	timer.connect("timeout",self,"_timeout")
 	timer.start()
-	get_node("EnemySprite").set_hidden(true)
+	get_node("AnimatedSprite").set_hidden(true)
 	get_node("ExplosionAnimation").set_hidden(false)
 	get_node("ExplosionAnimation").set_frame(0)
 	get_node("ExplosionAnimation").play("default")

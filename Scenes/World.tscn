@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=1]
+[gd_scene load_steps=58 format=1]
 
 [ext_resource path="res://Scripts/lvl1.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Boss.gd" type="Script" id=2]
@@ -17,63 +17,65 @@
 [ext_resource path="res://Scripts/ingamebg.gd" type="Script" id=15]
 [ext_resource path="res://Textures/fondo.png" type="Texture" id=16]
 [ext_resource path="res://Scenes/Player.xml" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scripts/Guide.gd" type="Script" id=18]
+[ext_resource path="res://Textures/arrow.png" type="Texture" id=19]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=20]
+
+[sub_resource type="ConvexPolygonShape2D" id=1]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
 
 [sub_resource type="ConvexPolygonShape2D" id=4]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
+points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=5]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
+points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
 [sub_resource type="ConvexPolygonShape2D" id=6]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
+points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
 
 [sub_resource type="ConvexPolygonShape2D" id=7]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
+points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=8]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
 
 [sub_resource type="ConvexPolygonShape2D" id=9]
 
 custom_solver_bias = 0.0
-points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
+points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
 
 [sub_resource type="ConvexPolygonShape2D" id=10]
 
 custom_solver_bias = 0.0
-points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
-
-[sub_resource type="ConvexPolygonShape2D" id=11]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
-
-[sub_resource type="ConvexPolygonShape2D" id=12]
-
-custom_solver_bias = 0.0
 points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
-[sub_resource type="SpriteFrames" id=13]
+[sub_resource type="SpriteFrames" id=11]
 
 animations = [ { "frames":[ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ], "loop":true, "name":"default", "speed":7.0 } ]
 
-[sub_resource type="StyleBoxTexture" id=33]
+[sub_resource type="StyleBoxTexture" id=12]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -89,6 +91,148 @@ expand_margin/right = 0.0
 expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=13]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 13 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="DynamicFont" id=14]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
+
+[sub_resource type="ConvexPolygonShape2D" id=18]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
+
+[sub_resource type="ConvexPolygonShape2D" id=19]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
+
+[sub_resource type="SpriteFrames" id=20]
+
+animations = [ { "frames":[ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ], "loop":true, "name":"default", "speed":7.0 } ]
+
+[sub_resource type="StyleBoxTexture" id=21]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 12 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="StyleBoxTexture" id=22]
+
+content_margin/left = -1.0
+content_margin/right = -1.0
+content_margin/top = -1.0
+content_margin/bottom = -1.0
+texture = ExtResource( 13 )
+margin/left = 0.0
+margin/right = 0.0
+margin/top = 0.0
+margin/bottom = 0.0
+expand_margin/left = 0.0
+expand_margin/right = 0.0
+expand_margin/top = 0.0
+expand_margin/bottom = 0.0
+draw_center = true
+
+[sub_resource type="DynamicFont" id=23]
+
+font/size = 16
+font/use_mipmaps = false
+font/use_filter = false
+
+[sub_resource type="ConvexPolygonShape2D" id=24]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+
+[sub_resource type="ConvexPolygonShape2D" id=25]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
+
+[sub_resource type="ConvexPolygonShape2D" id=26]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
+
+[sub_resource type="ConvexPolygonShape2D" id=27]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
+
+[sub_resource type="ConvexPolygonShape2D" id=28]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
+
+[sub_resource type="ConvexPolygonShape2D" id=29]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
+
+[sub_resource type="ConvexPolygonShape2D" id=30]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
+
+[sub_resource type="ConvexPolygonShape2D" id=31]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
+
+[sub_resource type="ConvexPolygonShape2D" id=32]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
+
+[sub_resource type="ConvexPolygonShape2D" id=33]
+
+custom_solver_bias = 0.0
+points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
 
 [sub_resource type="StyleBoxTexture" id=34]
 
@@ -96,58 +240,6 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 13 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="DynamicFont" id=35]
-
-font/size = 16
-font/use_mipmaps = false
-font/use_filter = false
-
-[sub_resource type="ConvexPolygonShape2D" id=16]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
-
-[sub_resource type="ConvexPolygonShape2D" id=17]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
-
-[sub_resource type="ConvexPolygonShape2D" id=18]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
-
-[sub_resource type="ConvexPolygonShape2D" id=19]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
-
-[sub_resource type="ConvexPolygonShape2D" id=20]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
-
-[sub_resource type="SpriteFrames" id=21]
-
-animations = [ { "frames":[ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ], "loop":true, "name":"default", "speed":7.0 } ]
-
-[sub_resource type="StyleBoxTexture" id=36]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
 texture = ExtResource( 12 )
 margin/left = 0.0
 margin/right = 0.0
@@ -159,7 +251,7 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="StyleBoxTexture" id=37]
+[sub_resource type="StyleBoxTexture" id=35]
 
 content_margin/left = -1.0
 content_margin/right = -1.0
@@ -176,103 +268,13 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
-[sub_resource type="DynamicFont" id=38]
+[sub_resource type="DynamicFont" id=36]
 
 font/size = 16
 font/use_mipmaps = false
 font/use_filter = false
 
-[sub_resource type="ConvexPolygonShape2D" id=22]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
-
-[sub_resource type="ConvexPolygonShape2D" id=23]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
-
-[sub_resource type="ConvexPolygonShape2D" id=24]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
-
-[sub_resource type="ConvexPolygonShape2D" id=25]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
-
-[sub_resource type="ConvexPolygonShape2D" id=26]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
-
-[sub_resource type="ConvexPolygonShape2D" id=27]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 9.05007, 5.05952, 8.10013, 7.97619, 6.55969, 3.98809, 9.15276, 0.77381 )
-
-[sub_resource type="ConvexPolygonShape2D" id=28]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -5.86649, 3.5119, -7.79204, 8.15476, -8.51091, 8.27381, -8.89602, 5.05952, -9.02439, 0.833333 )
-
-[sub_resource type="ConvexPolygonShape2D" id=29]
-
-custom_solver_bias = 0.0
-points = Vector2Array( 2.47754, -8.86905, 6.66239, -5.77381, 9.15276, 0.77381, 6.55969, 3.98809, 2.65726, 1.42857, -2.40051, -8.75 )
-
-[sub_resource type="ConvexPolygonShape2D" id=30]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -7.61232, -3.69048, -5.1733, -7.02381, -2.40051, -8.75, 2.65726, 1.42857, -2.47754, 1.54762, -9.02439, 0.833333 )
-
-[sub_resource type="ConvexPolygonShape2D" id=31]
-
-custom_solver_bias = 0.0
-points = Vector2Array( -9.02439, 0.833333, -2.47754, 1.54762, -5.86649, 3.5119 )
-
-[sub_resource type="StyleBoxTexture" id=39]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 12 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="StyleBoxTexture" id=40]
-
-content_margin/left = -1.0
-content_margin/right = -1.0
-content_margin/top = -1.0
-content_margin/bottom = -1.0
-texture = ExtResource( 13 )
-margin/left = 0.0
-margin/right = 0.0
-margin/top = 0.0
-margin/bottom = 0.0
-expand_margin/left = 0.0
-expand_margin/right = 0.0
-expand_margin/top = 0.0
-expand_margin/bottom = 0.0
-draw_center = true
-
-[sub_resource type="DynamicFont" id=41]
-
-font/size = 16
-font/use_mipmaps = false
-font/use_filter = false
-
-[sub_resource type="CircleShape2D" id=32]
+[sub_resource type="CircleShape2D" id=37]
 
 custom_solver_bias = 0.0
 radius = 10.0
@@ -293,19 +295,19 @@ editor/display_folded = true
 transform/pos = Vector2( 0, -250 )
 transform/scale = Vector2( 7.5, 7.5 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 4 )
+shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 5 )
+shapes/2/shape = SubResource( 3 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 6 )
+shapes/3/shape = SubResource( 4 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 7 )
+shapes/4/shape = SubResource( 5 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/4/trigger = false
 collision/layers = 1
@@ -332,19 +334,19 @@ trigger = false
 
 editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 8 )
+shapes/0/shape = SubResource( 6 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 9 )
+shapes/1/shape = SubResource( 7 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 10 )
+shapes/2/shape = SubResource( 8 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 11 )
+shapes/3/shape = SubResource( 9 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 12 )
+shapes/4/shape = SubResource( 10 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/4/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -394,7 +396,7 @@ transform/scale = Vector2( 0.133333, 0.133333 )
 transform/pos = Vector2( -199.18, 76.8093 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion2" type="AnimatedSprite" parent="Boss/Sector1/ExplosionHolder"]
@@ -402,7 +404,7 @@ animation = "default"
 transform/pos = Vector2( -105.725, -31.7191 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion3" type="AnimatedSprite" parent="Boss/Sector1/ExplosionHolder"]
@@ -410,7 +412,7 @@ animation = "default"
 transform/pos = Vector2( 180.67, 78.3167 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion4" type="AnimatedSprite" parent="Boss/Sector1/ExplosionHolder"]
@@ -418,7 +420,7 @@ animation = "default"
 transform/pos = Vector2( 49.5311, 21.0377 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="ExplosionTimer" type="Timer" parent="Boss/Sector1/ExplosionHolder"]
@@ -443,9 +445,9 @@ margin/left = -100.0
 margin/top = -100.0
 margin/right = 100.0
 margin/bottom = -68.0
-custom_styles/fg = SubResource( 33 )
-custom_styles/bg = SubResource( 34 )
-custom_fonts/font = SubResource( 35 )
+custom_styles/fg = SubResource( 12 )
+custom_styles/bg = SubResource( 13 )
+custom_fonts/font = SubResource( 14 )
 range/min = 0.0
 range/max = 100.0
 range/step = 1.0
@@ -462,19 +464,19 @@ transform/pos = Vector2( 216.506, 125 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 4 )
+shapes/1/shape = SubResource( 2 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 5 )
+shapes/2/shape = SubResource( 3 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 6 )
+shapes/3/shape = SubResource( 4 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 7 )
+shapes/4/shape = SubResource( 5 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/4/trigger = false
 collision/layers = 1
@@ -502,19 +504,19 @@ trigger = false
 editor/display_folded = true
 transform/pos = Vector2( 0.104214, -0.0601654 )
 input/pickable = true
-shapes/0/shape = SubResource( 16 )
+shapes/0/shape = SubResource( 15 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 17 )
+shapes/1/shape = SubResource( 16 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 18 )
+shapes/2/shape = SubResource( 17 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 19 )
+shapes/3/shape = SubResource( 18 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 20 )
+shapes/4/shape = SubResource( 19 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/4/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -560,7 +562,7 @@ transform/scale = Vector2( 0.133333, 0.133333 )
 transform/pos = Vector2( 25.4136, -188.483 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion2" type="AnimatedSprite" parent="Boss/Sector2/ExplosionHolder"]
@@ -568,7 +570,7 @@ animation = "default"
 transform/pos = Vector2( 51.0383, -52.8219 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion3" type="AnimatedSprite" parent="Boss/Sector2/ExplosionHolder"]
@@ -576,7 +578,7 @@ animation = "default"
 transform/pos = Vector2( -156.974, 123.537 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion4" type="AnimatedSprite" parent="Boss/Sector2/ExplosionHolder"]
@@ -584,7 +586,7 @@ animation = "default"
 transform/pos = Vector2( -75.5781, 31.5891 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 21 )
+frames = SubResource( 20 )
 animation = "default"
 
 [node name="ExplosionTimer" type="Timer" parent="Boss/Sector2/ExplosionHolder"]
@@ -610,9 +612,9 @@ margin/left = -100.0
 margin/top = -100.0
 margin/right = 100.0
 margin/bottom = -68.0
-custom_styles/fg = SubResource( 36 )
-custom_styles/bg = SubResource( 37 )
-custom_fonts/font = SubResource( 38 )
+custom_styles/fg = SubResource( 21 )
+custom_styles/bg = SubResource( 22 )
+custom_fonts/font = SubResource( 23 )
 range/min = 0.0
 range/max = 100.0
 range/step = 1.0
@@ -628,19 +630,19 @@ transform/pos = Vector2( -216.506, 125 )
 transform/rot = 120.0
 transform/scale = Vector2( 7.5, 7.5 )
 input/pickable = false
-shapes/0/shape = SubResource( 22 )
+shapes/0/shape = SubResource( 24 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 23 )
+shapes/1/shape = SubResource( 25 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 24 )
+shapes/2/shape = SubResource( 26 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 25 )
+shapes/3/shape = SubResource( 27 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 26 )
+shapes/4/shape = SubResource( 28 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243967, 0.820325 )
 shapes/4/trigger = false
 collision/layers = 1
@@ -666,19 +668,19 @@ trigger = false
 [node name="DamageArea" type="Area2D" parent="Boss/Sector3"]
 
 input/pickable = true
-shapes/0/shape = SubResource( 27 )
+shapes/0/shape = SubResource( 29 )
 shapes/0/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 28 )
+shapes/1/shape = SubResource( 30 )
 shapes/1/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/1/trigger = false
-shapes/2/shape = SubResource( 29 )
+shapes/2/shape = SubResource( 31 )
 shapes/2/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/2/trigger = false
-shapes/3/shape = SubResource( 30 )
+shapes/3/shape = SubResource( 32 )
 shapes/3/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/3/trigger = false
-shapes/4/shape = SubResource( 31 )
+shapes/4/shape = SubResource( 33 )
 shapes/4/transform = Matrix32( 3.18803, 0, 0, 1.37507, -0.243965, 0.820326 )
 shapes/4/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -724,7 +726,7 @@ transform/scale = Vector2( 0.133333, 0.133333 )
 transform/pos = Vector2( -51.4607, -196.019 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion2" type="AnimatedSprite" parent="Boss/Sector3/ExplosionHolder"]
@@ -732,7 +734,7 @@ animation = "default"
 transform/pos = Vector2( -78.5929, -48.2999 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion3" type="AnimatedSprite" parent="Boss/Sector3/ExplosionHolder"]
@@ -740,7 +742,7 @@ animation = "default"
 transform/pos = Vector2( 156.552, 105.449 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion4" type="AnimatedSprite" parent="Boss/Sector3/ExplosionHolder"]
@@ -748,7 +750,7 @@ animation = "default"
 transform/pos = Vector2( 45.0092, 18.023 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="ExplosionTimer" type="Timer" parent="Boss/Sector3/ExplosionHolder"]
@@ -774,9 +776,9 @@ margin/left = -100.0
 margin/top = -100.0
 margin/right = 100.0
 margin/bottom = -68.0
-custom_styles/fg = SubResource( 39 )
-custom_styles/bg = SubResource( 40 )
-custom_fonts/font = SubResource( 41 )
+custom_styles/fg = SubResource( 34 )
+custom_styles/bg = SubResource( 35 )
+custom_fonts/font = SubResource( 36 )
 range/min = 0.0
 range/max = 100.0
 range/step = 1.0
@@ -791,10 +793,10 @@ percent/visible = true
 editor/display_folded = true
 transform/scale = Vector2( 5, 5 )
 input/pickable = false
-shapes/0/shape = SubResource( 32 )
+shapes/0/shape = SubResource( 37 )
 shapes/0/transform = Matrix32( 2.5, 0, 0, 2.5, -0.0386311, -0.114752 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 32 )
+shapes/1/shape = SubResource( 37 )
 shapes/1/transform = Matrix32( 6, 0, 0, 6, -0.0386311, -0.114752 )
 shapes/1/trigger = false
 collision/layers = 1
@@ -815,7 +817,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( -0.0386311, -0.114752 )
 transform/scale = Vector2( 2.5, 2.5 )
-shape = SubResource( 32 )
+shape = SubResource( 37 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -824,7 +826,7 @@ __meta__ = { "_edit_lock_":true }
 
 transform/pos = Vector2( -0.0386311, -0.114752 )
 transform/scale = Vector2( 6, 6 )
-shape = SubResource( 32 )
+shape = SubResource( 37 )
 trigger = false
 _update_shape_index = 1
 __meta__ = { "_edit_lock_":true }
@@ -834,7 +836,7 @@ __meta__ = { "_edit_lock_":true }
 editor/display_folded = true
 transform/pos = Vector2( 0.119751, 0.239496 )
 input/pickable = true
-shapes/0/shape = SubResource( 32 )
+shapes/0/shape = SubResource( 37 )
 shapes/0/transform = Matrix32( 2.5, 0, 0, 2.5, -0.0386353, -0.114752 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
@@ -846,7 +848,7 @@ angular_damp = 1.0
 
 transform/pos = Vector2( -0.0386353, -0.114752 )
 transform/scale = Vector2( 2.5, 2.5 )
-shape = SubResource( 32 )
+shape = SubResource( 37 )
 trigger = false
 _update_shape_index = 0
 __meta__ = { "_edit_lock_":true }
@@ -864,7 +866,7 @@ transform/scale = Vector2( 0.199999, 0.199999 )
 transform/pos = Vector2( -66.5337, 183.831 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion2" type="AnimatedSprite" parent="Boss/Center/ExplosionHolder"]
@@ -872,7 +874,7 @@ animation = "default"
 transform/pos = Vector2( -75.578, 61.7363 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion3" type="AnimatedSprite" parent="Boss/Center/ExplosionHolder"]
@@ -880,7 +882,7 @@ animation = "default"
 transform/pos = Vector2( 100.781, 158.206 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="Explosion4" type="AnimatedSprite" parent="Boss/Center/ExplosionHolder"]
@@ -888,7 +890,7 @@ animation = "default"
 transform/pos = Vector2( 49.5311, 21.0377 )
 transform/rot = -120.0
 transform/scale = Vector2( 7.5, 7.5 )
-frames = SubResource( 13 )
+frames = SubResource( 11 )
 animation = "default"
 
 [node name="BossTimer" type="Timer" parent="Boss"]
@@ -933,7 +935,17 @@ region_rect = Rect2( 0, 0, 2048, 2048 )
 
 transform/pos = Vector2( 5435.73, 5079.79 )
 
-[node name="GUI" parent="." instance=ExtResource( 18 )]
+[node name="Guide" type="Node2D" parent="Player"]
+
+script/script = ExtResource( 18 )
+
+[node name="Arrow" type="Sprite" parent="Player/Guide"]
+
+transform/pos = Vector2( 0, 75 )
+transform/rot = 90.0
+texture = ExtResource( 19 )
+
+[node name="GUI" parent="." instance=ExtResource( 20 )]
 
 [connection signal="body_enter" from="Boss/Sector1/DamageArea" to="Boss/Sector1" method="_on_DamageArea_body_enter"]
 
