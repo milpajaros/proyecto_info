@@ -21,7 +21,6 @@ func _ready():
 	actualcd = 2
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
-	player = global.root.find_node("Player", true, false)
 
 
 
@@ -30,6 +29,7 @@ func _on_Area2D_body_enter( body ):
 		body._hit(self)
 
 func _fixed_process(delta):
+	playerpos = global.root.find_node("Player", true, false).get_pos()
 	if((actualcd <0) && (get_node("bombsrpite").is_hidden()) && !dead):
 		get_node("bombsrpite").set_hidden(false)
 	if((actualcd>0) && (!get_node("bombsrpite").is_hidden()) && !dead):
@@ -37,7 +37,7 @@ func _fixed_process(delta):
 	get_node("Hpholder/HP").set_val(hp*100/maxhp)
 	get_node("Hpholder").set_rot(-get_rot())
 	actualcd -= delta
-	distancia= get_pos().distance_to(player.get_pos())
+	distancia= get_pos().distance_to(playerpos)
 	if(distancia < 1000):
 		_chase(delta)
 	if(distancia <500):

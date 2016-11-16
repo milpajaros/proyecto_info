@@ -1,6 +1,5 @@
 
 extends KinematicBody2D
-var bomb = preload("res://scenes/bomb_scene.xml")
 var speed = 50
 var timer
 var ttl = 5

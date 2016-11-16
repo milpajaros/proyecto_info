@@ -20,16 +20,12 @@ var dmg = 1
 var hpbar
 
 func _ready():
-	hpbar = global.root.find_node("HPBoss",true,false)
-	hpbar.set_hidden(true)
-	playerpos = global.root.find_node("Player",true,false).get_pos()
 	get_node("Center/ExplosionHolder").set_hidden(true)
 	set_fixed_process(true)
 
 func _fixed_process(delta):
-	hpbar.set_val(hp*100/maxhp)
 	if((sectors <=0) && !bossmode ):
-		hpbar.set_hidden(false)
+		global.root.find_node("HPBoss",true,false).set_hidden(false)
 		print("bossmode on")
 		bossmode = true
 		get_node("Center/BossExtendedHitbox").queue_free()
@@ -38,7 +34,8 @@ func _fixed_process(delta):
 		timer.connect("timeout",self,"_nextphase")
 		timer.start()
 	if(bossmode):
-		playerpos = get_parent().get_node("Player").get_pos()
+		global.root.find_node("HPBoss",true,false).set_val(hp*100/maxhp)
+		playerpos = global.root.find_node("Player",true,false).get_pos()
 		actualcd -= delta
 		_rampage()
 	if((hp <= 0) && !dead):

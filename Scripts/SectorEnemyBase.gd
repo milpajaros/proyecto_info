@@ -11,7 +11,6 @@ var distancia
 var player
 
 func _ready():
-	player = get_tree().get_root().get_node("Root/Player")
 	get_node("ExplosionHolder").set_hidden(true)
 	timer = get_node("EnemySpawnPoint/EnemySpawnrate")
 	timer.set_wait_time(5)
@@ -20,6 +19,7 @@ func _ready():
 	set_process(true)
 	
 func _process(delta):
+	player = global.root.find_node("Player",true,false)
 	get_node("Hpholder/HP").set_val(hp*100/maxhp)
 	get_node("Hpholder").set_rot(-get_rot())
 	look_at(get_parent().get_pos())

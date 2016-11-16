@@ -6,20 +6,24 @@ onready var laser_scene = preload("res://scenes/laser_scene.xml")
 onready var nuke_scene = preload("res://scenes/nuke.tscn")
 var laser
 var nuke
+signal game_over
 
 
 var acceleration = 4000 #aceleración del player
 var maxspeed = 400 #velocidad máxima
 var velocity = Vector2() #vector velocidad
 var shootcd = 0.25 #tiempo entre disparo y disparo
-var actualcd = 0
-var dead = false
+var actualcd
+var dead
 var nukeammo = 40
 var maxhp = 20
-var hp = maxhp
+var hp
 
 
 func _ready():
+	dead = false
+	hp = maxhp
+	actualcd = 0
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
 	set_meta("aliado",1)
@@ -83,8 +87,6 @@ func _fixed_process(delta):
 		nuke = nuke_scene.instance()
 		get_parent().get_node("Nuke_holder").add_child(nuke)
 		
-	if(Input.is_action_pressed("ui_exit")):
-		get_tree().quit()
 
 func _on_BulletHitArea_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("enemigo")):
@@ -98,6 +100,7 @@ func die():
 	get_node("ExplosionAnimation").set_hidden(false)
 	get_node("ExplosionAnimation").set_frame(0)
 	get_node("ExplosionAnimation").play("default")
+	global.root.find_node("DeathMenu",true,false).game_over()
 	
 func _fire():
 	laser = laser_scene.instance()
@@ -109,3 +112,6 @@ func _fire():
 	laser.look_at(get_global_mouse_pos())
 	laser.ttl = 1
 	laserHolder.add_child(laser)
+
+func is_alive():
+	return !dead

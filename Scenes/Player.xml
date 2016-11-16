@@ -2,17 +2,17 @@
 <resource_file type="PackedScene" subresource_count="19" version="2.1" version_name="Godot Engine v2.1.stable.official">
 	<ext_resource path="res://Textures/Explosion/frame0.png" type="Texture" index="8"></ext_resource>
 	<ext_resource path="res://Textures/Explosion/frame2.png" type="Texture" index="10"></ext_resource>
-	<ext_resource path="res://Textures/Player/frame4.png" type="Texture" index="5"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" index="13"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" index="14"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" index="11"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" index="12"></ext_resource>
-	<ext_resource path="res://Textures/Player/frame5.png" type="Texture" index="6"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" index="9"></ext_resource>
-	<ext_resource path="res://Textures/Player/frame2.png" type="Texture" index="3"></ext_resource>
 	<ext_resource path="res://Textures/Player/frame1.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://Textures/Player/frame0.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://Textures/Player/frame4.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" index="13"></ext_resource>
+	<ext_resource path="res://Textures/Player/frame2.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" index="11"></ext_resource>
 	<ext_resource path="res://Textures/Player/frame3.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" index="12"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" index="14"></ext_resource>
+	<ext_resource path="res://Textures/Player/frame5.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" index="9"></ext_resource>
 	<ext_resource path="res://Scripts/Player.gd" type="Script" index="0"></ext_resource>
 	<ext_resource path="res://Scripts/PlayerAnimationScript.gd" type="Script" index="7"></ext_resource>
 	<resource type="CircleShape2D" path="local://1">
@@ -143,7 +143,7 @@
 				<vector2> 888.259, 312.583 </vector2>
 				<bool> False </bool>
 				<resource  resource_type="Shape2D" path="local://1">  </resource>
-				<matrix32> -4, 3.49691e-07, -3.49691e-07, -4, 0, -8 </matrix32>
+				<matrix32> -3.4, 2.97237e-07, -2.97237e-07, -3.4, 0, -8 </matrix32>
 				<int> 1 </int>
 				<real> 0.08 </real>
 				<resource  external="0">  </resource>
@@ -156,7 +156,7 @@
 				<real> 0.05 </real>
 				<vector2> 0, -8 </vector2>
 				<real> 180 </real>
-				<vector2> 4, 4 </vector2>
+				<vector2> 3.4, 3.4 </vector2>
 				<int> 0 </int>
 				<real> -180 </real>
 				<vector2> 0.1, 0.1 </vector2>
@@ -165,7 +165,7 @@
 				<resource  resource_type="SpriteFrames" path="local://2">  </resource>
 				<string> "default" </string>
 				<resource  external="7">  </resource>
-				<matrix32> -4, -3.49691e-07, 3.49691e-07, -4, 0, -8 </matrix32>
+				<matrix32> -3.4, -2.97237e-07, 2.97237e-07, -3.4, 0, -8 </matrix32>
 				<vector2> 0, 1 </vector2>
 				<real> 98 </real>
 				<real> 1 </real>

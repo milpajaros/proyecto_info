@@ -26,13 +26,13 @@ func _ready():
 	timer.start()
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
-	player = global.root.find_node("Player",true,false)
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
 		body._hit(self)
 
 func _fixed_process(delta):
+	player = global.root.find_node("Player",true,false)
 	get_node("Hpholder/HP").set_val(hp*100/maxhp)
 	get_node("Hpholder").set_rot(-get_rot())
 	actualcd -= delta

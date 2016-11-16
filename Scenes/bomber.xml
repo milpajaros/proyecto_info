@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="37" version="2.1" version_name="Godot Engine v2.1.stable.official">
-	<ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" index="10"></ext_resource>
-	<ext_resource path="res://Textures/hpbg.png" type="Texture" index="6"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" index="11"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" index="12"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" index="13"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" index="8"></ext_resource>
-	<ext_resource path="res://Textures/hpfg.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://Textures/bomb.png" type="Texture" index="14"></ext_resource>
 	<ext_resource path="res://Textures/Explosion/frame0.png" type="Texture" index="7"></ext_resource>
 	<ext_resource path="res://Textures/Explosion/frame2.png" type="Texture" index="9"></ext_resource>
-	<ext_resource path="res://Textures/bomb.png" type="Texture" index="14"></ext_resource>
-	<ext_resource path="res://Scripts/bomber.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://Textures/hpfg.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" index="12"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" index="10"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" index="11"></ext_resource>
+	<ext_resource path="res://Textures/hpbg.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" index="13"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" index="8"></ext_resource>
 	<ext_resource path="res://Textures/Enemy/bomberframe0.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://Textures/Enemy/bomberframe1.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://Textures/Enemy/bomberframe2.png" type="Texture" index="3"></ext_resource>
 	<ext_resource path="res://Textures/Enemy/bomberframe3.png" type="Texture" index="4"></ext_resource>
+	<ext_resource path="res://Textures/Enemy/bomberframe1.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Scripts/bomber.gd" type="Script" index="0"></ext_resource>
 	<resource type="ConvexPolygonShape2D" path="local://6">
 		<real name="custom_solver_bias"> 0 </real>
 		<vector2_array name="points" len="5"> 			-10.2251, 10.8502, -15.6763, 13.9818, -15.7923, 11.8941, -11.8489, 7.13875, -6.97759, 4.70311 </vector2_array>
@@ -181,14 +181,14 @@
 	<main_resource>
 		<dictionary name="_bundled" shared="false">
 			<string> "conn_count" </string>
-			<int> 2 </int>
+			<int> 1 </int>
 			<string> "conns" </string>
-			<int_array  len="12"> 				5, 0, 86, 85, 2, 0, 5, 0, 88, 87, 2, 0 </int_array>
+			<int_array  len="6"> 				5, 0, 86, 85, 2, 0 </int_array>
 			<string> "editable_instances" </string>
 			<array  len="0" shared="false">
 			</array>
 			<string> "names" </string>
-			<string_array  len="89">
+			<string_array  len="87">
 				<string> "Bomber" </string>
 				<string> "input/pickable" </string>
 				<string> "shapes/0/shape" </string>
@@ -274,8 +274,6 @@
 				<string> "wait_time" </string>
 				<string> "one_shot" </string>
 				<string> "autostart" </string>
-				<string> "_on_Area2D_area_enter" </string>
-				<string> "area_enter" </string>
 				<string> "_on_Area2D_body_enter" </string>
 				<string> "body_enter" </string>
 			</string_array>

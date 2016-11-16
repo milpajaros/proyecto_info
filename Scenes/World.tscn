@@ -16,10 +16,10 @@
 [ext_resource path="res://Textures/EnemyStation.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/ingamebg.gd" type="Script" id=15]
 [ext_resource path="res://Textures/fondo.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/Player.xml" type="PackedScene" id=17]
-[ext_resource path="res://Scripts/Guide.gd" type="Script" id=18]
-[ext_resource path="res://Textures/arrow.png" type="Texture" id=19]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Player.xml" type="PackedScene" id=18]
+[ext_resource path="res://Scripts/Guide.gd" type="Script" id=19]
+[ext_resource path="res://Textures/arrow.png" type="Texture" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -931,21 +931,21 @@ texture = ExtResource( 16 )
 region = true
 region_rect = Rect2( 0, 0, 2048, 2048 )
 
-[node name="Player" parent="." instance=ExtResource( 17 )]
+[node name="GUI" parent="." instance=ExtResource( 17 )]
 
-transform/pos = Vector2( 5435.73, 5079.79 )
+[node name="Player" parent="." instance=ExtResource( 18 )]
 
-[node name="Guide" type="Node2D" parent="Player"]
+transform/pos = Vector2( 3190.1, 2041.63 )
 
-script/script = ExtResource( 18 )
+[node name="Node2D" type="Node2D" parent="Player"]
 
-[node name="Arrow" type="Sprite" parent="Player/Guide"]
+script/script = ExtResource( 19 )
 
-transform/pos = Vector2( 0, 75 )
+[node name="Sprite" type="Sprite" parent="Player/Node2D"]
+
+transform/pos = Vector2( 0, 100 )
 transform/rot = 90.0
-texture = ExtResource( 19 )
-
-[node name="GUI" parent="." instance=ExtResource( 20 )]
+texture = ExtResource( 20 )
 
 [connection signal="body_enter" from="Boss/Sector1/DamageArea" to="Boss/Sector1" method="_on_DamageArea_body_enter"]
 
