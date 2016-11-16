@@ -5,6 +5,8 @@ var timer
 var ttl = 5
 var blinkstate =3
 var dmg = 5
+var hp = 3
+var dead = false
 
 
 func _ready():
@@ -17,14 +19,19 @@ func _ready():
 	timer.set_wait_time(ttl)
 	timer.connect("timeout",self,"_timeout")
 	timer.start()
-	self.look_at(get_tree().get_root().get_node("Root/Player").get_pos())
+	self.look_at(global.root.find_node("Player",true,false).get_global_pos())
 	set_process(true)
 	set_meta("arma",1)
+	set_meta("bomb",2)
 
 func _process(delta):
 	_parpadeo()
 	move_local_y(speed*delta, true)
-	
+	if(dead == false && hp <=0):
+		dead = true
+		speed =0
+		get_node("area").set_hidden(true)
+		_timeout()
 	
 func _timeout():
 	get_node("explosion").set_hidden(false)
@@ -35,6 +42,7 @@ func _timeout():
 	get_node("explosion").play("default")
 	timer.connect("timeout",self,"_explode")
 	timer.start()
+
 	
 func _parpadeo():
 	var Tleft =timer.get_time_left()/ttl
@@ -50,7 +58,7 @@ func _parpadeo():
 
 func _hit(body):
 	if body.has_meta("aliado"):
-		body.hp= body.hp-dmg
+		body.hp = body.hp - dmg
 	speed = 0
 	
 func _explode():
@@ -59,5 +67,9 @@ func _explode():
 			_hit(body)
 	self.queue_free()
 
-
+func _on_Areabomb_body_enter( body ):
+	if (body.has_meta("arma")):
+			body._hit(self)
+	elif(!body.has_meta("enemigo")):
+			_timeout()
 

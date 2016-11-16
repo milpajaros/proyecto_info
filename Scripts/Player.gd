@@ -83,13 +83,14 @@ func _fixed_process(delta):
 		_fire()
 		
 	if (Input.is_action_pressed("ui_nuke") && nukeammo>0):
-		nukeammo -=1
-		nuke = nuke_scene.instance()
-		get_parent().get_node("Nuke_holder").add_child(nuke)
+#		nukeammo -=1
+#		nuke = nuke_scene.instance()
+#		get_parent().get_node("Nuke_holder").add_child(nuke)
+		pass
 		
 
 func _on_BulletHitArea_body_enter( body ):
-	if(body.has_method("_hit") && body.has_meta("enemigo")):
+	if(body.has_method("_hit") && body.has_meta("enemigo") && !body.has_meta("bomb")):
 		body._hit(self)
 
 func die():

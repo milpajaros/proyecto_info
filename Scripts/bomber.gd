@@ -10,7 +10,7 @@ var DistanciaProxima = 200
 var player
 const SPEED = 200
 var speed = SPEED
-var maxhp =5
+var maxhp =4
 var hp = maxhp
 var timer
 var dead = false
@@ -21,7 +21,7 @@ func _ready():
 	actualcd = 2
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
-
+	set_meta("enemigo",1)
 
 
 func _on_Area2D_body_enter( body ):
@@ -29,7 +29,7 @@ func _on_Area2D_body_enter( body ):
 		body._hit(self)
 
 func _fixed_process(delta):
-	playerpos = global.root.find_node("Player", true, false).get_pos()
+	player = global.root.find_node("Player", true, false)
 	if((actualcd <0) && (get_node("bombsrpite").is_hidden()) && !dead):
 		get_node("bombsrpite").set_hidden(false)
 	if((actualcd>0) && (!get_node("bombsrpite").is_hidden()) && !dead):
@@ -37,7 +37,7 @@ func _fixed_process(delta):
 	get_node("Hpholder/HP").set_val(hp*100/maxhp)
 	get_node("Hpholder").set_rot(-get_rot())
 	actualcd -= delta
-	distancia= get_pos().distance_to(playerpos)
+	distancia= get_pos().distance_to(player.get_pos())
 	if(distancia < 1000):
 		_chase(delta)
 	if(distancia <500):

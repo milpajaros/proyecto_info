@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=1]
+[gd_scene load_steps=59 format=1]
 
 [ext_resource path="res://Scripts/lvl1.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/Boss.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://Scenes/Player.xml" type="PackedScene" id=18]
 [ext_resource path="res://Scripts/Guide.gd" type="Script" id=19]
 [ext_resource path="res://Textures/arrow.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/bomber.xml" type="PackedScene" id=21]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 
@@ -946,6 +947,10 @@ script/script = ExtResource( 19 )
 transform/pos = Vector2( 0, 100 )
 transform/rot = 90.0
 texture = ExtResource( 20 )
+
+[node name="Bomber" parent="." instance=ExtResource( 21 )]
+
+transform/pos = Vector2( 2776.35, 2262.62 )
 
 [connection signal="body_enter" from="Boss/Sector1/DamageArea" to="Boss/Sector1" method="_on_DamageArea_body_enter"]
 

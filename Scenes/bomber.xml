@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="37" version="2.1" version_name="Godot Engine v2.1.stable.official">
-	<ext_resource path="res://Textures/bomb.png" type="Texture" index="14"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame0.png" type="Texture" index="7"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame2.png" type="Texture" index="9"></ext_resource>
-	<ext_resource path="res://Textures/hpfg.png" type="Texture" index="5"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" index="12"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" index="10"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" index="11"></ext_resource>
-	<ext_resource path="res://Textures/hpbg.png" type="Texture" index="6"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" index="13"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" index="8"></ext_resource>
-	<ext_resource path="res://Textures/Enemy/bomberframe0.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://Textures/Enemy/bomberframe2.png" type="Texture" index="3"></ext_resource>
 	<ext_resource path="res://Textures/Enemy/bomberframe3.png" type="Texture" index="4"></ext_resource>
 	<ext_resource path="res://Textures/Enemy/bomberframe1.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Textures/Enemy/bomberframe0.png" type="Texture" index="1"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" index="11"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" index="8"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" index="13"></ext_resource>
+	<ext_resource path="res://Textures/hpfg.png" type="Texture" index="5"></ext_resource>
+	<ext_resource path="res://Textures/hpbg.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Textures/bomb.png" type="Texture" index="14"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame0.png" type="Texture" index="7"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame2.png" type="Texture" index="9"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" index="12"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" index="10"></ext_resource>
 	<ext_resource path="res://Scripts/bomber.gd" type="Script" index="0"></ext_resource>
 	<resource type="ConvexPolygonShape2D" path="local://6">
 		<real name="custom_solver_bias"> 0 </real>
