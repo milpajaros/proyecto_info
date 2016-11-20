@@ -3,7 +3,6 @@ extends KinematicBody2D
 
 #variables para el disparo
 onready var laser_scene = preload("res://scenes/laser_scene.xml")
-onready var nuke_scene = preload("res://scenes/nuke.tscn")
 var laser
 var nuke
 

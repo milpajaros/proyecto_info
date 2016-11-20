@@ -165,22 +165,23 @@ default/chorus_send = 0.0
 
 [node name="Control" type="Control" parent="."]
 
-anchor/left = 1
+anchor/left = 3
 anchor/top = 3
-anchor/right = 1
+anchor/right = 3
 anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 610.0
-margin/top = 92.0
-margin/right = 570.0
-margin/bottom = 52.0
+margin/left = 10.0
+margin/top = 96.0
+margin/right = -30.0
+margin/bottom = 56.0
 
 [node name="Sprite" type="Sprite" parent="Control"]
 
-transform/scale = Vector2( 8.28153, 5.6444 )
+transform/pos = Vector2( 270.296, 64.1759 )
+transform/scale = Vector2( 5.56904, 3.59878 )
 texture = ExtResource( 15 )
 
 [connection signal="mouse_enter" from="ButtonContainer/Play" to="ButtonContainer" method="_on_Play_mouse_enter"]

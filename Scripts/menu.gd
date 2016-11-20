@@ -4,7 +4,7 @@ extends VBoxContainer
 
 func _ready():
 	set_process(true)
-	OS.set_window_title("Space conquerers")
+	OS.set_window_title("Space conqueror")
 
 func _process(delta):
 	pass

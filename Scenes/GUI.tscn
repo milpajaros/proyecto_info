@@ -230,16 +230,17 @@ script/script = ExtResource( 11 )
 [node name="Buttons" type="Container" parent="CanvasLayer/DeathMenu"]
 
 process/pause_mode = 2
+anchor/left = 3
 anchor/top = 1
-anchor/right = 1
+anchor/right = 3
 anchor/bottom = 1
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 2
-margin/left = 28.0
+margin/left = 572.5
 margin/top = 193.0
-margin/right = 9.0
+margin/right = -591.5
 margin/bottom = 41.0
 
 [node name="reintentar" type="TextureButton" parent="CanvasLayer/DeathMenu/Buttons"]
@@ -294,17 +295,19 @@ texture = ExtResource( 15 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DeathMenu"]
 
-anchor/right = 1
-anchor/bottom = 1
-rect/scale = Vector2( 8, 8 )
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+rect/scale = Vector2( 7, 7 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 275.0
-margin/top = 69.0
-margin/right = 1374.0
-margin/bottom = 768.0
+margin/left = 525.5
+margin/top = 259.5
+margin/right = 371.5
+margin/bottom = 224.5
 custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 bbcode/enabled = false
