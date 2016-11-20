@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=1]
+[gd_scene load_steps=29 format=1]
 
 [ext_resource path="res://Textures/hpfg.png" type="Texture" id=1]
 [ext_resource path="res://Textures/hpbg.png" type="Texture" id=2]
@@ -10,13 +10,19 @@
 [ext_resource path="res://Textures/Buttons/botonSalir.png" type="Texture" id=8]
 [ext_resource path="res://Textures/Buttons/botonSalirPress.png" type="Texture" id=9]
 [ext_resource path="res://Textures/Buttons/botonSalirHover.png" type="Texture" id=10]
-[ext_resource path="res://Scripts/DeathMenu.gd" type="Script" id=11]
-[ext_resource path="res://Textures/Buttons/botonreiniciar.png" type="Texture" id=12]
-[ext_resource path="res://Textures/Buttons/botonreiniciarPressed.png" type="Texture" id=13]
-[ext_resource path="res://Textures/Buttons/botonreiniciarHover.png" type="Texture" id=14]
-[ext_resource path="res://Textures/black.jpg" type="Texture" id=15]
-[ext_resource path="res://Music/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg" type="AudioStream" id=16]
-[ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=17]
+[ext_resource path="res://Textures/Buttons/music.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Buttons/musicpressed.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Buttons/musichover.png" type="Texture" id=13]
+[ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=16]
+[ext_resource path="res://Scripts/DeathMenu.gd" type="Script" id=17]
+[ext_resource path="res://Textures/Buttons/botonreiniciar.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Buttons/botonreiniciarPressed.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Buttons/botonreiniciarHover.png" type="Texture" id=20]
+[ext_resource path="res://Textures/black.jpg" type="Texture" id=21]
+[ext_resource path="res://Music/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg" type="AudioStream" id=22]
+[ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=23]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -88,7 +94,7 @@ draw_center = true
 
 [sub_resource type="SampleLibrary" id=5]
 
-samples/Bip = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
+samples/Bip = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
 
 [node name="GUI" type="Node"]
 
@@ -157,7 +163,6 @@ percent/visible = true
 [node name="PauseMenu" type="Container" parent="CanvasLayer"]
 
 process/pause_mode = 2
-editor/display_folded = true
 anchor/left = 3
 anchor/top = 3
 anchor/right = 3
@@ -212,6 +217,46 @@ textures/normal = ExtResource( 8 )
 textures/pressed = ExtResource( 9 )
 textures/hover = ExtResource( 10 )
 
+[node name="Music" type="TextureButton" parent="CanvasLayer/PauseMenu"]
+
+anchor/top = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 66.0
+margin/top = 141.0
+margin/right = 138.0
+margin/bottom = 69.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 11 )
+textures/pressed = ExtResource( 12 )
+textures/hover = ExtResource( 13 )
+
+[node name="Sound" type="TextureButton" parent="CanvasLayer/PauseMenu"]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 160.0
+margin/top = 141.0
+margin/right = 88.0
+margin/bottom = 69.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 14 )
+textures/pressed = ExtResource( 15 )
+textures/hover = ExtResource( 16 )
+
 [node name="DeathMenu" type="Container" parent="CanvasLayer"]
 
 process/pause_mode = 2
@@ -225,7 +270,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = -1.0
 margin/bottom = 3.0
-script/script = ExtResource( 11 )
+script/script = ExtResource( 17 )
 
 [node name="Buttons" type="Container" parent="CanvasLayer/DeathMenu"]
 
@@ -259,9 +304,9 @@ margin/bottom = 3.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 12 )
-textures/pressed = ExtResource( 13 )
-textures/hover = ExtResource( 14 )
+textures/normal = ExtResource( 18 )
+textures/pressed = ExtResource( 19 )
+textures/hover = ExtResource( 20 )
 
 [node name="Salir" type="TextureButton" parent="CanvasLayer/DeathMenu/Buttons"]
 
@@ -291,7 +336,7 @@ visibility/self_opacity = 0.0
 transform/pos = Vector2( 1869.92, 1144.44 )
 transform/scale = Vector2( 2.02381, 2.34446 )
 z/z = -1
-texture = ExtResource( 15 )
+texture = ExtResource( 21 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DeathMenu"]
 
@@ -314,9 +359,9 @@ bbcode/enabled = false
 bbcode/bbcode = "  Mision\nfracasada"
 visible_characters = 17
 
-[node name="Stream" type="StreamPlayer" parent="CanvasLayer/DeathMenu"]
+[node name="DefeatMusic" type="StreamPlayer" parent="CanvasLayer/DeathMenu"]
 
-stream/stream = ExtResource( 16 )
+stream/stream = ExtResource( 22 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 5.0
@@ -356,6 +401,14 @@ default/chorus_send = 0.0
 [connection signal="mouse_enter" from="CanvasLayer/PauseMenu/Salir" to="CanvasLayer/PauseMenu" method="_on_Salir_mouse_enter"]
 
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Salir" to="CanvasLayer/PauseMenu" method="_on_Salir_pressed"]
+
+[connection signal="mouse_enter" from="CanvasLayer/PauseMenu/Music" to="CanvasLayer/PauseMenu" method="_on_Music_mouse_enter"]
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Music" to="CanvasLayer/PauseMenu" method="_on_Music_pressed"]
+
+[connection signal="mouse_enter" from="CanvasLayer/PauseMenu/Sound" to="CanvasLayer/PauseMenu" method="_on_Sound_mouse_enter"]
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Sound" to="CanvasLayer/PauseMenu" method="_on_Sound_pressed"]
 
 [connection signal="mouse_enter" from="CanvasLayer/DeathMenu/Buttons/reintentar" to="CanvasLayer/DeathMenu" method="_on_reintentar_mouse_enter"]
 

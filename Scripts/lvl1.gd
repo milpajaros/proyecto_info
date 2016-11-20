@@ -1,16 +1,18 @@
 
 extends Node
-onready var player_scene = preload("res://scenes/player.xml")
 var player
 
 func _ready():
+	if(global.music):
+		get_node("BGMusic").play()
 	get_node("CanvasLayer/VictoryScreen").set_hidden(true)
 	set_fixed_process(false)
 
 func victory():
 	set_fixed_process(true)
 	get_node("BGMusic").set_paused(true)
-	get_node("VictoryMusic").play_loop(11)
+	if(global.music):
+		get_node("VictoryMusic").play_loop(11)
 	get_node("CanvasLayer/VictoryScreen").set_hidden(false)
 	find_node("Guide",true,false).queue_free()
 

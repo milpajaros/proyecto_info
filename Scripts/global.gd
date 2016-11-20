@@ -2,6 +2,8 @@ extends Node
 
 var root
 var current_scene = null
+var sound = true
+var music = true
 
 func _ready():
 	root = get_tree().get_root()

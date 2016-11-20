@@ -1,6 +1,6 @@
 
 extends KinematicBody2D
-onready var laser_scene = preload("res://scenes/laser_scene.xml")
+onready var laser_scene = preload("res://Scenes/laser_scene.xml")
 var laserenemigo = preload("res://Textures/laserRed.png")
 # member variables here, example:
 # var a=2
@@ -61,7 +61,8 @@ func _fire():
 		laser.set_pos(LaserSpawnPoint)
 		laser.look_at(player.get_pos())
 		laser_holder.add_child(laser)
-		sampler.play("Shot")
+		if(global.sound):
+			sampler.play("Shot")
 
 func _chase(delta):
 	if(!dead):
@@ -88,7 +89,8 @@ func _die():
 	get_node("ExplosionAnimation").set_hidden(false)
 	get_node("ExplosionAnimation").set_frame(0)
 	get_node("ExplosionAnimation").play("default")
-	sampler.play("Explosion")
+	if(global.sound):
+		sampler.play("Explosion")
 	
 func _timeout():
 	hide()

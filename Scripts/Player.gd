@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 #variables para el disparo
-onready var laser_scene = preload("res://scenes/laser_scene.xml")
+onready var laser_scene = preload("res://Scenes/laser_scene.xml")
 var laser
 var nuke
 
@@ -88,7 +88,8 @@ func _on_BulletHitArea_body_enter( body ):
 		body._hit(self)
 
 func die():
-	sample.play("Explosion")
+	if(global.sound):
+		sample.play("Explosion")
 	hp= 0
 	acceleration = 0
 	velocity = Vector2(0,0)
@@ -99,7 +100,8 @@ func die():
 	global.root.find_node("DeathMenu",true,false).game_over()
 	
 func _fire():
-	sample.play("Shot")
+	if(global.sound):
+		sample.play("Shot")
 	laser = laser_scene.instance()
 	var playerpos = get_node("PlayerAnimation").get_pos()
 	var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()

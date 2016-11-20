@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var laser_scene = preload("res://scenes/laser_scene.xml")
+onready var laser_scene = preload("res://Scenes/laser_scene.xml")
 var laserenemigo = preload("res://Textures/laserRed.png")
 var sampler
 
@@ -30,7 +30,8 @@ func _fixed_process(delta):
 	if((sectors <=0) && !bossmode ):
 		global.root.find_node("HPBoss",true,false).set_hidden(false)
 		print("bossmode on")
-		get_node("BossMusic").play_loop(90)
+		if(global.music):
+			get_node("BossMusic").play_loop(90)
 		get_parent().get_node("BGMusic").set_paused(true)
 		bossmode = true
 		get_node("Center/BossExtendedHitbox").queue_free()
@@ -81,10 +82,11 @@ func _nextphase():
 	timer.start()
 
 func _die():
-	sampler.play("Explosion")
-	sampler.play("Explosion")
-	sampler.play("Explosion")
-	sampler.play("Explosion")
+	if(global.sound):
+		sampler.play("Explosion")
+		sampler.play("Explosion")
+		sampler.play("Explosion")
+		sampler.play("Explosion")
 	get_node("BossMusic").set_paused(true)
 	get_parent().victory()
 	global.root.find_node("HPBoss",true,false).set_hidden(true)

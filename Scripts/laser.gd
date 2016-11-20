@@ -1,6 +1,6 @@
 
 extends KinematicBody2D
-var laser = preload("res://scenes/laser_scene.xml")
+var laser = preload("res://Scenes/laser_scene.xml")
 
 var speed = 1000
 var timer
@@ -32,7 +32,8 @@ func _timeout():
 	self.queue_free()
 
 func _hit(body):
-	get_node("Sample").play("Explosion")
+	if(global.sound):
+		get_node("Sample").play("Explosion")
 	body.hp = body.hp - dmg
 	speed = 0
 	get_node("LaserSprite").set_hidden(true)

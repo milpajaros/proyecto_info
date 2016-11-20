@@ -1,5 +1,5 @@
 extends KinematicBody2D
-onready var bomb_scene = preload("res://scenes/bomb_scene.xml")
+onready var bomb_scene = preload("res://Scenes/bomb_scene.xml")
 var bombenemigo = preload("res://Textures/bomb.png")
 #PONER UN SPRITE
 
@@ -115,7 +115,8 @@ func _die():
 	get_node("ExplosionAnimation").set_hidden(false)
 	get_node("ExplosionAnimation").set_frame(0)
 	get_node("ExplosionAnimation").play("default")
-	get_node("Sample").play("Explosion")
+	if(global.sound):
+		get_node("Sample").play("Explosion")
 	
 func _timeout():
 	hide()

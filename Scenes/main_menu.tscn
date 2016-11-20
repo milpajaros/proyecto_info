@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://Scripts/Background.gd" type="Script" id=1]
 [ext_resource path="res://Textures/fondo.png" type="Texture" id=2]
@@ -12,9 +12,15 @@
 [ext_resource path="res://Textures/Buttons/botonAjustes.png" type="Texture" id=10]
 [ext_resource path="res://Textures/Buttons/botonAjustesPress.png" type="Texture" id=11]
 [ext_resource path="res://Textures/Buttons/botonAjustesHover.png" type="Texture" id=12]
-[ext_resource path="res://Music/Eric_Skiff_-_06_-_Searching.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Music/Rolemusic_-_Itsumo_no_y_ni.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=14]
 [ext_resource path="res://Textures/Logo.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Buttons/music.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Buttons/musicpressed.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Buttons/musichover.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=21]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -140,7 +146,7 @@ popup/exclusive = false
 stream/stream = ExtResource( 13 )
 stream/play = false
 stream/loop = true
-stream/volume_db = 1.0
+stream/volume_db = 5.0
 stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
@@ -184,6 +190,63 @@ transform/pos = Vector2( 270.296, 64.1759 )
 transform/scale = Vector2( 5.56904, 3.59878 )
 texture = ExtResource( 15 )
 
+[node name="Container" type="Container" parent="."]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 210.0
+margin/top = 104.0
+margin/right = 0.0
+margin/bottom = 3.0
+
+[node name="Music" type="TextureButton" parent="Container"]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 194.0
+margin/top = 79.0
+margin/right = 122.0
+margin/bottom = 7.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 16 )
+textures/pressed = ExtResource( 17 )
+textures/hover = ExtResource( 18 )
+
+[node name="Sound" type="TextureButton" parent="Container"]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 89.0
+margin/top = 76.0
+margin/right = 17.0
+margin/bottom = 4.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 19 )
+textures/pressed = ExtResource( 20 )
+textures/hover = ExtResource( 21 )
+
 [connection signal="mouse_enter" from="ButtonContainer/Play" to="ButtonContainer" method="_on_Play_mouse_enter"]
 
 [connection signal="pressed" from="ButtonContainer/Play" to="ButtonContainer" method="_on_Play_pressed"]
@@ -193,5 +256,13 @@ texture = ExtResource( 15 )
 [connection signal="pressed" from="ButtonContainer/Exit" to="ButtonContainer" method="_on_Exit_pressed"]
 
 [connection signal="pressed" from="ButtonContainer/Settings" to="ButtonContainer" method="_on_Settings_pressed"]
+
+[connection signal="mouse_enter" from="Container/Music" to="ButtonContainer" method="_on_Music_mouse_enter"]
+
+[connection signal="pressed" from="Container/Music" to="ButtonContainer" method="_on_Music_pressed"]
+
+[connection signal="mouse_enter" from="Container/Sound" to="ButtonContainer" method="_on_Sound_mouse_enter"]
+
+[connection signal="pressed" from="Container/Sound" to="ButtonContainer" method="_on_Sound_pressed"]
 
 

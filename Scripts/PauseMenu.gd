@@ -1,10 +1,15 @@
 
 extends Container
+onready var musichover = preload("res://Textures/Buttons/musichover.png")
+onready var music = preload("res://Textures/Buttons/music.png")
+onready var nomusic = preload("res://Textures/Buttons/nomusic.png")
+onready var nomusichover = preload("res://Textures/Buttons/nomusichover.png")
+onready var soundhover = preload("res://Textures/Buttons/soundhover.png")
+onready var sound = preload("res://Textures/Buttons/sound.png")
+onready var nosound = preload("res://Textures/Buttons/nosound.png")
+onready var nosoundhover = preload("res://Textures/Buttons/nosoundhover.png")
 
-# member variables here, example:
-# var a=2
-# var b="textvar"
-
+var wasplaying
 func _ready():
 	set_hidden(true)
 	set_process_input(true)
@@ -30,8 +35,53 @@ func _on_Salir_pressed():
 
 
 func _on_Salir_mouse_enter():
-	get_parent().get_node("Sample").play("Bip")
+	if(global.sound):
+		get_parent().get_node("Sample").play("Bip")
 
 
 func _on_Continuar_mouse_enter():
-	get_parent().get_node("Sample").play("Bip")
+	if(global.sound):
+		get_parent().get_node("Sample").play("Bip")
+
+
+func _on_Music_pressed():
+	var musicbutton = get_node("Music")
+	if(global.music == true):
+		if(global.root.find_node("BGMusic",true,false).is_playing()):
+			wasplaying=global.root.find_node("BGMusic",true,false)
+			wasplaying.stop()
+		if(global.root.find_node("VictoryMusic",true,false).is_playing()):
+			wasplaying=global.root.find_node("VictoryMusic",true,false)
+			wasplaying.stop()
+		if(global.root.find_node("DefeatMusic",true,false).is_playing()):
+			wasplaying=global.root.find_node("DefeatMusic",true,false)
+			wasplaying.stop()
+		global.music = false
+		musicbutton.set_normal_texture(nomusic)
+		musicbutton.set_hover_texture(nomusichover)
+	elif(global.music == false):
+		global.music=true
+		wasplaying.play()
+		musicbutton.set_normal_texture(music)
+		musicbutton.set_hover_texture(musichover)
+
+
+func _on_Sound_pressed():
+	var soundbutton = get_node("Sound")
+	if(global.sound == true):
+		global.sound=false
+		soundbutton.set_normal_texture(nosound)
+		soundbutton.set_hover_texture(nosoundhover)
+	elif(global.sound == false):
+		global.sound=true
+		soundbutton.set_normal_texture(sound)
+		soundbutton.set_hover_texture(soundhover)
+
+func _on_Music_mouse_enter():
+	if(global.sound):
+		get_parent().get_node("Sample").play("Bip")
+
+
+func _on_Sound_mouse_enter():
+	if(global.sound):
+		get_parent().get_node("Sample").play("Bip")

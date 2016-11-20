@@ -65,7 +65,8 @@ func _explode():
 	for body in get_node("AreaExplosion").get_overlapping_bodies():
 		if (!body.has_meta("arma") || body.has_meta("bomb")):
 			_hit(body)
-	get_node("Sample").play("Explosion")
+	if(global.sound):
+		get_node("Sample").play("Explosion")
 	self.queue_free()
 
 func _on_Areabomb_body_enter( body ):
@@ -73,4 +74,3 @@ func _on_Areabomb_body_enter( body ):
 			body._hit(self)
 	elif(body.has_meta("aliado")):
 			_timeout()
-

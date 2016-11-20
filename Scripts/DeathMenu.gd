@@ -9,7 +9,8 @@ func _ready():
 
 func game_over():
 	global.root.find_node("BGMusic",true,false).set_paused(true)
-	get_node("Stream").play()
+	if(global.music):
+		get_node("DefeatMusic").play()
 	get_parent().get_node("HPBoss").set_hidden(true)
 	get_parent().get_node("HPbar").set_hidden(true)
 	timer = get_node("Timer")
@@ -29,11 +30,13 @@ func _on_Salir_pressed():
 
 
 func _on_Salir_mouse_enter():
-	get_parent().get_node("Sample").play("Bip")
+	if(global.sound):
+		get_parent().get_node("Sample").play("Bip")
 
 
 func _on_reintentar_mouse_enter():
-	get_parent().get_node("Sample").play("Bip")
+	if(global.sound):
+		get_parent().get_node("Sample").play("Bip")
 
 func _timeout():
 	set_process(true)

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-onready var enemy_scene = preload("res://scenes/enemy.xml")
-onready var bomber_scene = preload("res://scenes/bomber.xml")
+onready var enemy_scene = preload("res://Scenes/Enemy.xml")
+onready var bomber_scene = preload("res://Scenes/bomber.xml")
 var RotSpeed = 200
 var timer
 var nwave= 3
@@ -66,8 +66,9 @@ func _on_DamageArea_body_enter( body ):
 		body._timeout()
 
 func _die():
-	sampler.play("Explosion")
-	sampler.play("Explosion")
+	if(global.sound):
+		sampler.play("Explosion")
+		sampler.play("Explosion")
 	hp = 0
 	timer.stop()
 	get_node("Hpholder").set_hidden(true)
