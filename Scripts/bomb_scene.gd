@@ -57,19 +57,20 @@ func _parpadeo():
 		get_node("area").play("velocidad4")
 
 func _hit(body):
-	if body.has_meta("aliado"):
+	if (body.has_meta("nave")):
 		body.hp = body.hp - dmg
 	speed = 0
 	
 func _explode():
 	for body in get_node("AreaExplosion").get_overlapping_bodies():
-		if (!body.has_meta("arma")):
+		if (!body.has_meta("arma") || body.has_meta("bomb")):
 			_hit(body)
+	get_node("Sample").play("Explosion")
 	self.queue_free()
 
 func _on_Areabomb_body_enter( body ):
 	if (body.has_meta("arma")):
 			body._hit(self)
-	elif(!body.has_meta("enemigo")):
+	elif(body.has_meta("aliado")):
 			_timeout()
 

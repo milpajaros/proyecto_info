@@ -7,7 +7,7 @@ extends Node2D
 var bosspos
 
 func _ready():
-	set_hidden(true)
+	get_node("Sprite").set_hidden(true)
 	set_process(true)
 
 func _process(delta):

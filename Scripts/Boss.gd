@@ -2,6 +2,7 @@ extends Node2D
 
 onready var laser_scene = preload("res://scenes/laser_scene.xml")
 var laserenemigo = preload("res://Textures/laserRed.png")
+var sampler
 
 var sectors = 3
 var bossmode = false
@@ -19,13 +20,18 @@ var phasetime = 5
 var dmg = 1
 
 func _ready():
+	sampler = get_node("Sample")
 	get_node("Center/ExplosionHolder").set_hidden(true)
 	set_fixed_process(true)
+	self.set_meta("estructura", 0)
+	self.set_meta("enemigo", 1)
 
 func _fixed_process(delta):
 	if((sectors <=0) && !bossmode ):
 		global.root.find_node("HPBoss",true,false).set_hidden(false)
 		print("bossmode on")
+		get_node("BossMusic").play_loop(90)
+		get_parent().get_node("BGMusic").set_paused(true)
 		bossmode = true
 		get_node("Center/BossExtendedHitbox").queue_free()
 		timer = get_node("BossTimer")
@@ -75,6 +81,12 @@ func _nextphase():
 	timer.start()
 
 func _die():
+	sampler.play("Explosion")
+	sampler.play("Explosion")
+	sampler.play("Explosion")
+	sampler.play("Explosion")
+	get_node("BossMusic").set_paused(true)
+	get_parent().victory()
 	global.root.find_node("HPBoss",true,false).set_hidden(true)
 	attackmode = 10
 	timer = get_node("BossTimer")
@@ -88,7 +100,7 @@ func _die():
 			N.play("default")
 
 func _timeout():
-	hide()
+	get_parent().next_level()
 	queue_free()
 
 func _patron0():#circulo
@@ -108,7 +120,7 @@ func _patron2():#el molinillo
 		for n in range(4):
 			_firerot((variation+n)*90)
 		actualcd = enemycd #reinicia el CD
-		variation+= 0.1
+		variation+= 0.075
 func _patron3():#disparos aleatorios
 	if(actualcd <= 0):
 		_firerot(variation)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://Textures/hpfg.png" type="Texture" id=1]
 [ext_resource path="res://Textures/hpbg.png" type="Texture" id=2]
@@ -14,6 +14,9 @@
 [ext_resource path="res://Textures/Buttons/botonreiniciar.png" type="Texture" id=12]
 [ext_resource path="res://Textures/Buttons/botonreiniciarPressed.png" type="Texture" id=13]
 [ext_resource path="res://Textures/Buttons/botonreiniciarHover.png" type="Texture" id=14]
+[ext_resource path="res://Textures/black.jpg" type="Texture" id=15]
+[ext_resource path="res://Music/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=17]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -83,7 +86,13 @@ expand_margin/top = 0.0
 expand_margin/bottom = 0.0
 draw_center = true
 
+[sub_resource type="SampleLibrary" id=5]
+
+samples/Bip = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
+
 [node name="GUI" type="Node"]
+
+process/pause_mode = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -148,6 +157,7 @@ percent/visible = true
 [node name="PauseMenu" type="Container" parent="CanvasLayer"]
 
 process/pause_mode = 2
+editor/display_folded = true
 anchor/left = 3
 anchor/top = 3
 anchor/right = 3
@@ -234,6 +244,7 @@ margin/bottom = 41.0
 
 [node name="reintentar" type="TextureButton" parent="CanvasLayer/DeathMenu/Buttons"]
 
+process/pause_mode = 2
 anchor/top = 1
 anchor/bottom = 1
 focus/ignore_mouse = false
@@ -253,6 +264,7 @@ textures/hover = ExtResource( 14 )
 
 [node name="Salir" type="TextureButton" parent="CanvasLayer/DeathMenu/Buttons"]
 
+process/pause_mode = 2
 anchor/left = 1
 anchor/top = 1
 anchor/right = 1
@@ -272,32 +284,81 @@ textures/normal = ExtResource( 8 )
 textures/pressed = ExtResource( 9 )
 textures/hover = ExtResource( 10 )
 
+[node name="black" type="Sprite" parent="CanvasLayer/DeathMenu"]
+
+visibility/self_opacity = 0.0
+transform/pos = Vector2( 1869.92, 1144.44 )
+transform/scale = Vector2( 2.02381, 2.34446 )
+z/z = -1
+texture = ExtResource( 15 )
+
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DeathMenu"]
 
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
-rect/scale = Vector2( 7.5, 7.5 )
+anchor/right = 1
+anchor/bottom = 1
+rect/scale = Vector2( 8, 8 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 414.5
-margin/top = 220.5
-margin/right = 297.5
-margin/bottom = 180.5
+margin/left = 275.0
+margin/top = 69.0
+margin/right = 1374.0
+margin/bottom = 768.0
 custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 bbcode/enabled = false
-bbcode/bbcode = "Git Gud\n Scrub"
+bbcode/bbcode = "  Mision\nfracasada"
 visible_characters = 17
+
+[node name="Stream" type="StreamPlayer" parent="CanvasLayer/DeathMenu"]
+
+stream/stream = ExtResource( 16 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 5.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 10.0
+stream/buffering_ms = 500
+
+[node name="Timer" type="Timer" parent="CanvasLayer/DeathMenu"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="Sample" type="SamplePlayer" parent="CanvasLayer"]
+
+config/polyphony = 1
+config/samples = SubResource( 5 )
+default/volume_db = 0.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[connection signal="mouse_enter" from="CanvasLayer/PauseMenu/Continuar" to="CanvasLayer/PauseMenu" method="_on_Continuar_mouse_enter"]
 
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Continuar" to="CanvasLayer/PauseMenu" method="_on_Continuar_pressed"]
 
+[connection signal="mouse_enter" from="CanvasLayer/PauseMenu/Salir" to="CanvasLayer/PauseMenu" method="_on_Salir_mouse_enter"]
+
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Salir" to="CanvasLayer/PauseMenu" method="_on_Salir_pressed"]
 
+[connection signal="mouse_enter" from="CanvasLayer/DeathMenu/Buttons/reintentar" to="CanvasLayer/DeathMenu" method="_on_reintentar_mouse_enter"]
+
 [connection signal="pressed" from="CanvasLayer/DeathMenu/Buttons/reintentar" to="CanvasLayer/DeathMenu" method="_on_reintentar_pressed"]
+
+[connection signal="mouse_enter" from="CanvasLayer/DeathMenu/Buttons/Salir" to="CanvasLayer/DeathMenu" method="_on_Salir_mouse_enter"]
 
 [connection signal="pressed" from="CanvasLayer/DeathMenu/Buttons/Salir" to="CanvasLayer/DeathMenu" method="_on_Salir_pressed"]
 

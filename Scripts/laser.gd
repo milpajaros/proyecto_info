@@ -32,6 +32,7 @@ func _timeout():
 	self.queue_free()
 
 func _hit(body):
+	get_node("Sample").play("Explosion")
 	body.hp = body.hp - dmg
 	speed = 0
 	get_node("LaserSprite").set_hidden(true)

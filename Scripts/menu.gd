@@ -22,3 +22,10 @@ func _on_Settings_pressed():
 
 func _on_Exit_pressed():
 	get_tree().quit()
+
+func _on_Exit_mouse_enter():
+	get_parent().get_node("Sample").play("Bip")
+
+
+func _on_Play_mouse_enter():
+	get_parent().get_node("Sample").play("Bip")

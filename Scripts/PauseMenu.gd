@@ -27,3 +27,11 @@ func _on_Continuar_pressed():
 func _on_Salir_pressed():
 	get_tree().set_pause(false)
 	get_node("/root/global").goto_scene("res://Scenes/main_menu.tscn")
+
+
+func _on_Salir_mouse_enter():
+	get_parent().get_node("Sample").play("Bip")
+
+
+func _on_Continuar_mouse_enter():
+	get_parent().get_node("Sample").play("Bip")

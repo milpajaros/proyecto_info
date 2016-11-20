@@ -17,8 +17,10 @@ var hp = maxhp
 var timer
 var dead = false
 var distancia
+var sampler
 
 func _ready():
+	sampler = get_node("SamplePlayer")
 	actualcd = 2
 	timer = get_node("EnemyTimer")
 	timer.set_wait_time(60)
@@ -26,6 +28,7 @@ func _ready():
 	timer.start()
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
+	set_meta("nave",2)
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
@@ -58,6 +61,7 @@ func _fire():
 		laser.set_pos(LaserSpawnPoint)
 		laser.look_at(player.get_pos())
 		laser_holder.add_child(laser)
+		sampler.play("Shot")
 
 func _chase(delta):
 	if(!dead):
@@ -84,6 +88,7 @@ func _die():
 	get_node("ExplosionAnimation").set_hidden(false)
 	get_node("ExplosionAnimation").set_frame(0)
 	get_node("ExplosionAnimation").play("default")
+	sampler.play("Explosion")
 	
 func _timeout():
 	hide()

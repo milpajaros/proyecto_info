@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=17 format=1]
 
 [ext_resource path="res://Scripts/Background.gd" type="Script" id=1]
 [ext_resource path="res://Textures/fondo.png" type="Texture" id=2]
@@ -6,12 +6,19 @@
 [ext_resource path="res://Textures/Buttons/botonJugar.png" type="Texture" id=4]
 [ext_resource path="res://Textures/Buttons/botonJugarPress.png" type="Texture" id=5]
 [ext_resource path="res://Textures/Buttons/botonJugarHover.png" type="Texture" id=6]
-[ext_resource path="res://Textures/Buttons/botonAjustes.png" type="Texture" id=7]
-[ext_resource path="res://Textures/Buttons/botonAjustesPress.png" type="Texture" id=8]
-[ext_resource path="res://Textures/Buttons/botonAjustesHover.png" type="Texture" id=9]
-[ext_resource path="res://Textures/Buttons/botonSalir.png" type="Texture" id=10]
-[ext_resource path="res://Textures/Buttons/botonSalirPress.png" type="Texture" id=11]
-[ext_resource path="res://Textures/Buttons/botonSalirHover.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Buttons/botonSalir.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Buttons/botonSalirPress.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Buttons/botonSalirHover.png" type="Texture" id=9]
+[ext_resource path="res://Textures/Buttons/botonAjustes.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Buttons/botonAjustesPress.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Buttons/botonAjustesHover.png" type="Texture" id=12]
+[ext_resource path="res://Music/Eric_Skiff_-_06_-_Searching.ogg" type="AudioStream" id=13]
+[ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=14]
+[ext_resource path="res://Textures/Logo.png" type="Texture" id=15]
+
+[sub_resource type="SampleLibrary" id=1]
+
+samples/Bip = { "db":0.0, "pitch":1.0, "sample":ExtResource( 14 ) }
 
 [node name="MainMenu" type="Node"]
 
@@ -68,7 +75,7 @@ size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 361.0
-margin/bottom = 167.0
+margin/bottom = 253.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -76,16 +83,16 @@ textures/normal = ExtResource( 4 )
 textures/pressed = ExtResource( 5 )
 textures/hover = ExtResource( 6 )
 
-[node name="Settings" type="TextureButton" parent="ButtonContainer"]
+[node name="Exit" type="TextureButton" parent="ButtonContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 171.0
+margin/top = 257.0
 margin/right = 361.0
-margin/bottom = 338.0
+margin/bottom = 510.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -93,8 +100,9 @@ textures/normal = ExtResource( 7 )
 textures/pressed = ExtResource( 8 )
 textures/hover = ExtResource( 9 )
 
-[node name="Exit" type="TextureButton" parent="ButtonContainer"]
+[node name="Settings" type="TextureButton" parent="ButtonContainer"]
 
+visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -127,10 +135,62 @@ margin/right = -491.0
 margin/bottom = -283.0
 popup/exclusive = false
 
+[node name="StreamPlayer" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 13 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 1.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
+[node name="Sample" type="SamplePlayer" parent="."]
+
+config/polyphony = 1
+config/samples = SubResource( 1 )
+default/volume_db = 1.0
+default/pitch_scale = 1.0
+default/pan = 0.0
+default/depth = 0.0
+default/height = 0.0
+default/filter/type = 0
+default/filter/cutoff = 5000.0
+default/filter/resonance = 1.0
+default/filter/gain = 1.0
+default/reverb_room = 2
+default/reverb_send = 0.0
+default/chorus_send = 0.0
+
+[node name="Control" type="Control" parent="."]
+
+anchor/left = 1
+anchor/top = 3
+anchor/right = 1
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 610.0
+margin/top = 92.0
+margin/right = 570.0
+margin/bottom = 52.0
+
+[node name="Sprite" type="Sprite" parent="Control"]
+
+transform/scale = Vector2( 8.28153, 5.6444 )
+texture = ExtResource( 15 )
+
+[connection signal="mouse_enter" from="ButtonContainer/Play" to="ButtonContainer" method="_on_Play_mouse_enter"]
+
 [connection signal="pressed" from="ButtonContainer/Play" to="ButtonContainer" method="_on_Play_pressed"]
 
-[connection signal="pressed" from="ButtonContainer/Settings" to="ButtonContainer" method="_on_Settings_pressed"]
+[connection signal="mouse_enter" from="ButtonContainer/Exit" to="ButtonContainer" method="_on_Exit_mouse_enter"]
 
 [connection signal="pressed" from="ButtonContainer/Exit" to="ButtonContainer" method="_on_Exit_pressed"]
+
+[connection signal="pressed" from="ButtonContainer/Settings" to="ButtonContainer" method="_on_Settings_pressed"]
 
 

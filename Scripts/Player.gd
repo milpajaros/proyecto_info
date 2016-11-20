@@ -6,7 +6,7 @@ onready var laser_scene = preload("res://scenes/laser_scene.xml")
 onready var nuke_scene = preload("res://scenes/nuke.tscn")
 var laser
 var nuke
-signal game_over
+
 
 
 var acceleration = 4000 #aceleración del player
@@ -18,15 +18,18 @@ var dead
 var nukeammo = 40
 var maxhp = 20
 var hp
+var sample
 
 
 func _ready():
+	sample= get_node("SamplePlayer")
 	dead = false
 	hp = maxhp
 	actualcd = 0
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
 	set_meta("aliado",1)
+	set_meta("nave",2)
 
 
 func _fixed_process(delta):
@@ -55,14 +58,6 @@ func _fixed_process(delta):
 	if(Input.is_action_pressed("ui_down")):
 		if(velocity.y < maxspeed):
 			velocity.y += delta*acceleration
-	if(Input.is_action_pressed("ui_shift")):
-		maxspeed = 200
-		if (velocity.x > maxspeed):
-			velocity.x = maxspeed
-		if (velocity.y > maxspeed):
-			velocity.y = maxspeed
-	if(!Input.is_action_pressed("ui_shift")):
-		maxspeed = 400
 
 	#condicion de parada
 	if(!Input.is_action_pressed("ui_left") && !Input.is_action_pressed("ui_right")):
@@ -94,6 +89,7 @@ func _on_BulletHitArea_body_enter( body ):
 		body._hit(self)
 
 func die():
+	sample.play("Explosion")
 	hp= 0
 	acceleration = 0
 	velocity = Vector2(0,0)
@@ -104,6 +100,7 @@ func die():
 	global.root.find_node("DeathMenu",true,false).game_over()
 	
 func _fire():
+	sample.play("Shot")
 	laser = laser_scene.instance()
 	var playerpos = get_node("PlayerAnimation").get_pos()
 	var LaserSpawnPoint = get_node("LaserSpawnPoint").get_global_pos()
