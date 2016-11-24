@@ -47,7 +47,7 @@ func _on_Continuar_mouse_enter():
 func _on_Music_pressed():
 	var musicbutton = get_node("Music")
 	if(global.music == true):
-		if(global.root.find_node("BGMusic",true,false).is_playing()):
+		if(global.current_scene.find_node("BGMusic",true,false).is_playing()):
 			wasplaying=global.root.find_node("BGMusic",true,false)
 			wasplaying.stop()
 		if(global.root.find_node("VictoryMusic",true,false).is_playing()):

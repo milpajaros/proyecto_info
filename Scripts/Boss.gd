@@ -102,7 +102,6 @@ func _die():
 			N.play("default")
 
 func _timeout():
-	get_parent().next_level()
 	queue_free()
 
 func _patron0():#circulo

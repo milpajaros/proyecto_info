@@ -8,7 +8,7 @@ func _ready():
 	set_hidden(true)
 
 func game_over():
-	global.root.find_node("BGMusic",true,false).set_paused(true)
+	global.current_scene.find_node("BGMusic",true,false).set_paused(true)
 	if(global.music):
 		get_node("DefeatMusic").play()
 	get_parent().get_node("HPBoss").set_hidden(true)
@@ -21,7 +21,7 @@ func game_over():
 
 func _on_reintentar_pressed():
 	get_tree().set_pause(false)
-	get_node("/root/global").goto_scene("res://Scenes/World.tscn")
+	get_node("/root/global").goto_scene(global.current_scene_path)
 
 
 func _on_Salir_pressed():

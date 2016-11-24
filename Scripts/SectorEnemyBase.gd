@@ -8,14 +8,12 @@ var nwave= 3
 var maxhp = 50
 var hp = maxhp
 var dead = false
-var enemigo
 var distancia
 var player
 var sampler
 
 func _ready():
 	sampler = get_parent().get_node("Sample")
-	enemigo = true
 	get_node("ExplosionHolder").set_hidden(true)
 	timer = get_node("EnemySpawnPoint/EnemySpawnrate")
 	timer.set_wait_time(5)
@@ -43,7 +41,7 @@ func _process(delta):
 func _timeout():
 	distancia= get_pos().distance_to(player.get_pos())
 	var enemy
-	if(enemigo && nwave> 0 && distancia<10000):
+	if(nwave> 0 && distancia<10000):
 		var enemytype= randi() % 6
 		if(enemytype == 0):
 			 enemy = bomber_scene.instance()
@@ -60,9 +58,9 @@ func _timeout():
 		nwave = 3
 
 func _on_DamageArea_body_enter( body ):
-	if(body.has_method("_hit") && body.has_meta("aliado") && enemigo):
+	if(body.has_method("_hit") && body.has_meta("aliado")):
 		body._hit(self)
-	if(body.has_method("_hit") && body.has_meta("enemigo") && enemigo):
+	if(body.has_method("_hit") && body.has_meta("enemigo")):
 		body._timeout()
 
 func _die():

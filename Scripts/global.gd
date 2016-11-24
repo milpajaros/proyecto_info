@@ -2,6 +2,7 @@ extends Node
 
 var root
 var current_scene = null
+var current_scene_path = null
 var sound = true
 var music = true
 
@@ -11,6 +12,7 @@ func _ready():
 
 func goto_scene(path):
 	current_scene.queue_free()
+	current_scene_path = path
 	call_deferred("_deferred_goto_scene",path)
 
 func _deferred_goto_scene(path):

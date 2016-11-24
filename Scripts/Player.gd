@@ -18,6 +18,7 @@ var nukeammo = 40
 var maxhp = 20
 var hp
 var sample
+var pause = false
 
 
 func _ready():
@@ -114,3 +115,6 @@ func _fire():
 
 func is_alive():
 	return !dead
+
+func pause(p):
+	set_fixed_process(!p)

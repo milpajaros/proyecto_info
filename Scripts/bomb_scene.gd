@@ -5,7 +5,7 @@ var timer
 var ttl = 5
 var blinkstate =3
 var dmg = 5
-var hp = 3
+var hp = 2
 var dead = false
 
 
