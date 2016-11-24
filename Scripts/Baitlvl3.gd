@@ -7,7 +7,7 @@ var timer
 var actualcd = 0
 var enemycd = 2
 var maxhp= 100
-var hp = maxhp
+var hp = 0
 var dead = false
 var bulletTTL = 1.5
 var variation = 0
@@ -78,7 +78,8 @@ func _die():
 		sampler.play("Explosion")
 		sampler.play("Explosion")
 	global.root.find_node("HPBoss",true,false).set_hidden(true)
-	get_parent().get_node("VictoryMusic").play_loop(11)
+	if global.music:
+		get_parent().get_node("VictoryMusic").play_loop(11)
 	get_parent().get_node("BGMusic").stop()
 	timer = get_node("Timer")
 	timer.set_wait_time(5)

@@ -18,3 +18,7 @@ func _process(delta):
 	if(time <=0):
 		self.stop()
 		self.play_loop(t)
+
+func stop_loop():
+	set_process(false)
+	self.stop()
