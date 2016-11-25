@@ -13,6 +13,7 @@ func _ready():
 	set_fixed_process(false)
 
 func victory():
+	player = global.root.find_node("Player",true, false)
 	player.pause(true)
 	get_node("BGMusic").set_paused(true)
 	if(global.music):

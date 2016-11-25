@@ -305,7 +305,7 @@ script/script = ExtResource( 2 )
 
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
-motion/mirroring = Vector2( 4096, 4096 )
+motion/mirroring = Vector2( 1024, 1024 )
 
 [node name="Sprite" type="Sprite" parent="BG/ParallaxLayer"]
 
@@ -352,7 +352,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 560.0
 margin/top = 260.0
-margin/right = 384.0
+margin/right = 396.0
 margin/bottom = 208.0
 custom_fonts/normal_font = ExtResource( 8 )
 custom_colors/default_color = Color( 0.921875, 1, 0, 1 )
@@ -404,7 +404,7 @@ margin/right = 376.0
 margin/bottom = 119.0
 custom_fonts/normal_font = ExtResource( 8 )
 bbcode/enabled = false
-bbcode/bbcode = "Gracias por habernos traido la paz.\nY por jugar a Space Conqueror"
+bbcode/bbcode = "Gracias por habernos traido la paz.\nY por jugar a Space Conqueror."
 visible_characters = -1
 
 [node name="Bait" type="StaticBody2D" parent="."]
