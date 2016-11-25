@@ -9,6 +9,7 @@ func _ready():
 	get_node("Boss").set_hidden(true)
 	if global.music:
 		get_node("BGMusic").play()
+	global.wasplaying = get_node("BGMusic")
 	get_node("CanvasLayer/Victory screen").set_hidden(true)
 	timer =get_node("Timer")
 	timer.set_wait_time(5)
@@ -40,6 +41,7 @@ func _final_boss():
 	get_node("VictoryMusic").stop_loop()
 	if global.music:
 		get_node("BossMusic").play_loop(90)
+	global.wasplaying = get_node("BossMusic")
 
 func _process(delta):
 	if( zoom <2):

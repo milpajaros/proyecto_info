@@ -8,7 +8,8 @@ func _ready():
 	set_hidden(true)
 
 func game_over():
-	global.current_scene.find_node("BGMusic",true,false).set_paused(true)
+	global.root.find_node("BGMusic",true,false).set_paused(true)
+	global.root.find_node("BossMusic",true,false).set_paused(true)
 	if(global.music):
 		get_node("DefeatMusic").play()
 	get_parent().get_node("HPBoss").set_hidden(true)

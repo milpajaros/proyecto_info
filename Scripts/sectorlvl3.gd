@@ -37,22 +37,22 @@ func charge(t):
 func _fixed_process(delta):
 	if(charging):
 		if(scale <0.4):
-			scale = scale+delta*0.4
+			scale = scale+delta*0.8
 		else:
 			scale = 0.4
 		beam.set_scale(Vector2(scale,(scale+0.2)))
 	elif(shooting):
 		if(mode == 0):
 			beam.set_texture(beamtexture)
-			beam.set_scale(Vector2(0.4, 8))
+			beam.set_scale(Vector2(0.4, 12))
 		elif(mode == 1):
-			beam.rotate(deg2rad(delta*20))
+			beam.rotate(deg2rad(delta*15))
 			beam.set_texture(beamtexture)
-			beam.set_scale(Vector2(0.4, 8))
+			beam.set_scale(Vector2(0.4, 12))
 		elif(mode == 2 || mode == 3):
-			beam.rotate(deg2rad(-delta*15))
+			beam.rotate(deg2rad(-delta*8))
 			beam.set_texture(beamtexture)
-			beam.set_scale(Vector2(0.4, 8))
+			beam.set_scale(Vector2(0.4, 12))
 	else:
 		beam.set_texture(blasttexture)
 		beam.set_scale(Vector2(0.1, 0.1))

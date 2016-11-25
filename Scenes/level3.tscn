@@ -388,7 +388,7 @@ margin/right = 376.0
 margin/bottom = 119.0
 custom_fonts/normal_font = ExtResource( 8 )
 bbcode/enabled = false
-bbcode/bbcode = "Hemos localizado la base central de los aliens.\nSi la destuyes, habremos ganado la guerra."
+bbcode/bbcode = "Hemos localizado la base central de los aliens.\nSi la destruyes, habremos ganado la guerra."
 visible_characters = -1
 
 [node name="Text2" type="RichTextLabel" parent="CanvasLayer/Tutorial"]
@@ -586,6 +586,8 @@ script/script = ExtResource( 24 )
 
 [node name="Boss" type="Node2D" parent="."]
 
+visibility/visible = false
+visibility/opacity = 0.0
 script/script = ExtResource( 26 )
 
 [node name="Sector" type="KinematicBody2D" parent="Boss"]

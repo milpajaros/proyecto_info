@@ -32,6 +32,7 @@ func _fixed_process(delta):
 		print("bossmode on")
 		if(global.music):
 			get_node("BossMusic").play_loop(90)
+		global.wasplaying = get_node("BossMusic")
 		get_parent().get_node("BGMusic").set_paused(true)
 		bossmode = true
 		get_node("Center/BossExtendedHitbox").queue_free()

@@ -7,7 +7,7 @@ var timer
 var actualcd = 0
 var enemycd = 2
 var maxhp= 100
-var hp = 0
+var hp = maxhp
 var dead = false
 var bulletTTL = 1.5
 var variation = 0

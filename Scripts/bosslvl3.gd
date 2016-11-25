@@ -17,7 +17,7 @@ var charging = false
 var resting = false
 var shooting = false
 var rottime = 3
-var chargetime = 3
+var chargetime = 2
 var shottime = 2.5
 var resttime = 5
 var rotspeed = 0
@@ -132,7 +132,9 @@ func _die():
 		sampler.play("Explosion")
 		sampler.play("Explosion")
 	global.root.find_node("HPBoss",true,false).set_hidden(true)
-	get_parent().get_node("VictoryMusic").play_loop(11)
+	if global.music:
+		get_parent().get_node("VictoryMusic").play_loop(11)
+	global.wasplaying = get_parent().get_node("VictoryMusic")
 	get_parent().get_node("BossMusic").stop()
 	timer = get_node("Timer")
 	timer.set_wait_time(5)

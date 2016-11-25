@@ -48,24 +48,24 @@ func _on_Music_pressed():
 	var musicbutton = get_node("Music")
 	if(global.music == true):
 		if(global.root.find_node("BGMusic",true,false).is_playing()):
-			wasplaying=global.root.find_node("BGMusic",true,false)
-			wasplaying.stop()
+			global.wasplaying=global.root.find_node("BGMusic",true,false)
+			global.wasplaying.stop()
 		if(global.root.find_node("VictoryMusic",true,false).is_playing()):
-			wasplaying=global.root.find_node("VictoryMusic",true,false)
-			wasplaying.stop()
+			global.wasplaying=global.root.find_node("VictoryMusic",true,false)
+			global.wasplaying.stop()
 		if(global.root.find_node("DefeatMusic",true,false).is_playing()):
-			wasplaying=global.root.find_node("DefeatMusic",true,false)
-			wasplaying.stop()
+			global.wasplaying=global.root.find_node("DefeatMusic",true,false)
+			global.wasplaying.stop()
 		if(global.root.find_node("BossMusic",true,false).is_playing()):
-			wasplaying=global.root.find_node("BossMusic",true,false)
-			wasplaying.stop()
+			global.wasplaying=global.root.find_node("BossMusic",true,false)
+			global.wasplaying.stop()
 		global.music = false
 		global.music = false
 		musicbutton.set_normal_texture(nomusic)
 		musicbutton.set_hover_texture(nomusichover)
 	elif(global.music == false):
 		global.music=true
-		wasplaying.play()
+		global.wasplaying.play()
 		musicbutton.set_normal_texture(music)
 		musicbutton.set_hover_texture(musichover)
 

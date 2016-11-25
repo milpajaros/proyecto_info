@@ -5,6 +5,7 @@ var current_scene = null
 var current_scene_path = null
 var sound = true
 var music = true
+var wasplaying
 
 func _ready():
 	root = get_tree().get_root()
