@@ -15,13 +15,13 @@
 [ext_resource path="res://Music/Rolemusic_-_Itsumo_no_y_ni.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=14]
 [ext_resource path="res://Textures/Logo.png" type="Texture" id=15]
-[ext_resource path="res://Textures/Tipografias/font.fnt" type="BitmapFont" id=16]
-[ext_resource path="res://Textures/Buttons/music.png" type="Texture" id=17]
-[ext_resource path="res://Textures/Buttons/musicpressed.png" type="Texture" id=18]
-[ext_resource path="res://Textures/Buttons/musichover.png" type="Texture" id=19]
-[ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=20]
-[ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=21]
-[ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Buttons/music.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Buttons/musicpressed.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Buttons/musichover.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Tipografias/font.fnt" type="BitmapFont" id=22]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -191,22 +191,6 @@ transform/pos = Vector2( 270.296, 64.1759 )
 transform/scale = Vector2( 5.56904, 3.59878 )
 texture = ExtResource( 15 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 57.0
-margin/top = 344.0
-margin/right = 412.0
-margin/bottom = 389.0
-custom_fonts/normal_font = ExtResource( 16 )
-custom_colors/default_color = Color( 1, 0.960938, 0, 1 )
-bbcode/enabled = false
-bbcode/bbcode = "Musica por RoleMusic."
-visible_characters = -1
-
 [node name="Container" type="Container" parent="."]
 
 anchor/left = 1
@@ -239,9 +223,9 @@ margin/bottom = 7.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 17 )
-textures/pressed = ExtResource( 18 )
-textures/hover = ExtResource( 19 )
+textures/normal = ExtResource( 16 )
+textures/pressed = ExtResource( 17 )
+textures/hover = ExtResource( 18 )
 
 [node name="Sound" type="TextureButton" parent="Container"]
 
@@ -260,9 +244,29 @@ margin/bottom = 4.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 20 )
-textures/pressed = ExtResource( 21 )
-textures/hover = ExtResource( 22 )
+textures/normal = ExtResource( 19 )
+textures/pressed = ExtResource( 20 )
+textures/hover = ExtResource( 21 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+
+anchor/left = 1
+anchor/top = 1
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 553.0
+margin/top = 52.0
+margin/right = 198.0
+margin/bottom = 7.0
+custom_fonts/normal_font = ExtResource( 22 )
+custom_colors/default_color = Color( 1, 0.960938, 0, 1 )
+bbcode/enabled = false
+bbcode/bbcode = "Musica por RoleMusic."
+visible_characters = -1
 
 [connection signal="mouse_enter" from="ButtonContainer/Play" to="ButtonContainer" method="_on_Play_mouse_enter"]
 
