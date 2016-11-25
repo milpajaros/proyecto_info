@@ -23,11 +23,11 @@
 [ext_resource path="res://Scenes/Player.xml" type="PackedScene" id=21]
 [ext_resource path="res://Scripts/Guide.gd" type="Script" id=22]
 [ext_resource path="res://Textures/arrow.png" type="Texture" id=23]
-[ext_resource path="res://Textures/Tipografias/font.fnt" type="BitmapFont" id=24]
-[ext_resource path="res://Scripts/tutorial.gd" type="Script" id=25]
-[ext_resource path="res://Textures/black.jpg" type="Texture" id=26]
-[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=27]
-[ext_resource path="res://Music/Rolemu_-_Neoakushon.ogg" type="AudioStream" id=28]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Music/Rolemu_-_Neoakushon.ogg" type="AudioStream" id=25]
+[ext_resource path="res://Textures/Tipografias/font.fnt" type="BitmapFont" id=26]
+[ext_resource path="res://Scripts/tutorial.gd" type="Script" id=27]
+[ext_resource path="res://Textures/black.jpg" type="Texture" id=28]
 [ext_resource path="res://Music/Rolemusic_-_01_-_Bacterial_Love.ogg" type="AudioStream" id=29]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -989,6 +989,19 @@ transform/pos = Vector2( 0, 100 )
 transform/rot = 90.0
 texture = ExtResource( 23 )
 
+[node name="GUI" parent="." instance=ExtResource( 24 )]
+
+[node name="BGMusic" type="StreamPlayer" parent="."]
+
+stream/stream = ExtResource( 25 )
+stream/play = false
+stream/loop = true
+stream/volume_db = 0.0
+stream/autoplay = false
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 layer = 1
@@ -998,20 +1011,19 @@ scale = Vector2( 1, 1 )
 
 [node name="VictoryScreen" type="RichTextLabel" parent="CanvasLayer"]
 
-visibility/visible = false
 anchor/left = 3
 anchor/right = 3
-rect/scale = Vector2( 10, 10 )
+rect/scale = Vector2( 7, 7 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 788.0
-margin/top = 7.0
-margin/right = 615.0
-margin/bottom = 87.0
-custom_fonts/mono_font = ExtResource( 24 )
-custom_fonts/normal_font = ExtResource( 24 )
+margin/left = 526.0
+margin/top = 35.0
+margin/right = 362.0
+margin/bottom = 109.0
+custom_fonts/mono_font = ExtResource( 26 )
+custom_fonts/normal_font = ExtResource( 26 )
 custom_colors/default_color = Color( 1, 0.914063, 0, 1 )
 bbcode/enabled = false
 bbcode/bbcode = "  Misión\ncompletada"
@@ -1032,7 +1044,7 @@ margin/left = 511.0
 margin/top = 202.0
 margin/right = 171.0
 margin/bottom = 67.0
-script/script = ExtResource( 25 )
+script/script = ExtResource( 27 )
 
 [node name="text" type="RichTextLabel" parent="CanvasLayer/Tutorial"]
 
@@ -1044,7 +1056,7 @@ margin/left = 7.0
 margin/top = 7.0
 margin/right = 333.0
 margin/bottom = 128.0
-custom_fonts/normal_font = ExtResource( 24 )
+custom_fonts/normal_font = ExtResource( 26 )
 bbcode/enabled = false
 bbcode/bbcode = "Muévete con las flechas o W,A,S,D.\n\nApunta con el ratón y dispara con el botón izquierdo."
 visible_characters = -1
@@ -1062,7 +1074,7 @@ visibility/visible = false
 transform/pos = Vector2( 1391.43, 918.176 )
 transform/scale = Vector2( 1.4562, 1.71195 )
 z/z = -1
-texture = ExtResource( 26 )
+texture = ExtResource( 28 )
 
 [node name="Timer" type="Timer" parent="CanvasLayer"]
 
@@ -1070,19 +1082,6 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
-
-[node name="GUI" parent="." instance=ExtResource( 27 )]
-
-[node name="BGMusic" type="StreamPlayer" parent="."]
-
-stream/stream = ExtResource( 28 )
-stream/play = false
-stream/loop = true
-stream/volume_db = 0.0
-stream/autoplay = false
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
 
 [node name="VictoryMusic" type="StreamPlayer" parent="."]
 

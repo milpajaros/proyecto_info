@@ -16,10 +16,10 @@
 [ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=14]
 [ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=15]
 [ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=16]
-[ext_resource path="res://Scripts/DeathMenu.gd" type="Script" id=17]
-[ext_resource path="res://Textures/Buttons/botonreiniciar.png" type="Texture" id=18]
-[ext_resource path="res://Textures/Buttons/botonreiniciarPressed.png" type="Texture" id=19]
-[ext_resource path="res://Textures/Buttons/botonreiniciarHover.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Buttons/botonreiniciar.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Buttons/botonreiniciarPressed.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Buttons/botonreiniciarHover.png" type="Texture" id=19]
+[ext_resource path="res://Scripts/DeathMenu.gd" type="Script" id=20]
 [ext_resource path="res://Textures/black.jpg" type="Texture" id=21]
 [ext_resource path="res://Music/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg" type="AudioStream" id=22]
 [ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=23]
@@ -171,10 +171,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 203.0
-margin/top = 243.0
-margin/right = -237.0
-margin/bottom = -216.0
+margin/left = 205.0
+margin/top = 238.0
+margin/right = -318.0
+margin/bottom = -296.0
 script/script = ExtResource( 4 )
 
 [node name="Continuar" type="TextureButton" parent="CanvasLayer/PauseMenu"]
@@ -185,10 +185,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 220.0
-margin/top = 0.0
-margin/right = 180.0
-margin/bottom = 40.0
+margin/left = 220.5
+margin/top = -30.0
+margin/right = -211.5
+margin/bottom = 104.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -206,10 +206,10 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 160.0
-margin/top = 84.5
-margin/right = -128.0
-margin/bottom = -50.5
+margin/left = 160.5
+margin/top = -6.5
+margin/right = -127.5
+margin/bottom = -141.5
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -226,9 +226,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 66.0
-margin/top = 141.0
+margin/top = 81.0
 margin/right = 138.0
-margin/bottom = 69.0
+margin/bottom = 9.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -246,16 +246,37 @@ focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
-margin/left = 160.0
-margin/top = 141.0
-margin/right = 88.0
-margin/bottom = 69.0
+margin/left = 170.0
+margin/top = 78.0
+margin/right = 98.0
+margin/bottom = 6.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 textures/normal = ExtResource( 14 )
 textures/pressed = ExtResource( 15 )
 textures/hover = ExtResource( 16 )
+
+[node name="Reset" type="TextureButton" parent="CanvasLayer/PauseMenu"]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 216.5
+margin/top = 151.0
+margin/right = -215.5
+margin/bottom = 17.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+textures/normal = ExtResource( 17 )
+textures/pressed = ExtResource( 18 )
+textures/hover = ExtResource( 19 )
 
 [node name="DeathMenu" type="Container" parent="CanvasLayer"]
 
@@ -270,7 +291,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = -1.0
 margin/bottom = 3.0
-script/script = ExtResource( 17 )
+script/script = ExtResource( 20 )
 
 [node name="Buttons" type="Container" parent="CanvasLayer/DeathMenu"]
 
@@ -304,9 +325,9 @@ margin/bottom = 3.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 18 )
-textures/pressed = ExtResource( 19 )
-textures/hover = ExtResource( 20 )
+textures/normal = ExtResource( 17 )
+textures/pressed = ExtResource( 18 )
+textures/hover = ExtResource( 19 )
 
 [node name="Salir" type="TextureButton" parent="CanvasLayer/DeathMenu/Buttons"]
 
@@ -356,7 +377,7 @@ margin/bottom = 224.5
 custom_fonts/normal_font = ExtResource( 3 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 bbcode/enabled = false
-bbcode/bbcode = "  Mision\nfracasada"
+bbcode/bbcode = "  Misión\nfracasada"
 visible_characters = 17
 
 [node name="DefeatMusic" type="StreamPlayer" parent="CanvasLayer/DeathMenu"]
@@ -409,6 +430,10 @@ default/chorus_send = 0.0
 [connection signal="mouse_enter" from="CanvasLayer/PauseMenu/Sound" to="CanvasLayer/PauseMenu" method="_on_Sound_mouse_enter"]
 
 [connection signal="pressed" from="CanvasLayer/PauseMenu/Sound" to="CanvasLayer/PauseMenu" method="_on_Sound_pressed"]
+
+[connection signal="mouse_enter" from="CanvasLayer/PauseMenu/Reset" to="CanvasLayer/PauseMenu" method="_on_Reset_mouse_enter"]
+
+[connection signal="pressed" from="CanvasLayer/PauseMenu/Reset" to="CanvasLayer/PauseMenu" method="_on_Reset_pressed"]
 
 [connection signal="mouse_enter" from="CanvasLayer/DeathMenu/Buttons/reintentar" to="CanvasLayer/DeathMenu" method="_on_reintentar_mouse_enter"]
 

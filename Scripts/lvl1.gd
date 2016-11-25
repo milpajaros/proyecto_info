@@ -6,7 +6,7 @@ var timer
 
 func _ready():
 	player = global.root.find_node("Player",true, false)
-	global.wasplaying = get_node("BGMusic").play()
+	global.wasplaying = get_node("BGMusic")
 	if(global.music):
 		get_node("BGMusic").play()
 	get_node("CanvasLayer/VictoryScreen").set_hidden(true)

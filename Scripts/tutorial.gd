@@ -25,7 +25,7 @@ func _process(delta):
 		fire = true
 	if(left && right && up && down && fire):
 		global.root.find_node("Guide", true, false).get_node("Sprite").set_hidden(false)
-		get_node("text").set_bbcode("Muy bien, ahora derrota a esos malditos aliens.\n\n Bastará con que destruyas su estación central.")
+		get_node("text").set_bbcode("Muy bien, ahora derrota a esos malditos aliens.\n\nBastará con que destruyas su estación central.")
 		set_process(false)
 		timer.set_wait_time(5)
 		timer.connect("timeout",self,"_timeout")
