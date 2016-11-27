@@ -68,6 +68,7 @@ func rest():
 	shooting =false
 	beam.set_texture(blasttexture)
 	beam.set_scale(Vector2(0.1, 0.1))
+	scale = 0.1
 	beam.set_rot(deg2rad(0))
 	
 func _on_Area2D_body_enter( body ):
