@@ -2,7 +2,7 @@
 extends KinematicBody2D
 var speed = 50
 var timer
-var ttl = 5
+var ttl = 3
 var blinkstate =3
 var dmg = 5
 var hp = 2

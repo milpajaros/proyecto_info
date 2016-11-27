@@ -2,21 +2,21 @@
 <resource_file type="PackedScene" subresource_count="22" version="2.1" version_name="Godot Engine v2.1.stable.official">
 	<ext_resource path="res://Textures/Explosion/frame0.png" type="Texture" index="8"></ext_resource>
 	<ext_resource path="res://Textures/Explosion/frame6.png" type="Texture" index="14"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame2.png" type="Texture" index="10"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" index="11"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" index="12"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" index="13"></ext_resource>
-	<ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" index="9"></ext_resource>
-	<ext_resource path="res://Textures/Player/frame5.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Textures/Player/frame2.png" type="Texture" index="3"></ext_resource>
 	<ext_resource path="res://Textures/Player/frame3.png" type="Texture" index="4"></ext_resource>
 	<ext_resource path="res://Textures/Player/frame1.png" type="Texture" index="2"></ext_resource>
-	<ext_resource path="res://Textures/Player/frame0.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://Textures/Player/frame4.png" type="Texture" index="5"></ext_resource>
-	<ext_resource path="res://Textures/Player/frame2.png" type="Texture" index="3"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame3.png" type="Texture" index="11"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame2.png" type="Texture" index="10"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame1.png" type="Texture" index="9"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame4.png" type="Texture" index="12"></ext_resource>
+	<ext_resource path="res://Textures/Explosion/frame5.png" type="Texture" index="13"></ext_resource>
 	<ext_resource path="res://Music/Laser_Shoot.wav" type="Sample" index="16"></ext_resource>
 	<ext_resource path="res://Music/Explosion11.wav" type="Sample" index="15"></ext_resource>
-	<ext_resource path="res://Scripts/Player.gd" type="Script" index="0"></ext_resource>
 	<ext_resource path="res://Scripts/PlayerAnimationScript.gd" type="Script" index="7"></ext_resource>
+	<ext_resource path="res://Scripts/Player.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://Textures/Player/frame5.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Textures/Player/frame0.png" type="Texture" index="1"></ext_resource>
 	<resource type="CircleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 10 </real>
@@ -99,7 +99,6 @@
 			<string> "names" </string>
 			<string_array  len="68">
 				<string> "Player" </string>
-				<string> "transform/pos" </string>
 				<string> "input/pickable" </string>
 				<string> "shapes/0/shape" </string>
 				<string> "shapes/0/transform" </string>
@@ -128,6 +127,7 @@
 				<string> "drag_margin/bottom" </string>
 				<string> "Camera2D" </string>
 				<string> "PlayerHitbox" </string>
+				<string> "transform/pos" </string>
 				<string> "transform/rot" </string>
 				<string> "transform/scale" </string>
 				<string> "shape" </string>
@@ -173,10 +173,9 @@
 			<array  len="0" shared="false">
 			</array>
 			<string> "nodes" </string>
-			<int_array  len="212"> 				-1, -1, 10, 0, -1, 9, 1, 0, 2, 1, 3, 2, 4, 3, 5, 1, 6, 4, 7, 4, 8, 5, 9, 6, 0, 0, 0, 28, 11, -1, 16, 12, 4, 13, 1, 14, 7, 15, 8, 16, 9, 17, 9, 18, 10, 19, 10, 20, 7, 21, 7, 22, 7, 23, 11, 24, 12, 25, 13, 26, 12, 27, 13, 0, 0, 0, 35, 29, -1, 6, 1, 14, 30, 15, 31, 16, 32, 2, 33, 1, 34, 17, 0, 0, 0, 37, 36, -1, 2, 30, 18, 31, 19, 0, 0, 0, 39, 38, -1, 0, 0, 0, 0, 43, 40, -1, 6, 1, 20, 30, 15, 31, 21, 41, 22, 42, 23, 9, 24, 0, 0, 0, 49, 44, -1, 8, 2, 7, 3, 2, 4, 25, 5, 1, 45, 26, 46, 27, 47, 12, 48, 28, 0, 6, 0, 35, 35, -1, 6, 1, 14, 30, 18, 31, 16, 32, 2, 33, 1, 34, 17, 0, 0, 0, 43, 50, -1, 4, 1, 29, 31, 30, 41, 31, 42, 23, 0, 0, 0, 51, 51, -1, 14, 52, 4, 53, 32, 54, 33, 55, 28, 56, 34, 57, 34, 58, 34, 59, 17, 60, 35, 61, 28, 62, 28, 63, 36, 64, 34, 65, 34, 0 </int_array>
+			<int_array  len="210"> 				-1, -1, 9, 0, -1, 8, 1, 0, 2, 1, 3, 2, 4, 0, 5, 3, 6, 3, 7, 4, 8, 5, 0, 0, 0, 27, 10, -1, 16, 11, 3, 12, 0, 13, 6, 14, 7, 15, 8, 16, 8, 17, 9, 18, 9, 19, 0, 20, 0, 21, 0, 22, 10, 23, 11, 24, 12, 25, 11, 26, 12, 0, 0, 0, 35, 28, -1, 6, 29, 13, 30, 14, 31, 15, 32, 1, 33, 0, 34, 16, 0, 0, 0, 37, 36, -1, 2, 30, 17, 31, 18, 0, 0, 0, 39, 38, -1, 0, 0, 0, 0, 43, 40, -1, 6, 29, 19, 30, 14, 31, 20, 41, 21, 42, 22, 8, 23, 0, 0, 0, 49, 44, -1, 8, 1, 6, 2, 1, 3, 24, 4, 0, 45, 25, 46, 26, 47, 11, 48, 27, 0, 6, 0, 35, 35, -1, 6, 29, 13, 30, 17, 31, 15, 32, 1, 33, 0, 34, 16, 0, 0, 0, 43, 50, -1, 4, 29, 28, 31, 29, 41, 30, 42, 22, 0, 0, 0, 51, 51, -1, 14, 52, 3, 53, 31, 54, 32, 55, 27, 56, 33, 57, 33, 58, 33, 59, 16, 60, 34, 61, 27, 62, 27, 63, 35, 64, 33, 65, 33, 0 </int_array>
 			<string> "variants" </string>
-			<array  len="37" shared="false">
-				<vector2> 888.259, 312.583 </vector2>
+			<array  len="36" shared="false">
 				<bool> False </bool>
 				<resource  resource_type="Shape2D" path="local://1">  </resource>
 				<matrix32> -3.4, 2.97237e-07, -2.97237e-07, -3.4, 0, -8 </matrix32>
@@ -206,7 +205,7 @@
 				<real> 98 </real>
 				<real> 1 </real>
 				<vector2> 1.76048, 3.96116 </vector2>
-				<vector2> 5, 5 </vector2>
+				<vector2> 7, 7 </vector2>
 				<resource  resource_type="SpriteFrames" path="local://3">  </resource>
 				<resource  resource_type="SampleLibrary" path="local://4">  </resource>
 				<real> -5 </real>

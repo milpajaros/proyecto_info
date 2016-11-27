@@ -9,7 +9,7 @@ var nuke
 
 
 var acceleration = 4000 #aceleración del player
-var maxspeed = 400 #velocidad máxima
+var maxspeed = 600 #velocidad máxima
 var velocity = Vector2() #vector velocidad
 var shootcd = 0.25 #tiempo entre disparo y disparo
 var actualcd
@@ -36,6 +36,7 @@ func _fixed_process(delta):
 	get_tree().get_root().find_node("HPbar", true, false).set_val(hp*100/maxhp)
 	actualcd -= delta
 	var mousepos = get_global_mouse_pos()
+	get_node("PlayerCamera").set_offset((get_viewport().get_mouse_pos()-OS.get_window_size()/2)*0.25)
 	if(!dead):
 		look_at(mousepos) #la nave apunta al raton
 		

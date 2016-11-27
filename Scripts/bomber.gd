@@ -8,7 +8,7 @@ var enemycd = 5
 var actualcd = 0
 var DistanciaProxima = 200
 var player
-const SPEED = 200
+const SPEED = 300
 var speed = SPEED
 var maxhp =4
 var hp = maxhp
@@ -107,7 +107,7 @@ func _die():
 	dead = true
 	speed = 0
 	timer = get_node("Timer")
-	timer.set_wait_time(1)
+	timer.set_wait_time(0.5)
 	timer.connect("timeout",self,"_timeout")
 	timer.start()
 	get_node("AnimatedSprite").set_hidden(true)

@@ -10,7 +10,7 @@ var enemycd = 0.5
 var actualcd = 0
 var DistanciaProxima = 200
 var player
-const SPEED = 200
+const SPEED = 300
 var speed = SPEED
 var maxhp = 5
 var hp = maxhp
@@ -83,7 +83,7 @@ func _die():
 	get_node("Hpholder").set_hidden(true)
 	hp = 0
 	speed = 0
-	timer.set_wait_time(1)
+	timer.set_wait_time(0.5)
 	timer.start()
 	get_node("EnemySprite").set_hidden(true)
 	get_node("ExplosionAnimation").set_hidden(false)

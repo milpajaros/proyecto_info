@@ -586,12 +586,11 @@ script/script = ExtResource( 24 )
 
 [node name="Boss" type="Node2D" parent="."]
 
-visibility/visible = false
-visibility/opacity = 0.0
 script/script = ExtResource( 26 )
 
 [node name="Sector" type="KinematicBody2D" parent="Boss"]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 550 )
 transform/rot = 180.0
 transform/scale = Vector2( 13, 13 )
@@ -828,7 +827,7 @@ trigger = true
 
 [node name="Beam" type="Sprite" parent="Boss/SectorM"]
 
-transform/pos = Vector2( -3.55035, -0.223585 )
+transform/pos = Vector2( -2.15775, -2.83543 )
 transform/scale = Vector2( 0.1, 0.1 )
 texture = ExtResource( 28 )
 centered = false
