@@ -1,6 +1,6 @@
 
 extends KinematicBody2D
-onready var laser_scene = preload("res://scenes/laser_scene.xml")
+onready var laser_scene = preload("res://Scenes/laser_scene.xml")
 var laserenemigo = preload("res://Textures/laserRed.png")
 # member variables here, example:
 # var a=2
@@ -10,15 +10,17 @@ var enemycd = 0.5
 var actualcd = 0
 var DistanciaProxima = 200
 var player
-const SPEED = 200
+const SPEED = 300
 var speed = SPEED
 var maxhp = 5
 var hp = maxhp
 var timer
 var dead = false
 var distancia
+var sampler
 
 func _ready():
+	sampler = get_node("SamplePlayer")
 	actualcd = 2
 	timer = get_node("EnemyTimer")
 	timer.set_wait_time(60)
@@ -26,13 +28,14 @@ func _ready():
 	timer.start()
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
-	player = global.root.find_node("Player",true,false)
+	set_meta("nave",2)
 
 func _on_Area_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("aliado")):
 		body._hit(self)
 
 func _fixed_process(delta):
+	player = global.root.find_node("Player",true,false)
 	get_node("Hpholder/HP").set_val(hp*100/maxhp)
 	get_node("Hpholder").set_rot(-get_rot())
 	actualcd -= delta
@@ -58,6 +61,8 @@ func _fire():
 		laser.set_pos(LaserSpawnPoint)
 		laser.look_at(player.get_pos())
 		laser_holder.add_child(laser)
+		if(global.sound):
+			sampler.play("Shot")
 
 func _chase(delta):
 	if(!dead):
@@ -78,12 +83,14 @@ func _die():
 	get_node("Hpholder").set_hidden(true)
 	hp = 0
 	speed = 0
-	timer.set_wait_time(1)
+	timer.set_wait_time(0.5)
 	timer.start()
 	get_node("EnemySprite").set_hidden(true)
 	get_node("ExplosionAnimation").set_hidden(false)
 	get_node("ExplosionAnimation").set_frame(0)
 	get_node("ExplosionAnimation").play("default")
+	if(global.sound):
+		sampler.play("Explosion")
 	
 func _timeout():
 	hide()

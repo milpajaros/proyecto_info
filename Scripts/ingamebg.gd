@@ -9,3 +9,5 @@ func _ready():
 func _process(delta):
 	offloc = offloc +10*delta
 	set_offset(Vector2(-offloc,offloc))
+func stop():
+	set_process(false)

@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-onready var enemy_scene = preload("res://scenes/enemy.xml")
+onready var enemy_scene = preload("res://Scenes/Enemy.xml")
+onready var bomber_scene = preload("res://Scenes/bomber.xml")
 var RotSpeed = 200
 var timer
 var nwave= 3
@@ -9,17 +10,21 @@ var hp = maxhp
 var dead = false
 var distancia
 var player
+var sampler
 
 func _ready():
-	player = get_tree().get_root().get_node("Root/Player")
+	sampler = get_parent().get_node("Sample")
 	get_node("ExplosionHolder").set_hidden(true)
 	timer = get_node("EnemySpawnPoint/EnemySpawnrate")
 	timer.set_wait_time(5)
 	timer.connect("timeout",self, "_timeout")
 	timer.start()
+	self.set_meta("estructura", 0)
+	self.set_meta("enemigo", 1)
 	set_process(true)
 	
 func _process(delta):
+	player = global.root.find_node("Player",true,false)
 	get_node("Hpholder/HP").set_val(hp*100/maxhp)
 	get_node("Hpholder").set_rot(-get_rot())
 	look_at(get_parent().get_pos())
@@ -35,8 +40,13 @@ func _process(delta):
 
 func _timeout():
 	distancia= get_pos().distance_to(player.get_pos())
+	var enemy
 	if(nwave> 0 && distancia<10000):
-		var enemy= enemy_scene.instance()
+		var enemytype= randi() % 6
+		if(enemytype == 0):
+			 enemy = bomber_scene.instance()
+		else:
+			enemy= enemy_scene.instance()
 		enemy.set_pos(get_node("EnemySpawnPoint").get_global_pos())
 		timer.set_wait_time(1)
 		timer.start()
@@ -54,9 +64,12 @@ func _on_DamageArea_body_enter( body ):
 		body._timeout()
 
 func _die():
+	if(global.sound):
+		sampler.play("Explosion")
+		sampler.play("Explosion")
 	hp = 0
+	timer.stop()
 	get_node("Hpholder").set_hidden(true)
-	get_node("DamageArea").queue_free()
 	timer = get_node("ExplosionHolder/ExplosionTimer")
 	timer.set_wait_time(3)
 	timer.connect("timeout",self,"_explosiontimeout")

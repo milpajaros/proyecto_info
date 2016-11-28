@@ -1,7 +1,8 @@
 extends Node2D
 
-onready var laser_scene = preload("res://scenes/laser_scene.xml")
+onready var laser_scene = preload("res://Scenes/laser_scene.xml")
 var laserenemigo = preload("res://Textures/laserRed.png")
+var sampler
 
 var sectors = 3
 var bossmode = false
@@ -17,20 +18,22 @@ var bulletTTL = 2
 var variation = 0
 var phasetime = 5
 var dmg = 1
-var hpbar
 
 func _ready():
-	hpbar = global.root.find_node("HPBoss",true,false)
-	hpbar.set_hidden(true)
-	playerpos = global.root.find_node("Player",true,false).get_pos()
+	sampler = get_node("Sample")
 	get_node("Center/ExplosionHolder").set_hidden(true)
 	set_fixed_process(true)
+	self.set_meta("estructura", 0)
+	self.set_meta("enemigo", 1)
 
 func _fixed_process(delta):
-	hpbar.set_val(hp*100/maxhp)
 	if((sectors <=0) && !bossmode ):
-		hpbar.set_hidden(false)
+		global.root.find_node("HPBoss",true,false).set_hidden(false)
 		print("bossmode on")
+		if(global.music):
+			get_node("BossMusic").play_loop(90)
+		global.wasplaying = get_node("BossMusic")
+		get_parent().get_node("BGMusic").set_paused(true)
 		bossmode = true
 		get_node("Center/BossExtendedHitbox").queue_free()
 		timer = get_node("BossTimer")
@@ -38,7 +41,8 @@ func _fixed_process(delta):
 		timer.connect("timeout",self,"_nextphase")
 		timer.start()
 	if(bossmode):
-		playerpos = get_parent().get_node("Player").get_pos()
+		global.root.find_node("HPBoss",true,false).set_val(hp*100/maxhp)
+		playerpos = global.root.find_node("Player",true,false).get_pos()
 		actualcd -= delta
 		_rampage()
 	if((hp <= 0) && !dead):
@@ -79,7 +83,14 @@ func _nextphase():
 	timer.start()
 
 func _die():
-	hpbar.set_hidden(true)
+	if(global.sound):
+		sampler.play("Explosion")
+		sampler.play("Explosion")
+		sampler.play("Explosion")
+		sampler.play("Explosion")
+	get_node("BossMusic").set_paused(true)
+	get_parent().victory()
+	global.root.find_node("HPBoss",true,false).set_hidden(true)
 	attackmode = 10
 	timer = get_node("BossTimer")
 	timer.set_wait_time(5)
@@ -92,7 +103,6 @@ func _die():
 			N.play("default")
 
 func _timeout():
-	hide()
 	queue_free()
 
 func _patron0():#circulo
@@ -112,7 +122,7 @@ func _patron2():#el molinillo
 		for n in range(4):
 			_firerot((variation+n)*90)
 		actualcd = enemycd #reinicia el CD
-		variation+= 0.1
+		variation+= 0.075
 func _patron3():#disparos aleatorios
 	if(actualcd <= 0):
 		_firerot(variation)
@@ -146,6 +156,7 @@ func _fireat(shootat):
 	laser.look_at(shootat)
 	laser.ttl = bulletTTL
 	laser.dmg = dmg
+	laser.speed = laser.speed*0.75
 	laser_holder.add_child(laser)
 	
 
@@ -160,5 +171,6 @@ func _firerot(rotation):
 	laser.rotate(deg2rad(rotation))
 	laser.ttl = bulletTTL
 	laser.dmg = dmg
+	laser.speed = laser.speed*0.75
 	laser_holder.add_child(laser)
 	
