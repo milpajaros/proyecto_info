@@ -1,28 +1,30 @@
-[gd_scene load_steps=29 format=1]
+[gd_scene load_steps=31 format=1]
 
-[ext_resource path="res://Textures/hpfg.png" type="Texture" id=1]
-[ext_resource path="res://Textures/hpbg.png" type="Texture" id=2]
-[ext_resource path="res://Textures/Tipografias/font.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=4]
-[ext_resource path="res://Textures/Buttons/botoncontinuar.png" type="Texture" id=5]
-[ext_resource path="res://Textures/Buttons/botoncontinuarPress.png" type="Texture" id=6]
-[ext_resource path="res://Textures/Buttons/botoncontinuarHover.png" type="Texture" id=7]
-[ext_resource path="res://Textures/Buttons/botonSalir.png" type="Texture" id=8]
-[ext_resource path="res://Textures/Buttons/botonSalirPress.png" type="Texture" id=9]
-[ext_resource path="res://Textures/Buttons/botonSalirHover.png" type="Texture" id=10]
-[ext_resource path="res://Textures/Buttons/music.png" type="Texture" id=11]
-[ext_resource path="res://Textures/Buttons/musicpressed.png" type="Texture" id=12]
-[ext_resource path="res://Textures/Buttons/musichover.png" type="Texture" id=13]
-[ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=14]
-[ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=15]
-[ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=16]
-[ext_resource path="res://Textures/Buttons/botonreiniciar.png" type="Texture" id=17]
-[ext_resource path="res://Textures/Buttons/botonreiniciarPressed.png" type="Texture" id=18]
-[ext_resource path="res://Textures/Buttons/botonreiniciarHover.png" type="Texture" id=19]
-[ext_resource path="res://Scripts/DeathMenu.gd" type="Script" id=20]
-[ext_resource path="res://Textures/black.jpg" type="Texture" id=21]
-[ext_resource path="res://Music/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg" type="AudioStream" id=22]
-[ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=23]
+[ext_resource path="res://Textures/Marco.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/hurtframe.gd" type="Script" id=2]
+[ext_resource path="res://Textures/hpfg.png" type="Texture" id=3]
+[ext_resource path="res://Textures/hpbg.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Tipografias/font.fnt" type="BitmapFont" id=5]
+[ext_resource path="res://Scripts/PauseMenu.gd" type="Script" id=6]
+[ext_resource path="res://Textures/Buttons/botoncontinuar.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Buttons/botoncontinuarPress.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Buttons/botoncontinuarHover.png" type="Texture" id=9]
+[ext_resource path="res://Textures/Buttons/botonSalir.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Buttons/botonSalirPress.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Buttons/botonSalirHover.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Buttons/music.png" type="Texture" id=13]
+[ext_resource path="res://Textures/Buttons/musicpressed.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Buttons/musichover.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Buttons/botonreiniciar.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Buttons/botonreiniciarPressed.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Buttons/botonreiniciarHover.png" type="Texture" id=21]
+[ext_resource path="res://Scripts/DeathMenu.gd" type="Script" id=22]
+[ext_resource path="res://Textures/black.jpg" type="Texture" id=23]
+[ext_resource path="res://Music/Rolemusic_-_01_-_Shipwreck_In_The_Pacific_Ocean.ogg" type="AudioStream" id=24]
+[ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=25]
 
 [sub_resource type="StyleBoxTexture" id=1]
 
@@ -30,7 +32,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -47,7 +49,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -64,7 +66,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -81,7 +83,7 @@ content_margin/left = -1.0
 content_margin/right = -1.0
 content_margin/top = -1.0
 content_margin/bottom = -1.0
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 margin/left = 0.0
 margin/right = 0.0
 margin/top = 0.0
@@ -94,7 +96,7 @@ draw_center = true
 
 [sub_resource type="SampleLibrary" id=5]
 
-samples/Bip = { "db":0.0, "pitch":1.0, "sample":ExtResource( 23 ) }
+samples/Bip = { "db":0.0, "pitch":1.0, "sample":ExtResource( 25 ) }
 
 [node name="GUI" type="Node"]
 
@@ -106,6 +108,23 @@ layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
+
+[node name="HurtFrame" type="TextureFrame" parent="CanvasLayer"]
+
+anchor/right = 1
+anchor/bottom = 1
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = -1.0
+margin/bottom = -1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 0
+script/script = ExtResource( 2 )
 
 [node name="HPbar" type="ProgressBar" parent="CanvasLayer"]
 
@@ -121,7 +140,7 @@ margin/right = 257.0
 margin/bottom = 1.0
 custom_styles/fg = SubResource( 1 )
 custom_styles/bg = SubResource( 2 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 range/min = 0.0
@@ -148,7 +167,7 @@ margin/right = -256.0
 margin/bottom = 34.0
 custom_styles/fg = SubResource( 3 )
 custom_styles/bg = SubResource( 4 )
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 range/min = 0.0
@@ -175,7 +194,7 @@ margin/left = 205.0
 margin/top = 238.0
 margin/right = -318.0
 margin/bottom = -296.0
-script/script = ExtResource( 4 )
+script/script = ExtResource( 6 )
 
 [node name="Continuar" type="TextureButton" parent="CanvasLayer/PauseMenu"]
 
@@ -192,9 +211,9 @@ margin/bottom = 104.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 5 )
-textures/pressed = ExtResource( 6 )
-textures/hover = ExtResource( 7 )
+textures/normal = ExtResource( 7 )
+textures/pressed = ExtResource( 8 )
+textures/hover = ExtResource( 9 )
 
 [node name="Salir" type="TextureButton" parent="CanvasLayer/PauseMenu"]
 
@@ -213,9 +232,9 @@ margin/bottom = -141.5
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 9 )
-textures/hover = ExtResource( 10 )
+textures/normal = ExtResource( 10 )
+textures/pressed = ExtResource( 11 )
+textures/hover = ExtResource( 12 )
 
 [node name="Music" type="TextureButton" parent="CanvasLayer/PauseMenu"]
 
@@ -232,9 +251,9 @@ margin/bottom = 9.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 11 )
-textures/pressed = ExtResource( 12 )
-textures/hover = ExtResource( 13 )
+textures/normal = ExtResource( 13 )
+textures/pressed = ExtResource( 14 )
+textures/hover = ExtResource( 15 )
 
 [node name="Sound" type="TextureButton" parent="CanvasLayer/PauseMenu"]
 
@@ -253,9 +272,9 @@ margin/bottom = 6.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 14 )
-textures/pressed = ExtResource( 15 )
-textures/hover = ExtResource( 16 )
+textures/normal = ExtResource( 16 )
+textures/pressed = ExtResource( 17 )
+textures/hover = ExtResource( 18 )
 
 [node name="Reset" type="TextureButton" parent="CanvasLayer/PauseMenu"]
 
@@ -274,9 +293,9 @@ margin/bottom = 17.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 17 )
-textures/pressed = ExtResource( 18 )
-textures/hover = ExtResource( 19 )
+textures/normal = ExtResource( 19 )
+textures/pressed = ExtResource( 20 )
+textures/hover = ExtResource( 21 )
 
 [node name="DeathMenu" type="Container" parent="CanvasLayer"]
 
@@ -291,7 +310,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = -1.0
 margin/bottom = 3.0
-script/script = ExtResource( 20 )
+script/script = ExtResource( 22 )
 
 [node name="Buttons" type="Container" parent="CanvasLayer/DeathMenu"]
 
@@ -325,9 +344,9 @@ margin/bottom = 3.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 17 )
-textures/pressed = ExtResource( 18 )
-textures/hover = ExtResource( 19 )
+textures/normal = ExtResource( 19 )
+textures/pressed = ExtResource( 20 )
+textures/hover = ExtResource( 21 )
 
 [node name="Salir" type="TextureButton" parent="CanvasLayer/DeathMenu/Buttons"]
 
@@ -347,17 +366,17 @@ margin/bottom = 5.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 8 )
-textures/pressed = ExtResource( 9 )
-textures/hover = ExtResource( 10 )
+textures/normal = ExtResource( 10 )
+textures/pressed = ExtResource( 11 )
+textures/hover = ExtResource( 12 )
 
 [node name="black" type="Sprite" parent="CanvasLayer/DeathMenu"]
 
 visibility/self_opacity = 0.0
-transform/pos = Vector2( 1869.92, 1144.44 )
+transform/pos = Vector2( 1869.92, 1147.09 )
 transform/scale = Vector2( 2.02381, 2.34446 )
 z/z = -1
-texture = ExtResource( 21 )
+texture = ExtResource( 23 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/DeathMenu"]
 
@@ -374,7 +393,7 @@ margin/left = 525.5
 margin/top = 259.5
 margin/right = 371.5
 margin/bottom = 224.5
-custom_fonts/normal_font = ExtResource( 3 )
+custom_fonts/normal_font = ExtResource( 5 )
 custom_colors/default_color = Color( 1, 0, 0, 1 )
 bbcode/enabled = false
 bbcode/bbcode = "  Misión\nfracasada"
@@ -382,7 +401,7 @@ visible_characters = 17
 
 [node name="DefeatMusic" type="StreamPlayer" parent="CanvasLayer/DeathMenu"]
 
-stream/stream = ExtResource( 22 )
+stream/stream = ExtResource( 24 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 5.0
