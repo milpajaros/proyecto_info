@@ -17,6 +17,7 @@ var dead = false
 var distancia
 var playerpos
 var carryingbomb= false
+var chasedistance = 1000
 
 func _ready():
 	actualcd = 2
@@ -42,7 +43,7 @@ func _fixed_process(delta):
 	get_node("Hpholder").set_rot(-get_rot())
 	actualcd -= delta
 	distancia= get_pos().distance_to(player.get_pos())
-	if(distancia < 1000 && actualcd<0):
+	if(distancia < chasedistance && actualcd<0):
 		_chase(delta)
 	elif(distancia < 400 && actualcd >0):
 		_runaway(delta)

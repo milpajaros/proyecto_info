@@ -156,6 +156,7 @@ func _fireat(shootat):
 	laser.look_at(shootat)
 	laser.ttl = bulletTTL
 	laser.dmg = dmg
+	laser.speed = laser.speed*0.75
 	laser_holder.add_child(laser)
 	
 
@@ -170,5 +171,6 @@ func _firerot(rotation):
 	laser.rotate(deg2rad(rotation))
 	laser.ttl = bulletTTL
 	laser.dmg = dmg
+	laser.speed = laser.speed*0.75
 	laser_holder.add_child(laser)
 	

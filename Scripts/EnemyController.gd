@@ -18,6 +18,7 @@ var timer
 var dead = false
 var distancia
 var sampler
+var chasedistance = 1000
 
 func _ready():
 	sampler = get_node("SamplePlayer")
@@ -40,7 +41,7 @@ func _fixed_process(delta):
 	get_node("Hpholder").set_rot(-get_rot())
 	actualcd -= delta
 	distancia= get_pos().distance_to(player.get_pos())
-	if(distancia < 1000):
+	if(distancia < chasedistance):
 		_chase(delta)
 	if(distancia <500):
 		_fire()

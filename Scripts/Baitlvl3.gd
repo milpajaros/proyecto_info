@@ -1,6 +1,7 @@
 
 extends StaticBody2D
 onready var enemy_scene = preload("res://Scenes/Enemy.xml")
+onready var bomber_scene = preload("res://Scenes/bomber.xml")
 onready var laser_scene = preload("res://Scenes/laser_scene.xml")
 var laserenemigo = preload("res://Textures/laserRed.png")
 var timer
@@ -13,11 +14,13 @@ var bulletTTL = 1.5
 var variation = 0
 var dmg = 1
 var sampler
+var nwave
 
 func _ready():
+	nwave = 5
 	set_process(true)
 	timer = get_node("Timer")
-	timer.set_wait_time(5)
+	timer.set_wait_time(10)
 	timer.connect("timeout",self,"_nextwave")
 	timer.start()
 	sampler = get_node("Sample")
@@ -47,13 +50,24 @@ func _process(delta):
 		_die()
 
 func _nextwave():
-	var enemy= enemy_scene.instance()
-	var x = randi()%1000 -500
-	var y = randi()%1000 -500
-	enemy.set_pos(Vector2(x,y))
-	get_node("EnemyHolder").add_child(enemy)
-	timer.set_wait_time(5)
-	timer.start()
+	if (nwave > 0):
+		var enemy
+		if (nwave == 1):
+			enemy= bomber_scene.instance()
+		else:
+			enemy= enemy_scene.instance()
+		var x = randi()%2000 -1000
+		var y = randi()%2000 -1000
+		enemy.chasedistance = 10000
+		enemy.set_pos(Vector2(x,y))
+		get_node("EnemyHolder").add_child(enemy)
+		timer.set_wait_time(0.5)
+		timer.start()
+		nwave = nwave-1
+	else:
+		timer.set_wait_time(10)
+		timer.start()
+		nwave = 5
 
 func _fire():
 	for n in range(9):

@@ -36,7 +36,7 @@ func _fixed_process(delta):
 	get_tree().get_root().find_node("HPbar", true, false).set_val(hp*100/maxhp)
 	actualcd -= delta
 	var mousepos = get_global_mouse_pos()
-	get_node("PlayerCamera").set_offset((get_viewport().get_mouse_pos()-OS.get_window_size()/2)*0.25)
+	get_node("PlayerCamera").set_offset((get_viewport().get_mouse_pos()-OS.get_window_size()/2)*0.2)
 	if(!dead):
 		look_at(mousepos) #la nave apunta al raton
 		
