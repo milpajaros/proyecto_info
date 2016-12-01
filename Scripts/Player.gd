@@ -89,7 +89,8 @@ func _on_BulletHitArea_body_enter( body ):
 	if(body.has_method("_hit") && body.has_meta("enemigo") && !body.has_meta("bomb")):
 		body._hit(self)
 		global.root.find_node("GUI",true,false).get_node("CanvasLayer/HurtFrame").get_hurt()
-		sample.play("Hurt")
+		if(global.sound):
+			sample.play("Hurt")
 
 func die():
 	if(global.sound):

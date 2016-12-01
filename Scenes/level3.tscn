@@ -586,6 +586,7 @@ script/script = ExtResource( 24 )
 
 [node name="Boss" type="Node2D" parent="."]
 
+visibility/opacity = 0.0
 script/script = ExtResource( 26 )
 
 [node name="Sector" type="KinematicBody2D" parent="Boss"]
