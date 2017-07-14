@@ -70,7 +70,7 @@ func _explode():
 	self.queue_free()
 
 func _on_Areabomb_body_enter( body ):
-	if (body.has_meta("arma")):
+	if (body.has_meta("arma") && body.has_meta("aliado")):
 			body._hit(self)
-	elif(body.has_meta("aliado")):
+	elif(body.has_meta("aliado") && body.has_meta("nave")):
 			_timeout()

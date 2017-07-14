@@ -10,7 +10,7 @@ var DistanciaProxima = 200
 var player
 const SPEED = 300
 var speed = SPEED
-var maxhp =4
+var maxhp =2
 var hp = maxhp
 var timer
 var dead = false

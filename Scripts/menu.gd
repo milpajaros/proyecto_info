@@ -10,18 +10,15 @@ onready var nosound = preload("res://Textures/Buttons/nosound.png")
 onready var nosoundhover = preload("res://Textures/Buttons/nosoundhover.png")
 
 func _ready():
-	set_process(true)
+	set_process_input(true)
 	OS.set_window_title("Space conqueror")
-
-func _process(delta):
-	pass
 
 func _on_Play_pressed():
 	  get_node("/root/global").goto_scene("res://Scenes/World.tscn")
 
 
-func _on_Settings_pressed():
-	var popup = get_parent().get_node("PopupPanel")
+func _on_Credits_pressed():
+	var popup = get_parent().get_node("Credits")
 	if(popup.is_hidden()):
 		popup.set_hidden(false)
 	else:
@@ -73,3 +70,7 @@ func _on_Music_mouse_enter():
 func _on_Sound_mouse_enter():
 	if(global.sound):
 		get_parent().get_node("Sample").play("Bip")
+
+func _input(event):
+	if(event.is_action_pressed("ui_exit")):
+		get_tree().quit()

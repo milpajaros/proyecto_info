@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://Scripts/Background.gd" type="Script" id=1]
 [ext_resource path="res://Textures/fondo.png" type="Texture" id=2]
@@ -9,9 +9,9 @@
 [ext_resource path="res://Textures/Buttons/botonSalir.png" type="Texture" id=7]
 [ext_resource path="res://Textures/Buttons/botonSalirPress.png" type="Texture" id=8]
 [ext_resource path="res://Textures/Buttons/botonSalirHover.png" type="Texture" id=9]
-[ext_resource path="res://Textures/Buttons/botonAjustes.png" type="Texture" id=10]
-[ext_resource path="res://Textures/Buttons/botonAjustesPress.png" type="Texture" id=11]
-[ext_resource path="res://Textures/Buttons/botonAjustesHover.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Buttons/botonCreditos.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Buttons/botonCreditosPress.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Buttons/botonCreditosHover.png" type="Texture" id=12]
 [ext_resource path="res://Music/Rolemusic_-_Itsumo_no_y_ni.ogg" type="AudioStream" id=13]
 [ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=14]
 [ext_resource path="res://Textures/Logo.png" type="Texture" id=15]
@@ -21,7 +21,6 @@
 [ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=19]
 [ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=20]
 [ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=21]
-[ext_resource path="res://Textures/Tipografias/font.fnt" type="BitmapFont" id=22]
 
 [sub_resource type="SampleLibrary" id=1]
 
@@ -82,7 +81,7 @@ size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
 margin/right = 361.0
-margin/bottom = 253.0
+margin/bottom = 167.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -97,9 +96,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
-margin/top = 257.0
+margin/top = 171.0
 margin/right = 361.0
-margin/bottom = 510.0
+margin/bottom = 338.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -107,9 +106,8 @@ textures/normal = ExtResource( 7 )
 textures/pressed = ExtResource( 8 )
 textures/hover = ExtResource( 9 )
 
-[node name="Settings" type="TextureButton" parent="ButtonContainer"]
+[node name="Credits" type="TextureButton" parent="ButtonContainer"]
 
-visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 3
@@ -124,23 +122,6 @@ shortcut = null
 textures/normal = ExtResource( 10 )
 textures/pressed = ExtResource( 11 )
 textures/hover = ExtResource( 12 )
-
-[node name="PopupPanel" type="PopupPanel" parent="."]
-
-visibility/visible = false
-anchor/left = 3
-anchor/top = 3
-anchor/right = 3
-anchor/bottom = 3
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 120.0
-margin/top = 284.0
-margin/right = -491.0
-margin/bottom = -283.0
-popup/exclusive = false
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
@@ -248,24 +229,36 @@ textures/normal = ExtResource( 19 )
 textures/pressed = ExtResource( 20 )
 textures/hover = ExtResource( 21 )
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Credits" type="PopupPanel" parent="."]
 
-anchor/left = 1
-anchor/top = 1
-anchor/right = 1
-anchor/bottom = 1
+visibility/visible = false
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
-margin/left = 553.0
-margin/top = 52.0
-margin/right = 198.0
-margin/bottom = 7.0
-custom_fonts/normal_font = ExtResource( 22 )
-custom_colors/default_color = Color( 1, 0.960938, 0, 1 )
+margin/left = 416.0
+margin/top = 265.0
+margin/right = -924.0
+margin/bottom = -192.0
+popup/exclusive = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
+
+rect/scale = Vector2( 3.3, 3.3 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 29.0
+margin/top = 56.0
+margin/right = 418.0
+margin/bottom = 177.0
 bbcode/enabled = false
-bbcode/bbcode = "Musica por RoleMusic."
+bbcode/bbcode = "Autores:\n\tÁngel Hamilton López: angehl@gmail.com\n\tHector Martín Armas: hector.martinar@gmail.com\n\t\nMúsica por:\n\tRolemusic: http://freemusicarchive.org/music/Rolemusic/\n"
 visible_characters = -1
 
 [connection signal="mouse_enter" from="ButtonContainer/Play" to="ButtonContainer" method="_on_Play_mouse_enter"]
@@ -276,7 +269,7 @@ visible_characters = -1
 
 [connection signal="pressed" from="ButtonContainer/Exit" to="ButtonContainer" method="_on_Exit_pressed"]
 
-[connection signal="pressed" from="ButtonContainer/Settings" to="ButtonContainer" method="_on_Settings_pressed"]
+[connection signal="pressed" from="ButtonContainer/Credits" to="ButtonContainer" method="_on_Credits_pressed"]
 
 [connection signal="mouse_enter" from="Container/Music" to="ButtonContainer" method="_on_Music_mouse_enter"]
 

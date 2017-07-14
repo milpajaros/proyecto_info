@@ -44,15 +44,15 @@ func _fixed_process(delta):
 	elif(shooting):
 		if(mode == 0):
 			beam.set_texture(beamtexture)
-			beam.set_scale(Vector2(0.4, 12))
+			beam.set_scale(Vector2(0.4, 16))
 		elif(mode == 1):
 			beam.rotate(deg2rad(delta*15))
 			beam.set_texture(beamtexture)
-			beam.set_scale(Vector2(0.4, 12))
+			beam.set_scale(Vector2(0.4, 16))
 		elif(mode == 2 || mode == 3):
 			beam.rotate(deg2rad(-delta*8))
 			beam.set_texture(beamtexture)
-			beam.set_scale(Vector2(0.4, 12))
+			beam.set_scale(Vector2(0.4, 16))
 	else:
 		beam.set_texture(blasttexture)
 		beam.set_scale(Vector2(0.1, 0.1))

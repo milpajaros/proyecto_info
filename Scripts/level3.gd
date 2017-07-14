@@ -19,8 +19,7 @@ func _ready():
 func victory():
 	get_node("CanvasLayer/Victory screen").set_hidden(false)
 	global.root.find_node("Player",true,false).pause(true)
-	get_node("CanvasLayer/Tutorial/Text").set_hidden(true)
-	get_node("CanvasLayer/Tutorial/Text2").set_hidden(false)
+	get_node("CanvasLayer/Tutorial/Text").set_bbcode("Gracias por habernos traido la paz.\nY por jugar a Space Conqueror.")
 	get_node("CanvasLayer/Tutorial").set_hidden(false)
 	timer.set_wait_time(7)
 	timer.connect("timeout",self,"_timeout")
