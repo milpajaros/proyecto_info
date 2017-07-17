@@ -13,6 +13,9 @@ var player
 var sampler
 
 func _ready():
+	if(global.arcade):
+		maxhp = 40 + 10 * global.root.find_node("Arcade",true,false).stage
+	hp = maxhp
 	sampler = get_parent().get_node("Sample")
 	get_node("ExplosionHolder").set_hidden(true)
 	timer = get_node("EnemySpawnPoint/EnemySpawnrate")
@@ -44,9 +47,11 @@ func _timeout():
 	if(nwave> 0 && distancia<10000):
 		var enemytype= randi() % 6
 		if(enemytype == 0):
-			 enemy = bomber_scene.instance()
+			enemy = bomber_scene.instance()
+			enemy.dmg = get_parent().dmg*5
 		else:
 			enemy= enemy_scene.instance()
+			enemy.dmg = get_parent().dmg
 		enemy.set_pos(get_node("EnemySpawnPoint").get_global_pos())
 		timer.set_wait_time(1)
 		timer.start()
@@ -64,6 +69,10 @@ func _on_DamageArea_body_enter( body ):
 		body._timeout()
 
 func _die():
+	if(global.arcade):
+		global.root.find_node("Arcade",true,false).increase_score(100)
+		global.root.find_node("Arcade",true,false).increase_mult(5)
+		
 	if(global.sound):
 		sampler.play("Explosion")
 		sampler.play("Explosion")

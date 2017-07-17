@@ -5,6 +5,9 @@ var current_scene = null
 var current_scene_path = null
 var sound = true
 var music = true
+var score = 0
+var arcade = false
+var username = ""
 var wasplaying
 
 func _ready():

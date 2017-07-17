@@ -18,9 +18,14 @@ var timer
 var dead = false
 var distancia
 var sampler
+var dmg = 1
 var chasedistance = 1000
 
 func _ready():
+	if(global.arcade):
+		maxhp = 3 + 2 * global.root.find_node("Arcade",true,false).stage
+		dmg = global.root.find_node("Arcade",true,false).stage
+	hp = maxhp
 	sampler = get_node("SamplePlayer")
 	actualcd = 2
 	timer = get_node("EnemyTimer")
@@ -61,6 +66,7 @@ func _fire():
 		var laser_holder = get_node("LaserHolder")
 		laser.set_pos(LaserSpawnPoint)
 		laser.look_at(player.get_pos())
+		laser.dmg = dmg
 		laser_holder.add_child(laser)
 		if(global.sound):
 			sampler.play("Shot")
@@ -81,6 +87,10 @@ func _chase(delta):
 		move(movement)
 
 func _die():
+	if(global.arcade):
+		global.root.find_node("Arcade",true,false).increase_score(5)
+		global.root.find_node("Arcade",true,false).increase_mult(1)
+	
 	get_node("Hpholder").set_hidden(true)
 	hp = 0
 	speed = 0

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <resource_file type="PackedScene" subresource_count="15" version="2.1" version_name="Godot Engine v2.1.stable.official">
 	<ext_resource path="res://Textures/redcircle.png" type="Texture" index="7"></ext_resource>
-	<ext_resource path="res://Textures/bomb.png" type="Texture" index="1"></ext_resource>
-	<ext_resource path="res://Textures/LaserHit/frameRed0.png" type="Texture" index="2"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameRed3.png" type="Texture" index="5"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameRed2.png" type="Texture" index="4"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameRed4.png" type="Texture" index="6"></ext_resource>
+	<ext_resource path="res://Textures/LaserHit/frameRed0.png" type="Texture" index="2"></ext_resource>
+	<ext_resource path="res://Textures/bomb.png" type="Texture" index="1"></ext_resource>
 	<ext_resource path="res://Textures/LaserHit/frameRed1.png" type="Texture" index="3"></ext_resource>
-	<ext_resource path="res://Music/Explosion2.wav" type="Sample" index="8"></ext_resource>
 	<ext_resource path="res://Scripts/bomb_scene.gd" type="Script" index="0"></ext_resource>
+	<ext_resource path="res://Music/Explosion2.wav" type="Sample" index="8"></ext_resource>
 	<resource type="CircleShape2D" path="local://1">
 		<real name="custom_solver_bias"> 0 </real>
 		<real name="radius"> 23.472775 </real>
@@ -50,6 +50,18 @@
 				<string> "loop" </string>
 				<bool> True </bool>
 				<string> "name" </string>
+				<string> "velocidad3" </string>
+				<string> "speed" </string>
+				<real> 8 </real>
+			</dictionary>
+			<dictionary  shared="false">
+				<string> "frames" </string>
+				<array  len="2" shared="false">
+					<resource  external="7">  </resource>
+					<resource name=""></resource>				</array>
+				<string> "loop" </string>
+				<bool> True </bool>
+				<string> "name" </string>
 				<string> "velocidad2" </string>
 				<string> "speed" </string>
 				<real> 4 </real>
@@ -77,18 +89,6 @@
 				<string> "velocidad1" </string>
 				<string> "speed" </string>
 				<real> 2 </real>
-			</dictionary>
-			<dictionary  shared="false">
-				<string> "frames" </string>
-				<array  len="2" shared="false">
-					<resource  external="7">  </resource>
-					<resource name=""></resource>				</array>
-				<string> "loop" </string>
-				<bool> True </bool>
-				<string> "name" </string>
-				<string> "velocidad3" </string>
-				<string> "speed" </string>
-				<real> 8 </real>
 			</dictionary>
 		</array>
 

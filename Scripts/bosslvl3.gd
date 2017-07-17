@@ -50,7 +50,7 @@ func start():
 	_rotation()
 
 func _fixed_process(delta):
-	if(hp == 0 && !dead):
+	if(hp <= 0 && !dead):
 		_die()
 	global.root.find_node("HPBoss",true,false).set_val(hp*100/maxhp)
 	if(step == 0 && !dead):

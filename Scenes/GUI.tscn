@@ -109,6 +109,42 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 
+[node name="Multipler" type="RichTextLabel" parent="CanvasLayer"]
+
+rect/scale = Vector2( 5, 5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 6.0
+margin/top = 836.0
+margin/right = 95.0
+margin/bottom = 852.0
+custom_colors/default_color = Color( 0.78125, 1, 0, 1 )
+custom_colors/selection_color = Color( 0.828125, 1, 0, 1 )
+custom_colors/font_color_selected = Color( 0.851563, 1, 0, 1 )
+bbcode/enabled = false
+bbcode/bbcode = "0"
+visible_characters = -1
+
+[node name="Score" type="RichTextLabel" parent="CanvasLayer"]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 11.0
+margin/top = 913.0
+margin/right = 357.0
+margin/bottom = 929.0
+custom_colors/default_color = Color( 0.78125, 1, 0, 1 )
+custom_colors/selection_color = Color( 0.828125, 1, 0, 1 )
+custom_colors/font_color_selected = Color( 0.851563, 1, 0, 1 )
+bbcode/enabled = false
+bbcode/bbcode = "0"
+visible_characters = -1
+
 [node name="HurtFrame" type="TextureFrame" parent="CanvasLayer"]
 
 anchor/right = 1
@@ -416,6 +452,55 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = false
+
+[node name="input" type="Container" parent="CanvasLayer/DeathMenu"]
+
+anchor/left = 3
+anchor/top = 3
+anchor/right = 3
+anchor/bottom = 3
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 2
+margin/left = 413.5
+margin/top = -34.5
+margin/right = -493.5
+margin/bottom = -263.5
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/DeathMenu/input"]
+
+rect/scale = Vector2( 3, 3 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = 445.0
+margin/top = 88.0
+margin/right = 682.0
+margin/bottom = 112.0
+placeholder/alpha = 0.6
+focus_mode = 2
+caret/caret_blink = false
+caret/caret_blink_speed = 0.65
+
+[node name="text" type="RichTextLabel" parent="CanvasLayer/DeathMenu/input"]
+
+rect/scale = Vector2( 5, 5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 3
+size_flags/vertical = 3
+margin/left = -292.0
+margin/top = 91.0
+margin/right = -142.0
+margin/bottom = 113.0
+custom_colors/default_color = Color( 0.78125, 1, 0, 1 )
+custom_colors/selection_color = Color( 0.828125, 1, 0, 1 )
+custom_colors/font_color_selected = Color( 0.851563, 1, 0, 1 )
+bbcode/enabled = false
+bbcode/bbcode = "Introduce tu nombre:"
+visible_characters = -1
 
 [node name="Sample" type="SamplePlayer" parent="CanvasLayer"]
 

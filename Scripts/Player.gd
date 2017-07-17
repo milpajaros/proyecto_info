@@ -18,6 +18,7 @@ var nukeammo = 40
 var maxhp = 20
 var hp
 var sample
+var dmg = 1
 var pause = false
 
 
@@ -115,6 +116,7 @@ func _fire():
 	laser.set_pos(LaserSpawnPoint)
 	laser.look_at(get_global_mouse_pos())
 	laser.ttl = 1
+	laser.dmg = dmg
 	laserHolder.add_child(laser)
 
 func is_alive():

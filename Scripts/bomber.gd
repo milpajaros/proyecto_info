@@ -16,10 +16,15 @@ var timer
 var dead = false
 var distancia
 var playerpos
+var dmg = 5
 var carryingbomb= false
 var chasedistance = 1000
 
 func _ready():
+	if(global.arcade):
+		maxhp =  2 + global.root.find_node("Arcade",true,false).stage
+		dmg = 5*global.root.find_node("Arcade",true,false).stage
+	hp = maxhp
 	actualcd = 2
 	get_node("ExplosionAnimation").set_hidden(true)
 	set_fixed_process(true)
@@ -64,6 +69,7 @@ func _fire():
 		var bombSpawnPoint = get_pos()
 		var bomb_holder = get_node("bombHolder")
 		bomb.set_pos(bombSpawnPoint)
+		bomb.dmg = dmg
 		bomb_holder.add_child(bomb)
 
 func _chase(delta):
@@ -93,6 +99,10 @@ func _runaway(delta):
 		move(movement)
 
 func _die():
+	if(global.arcade):
+		global.root.find_node("Arcade",true,false).increase_score(10)
+		global.root.find_node("Arcade",true,false).increase_mult(1)
+	
 	if(carryingbomb):
 		bomb = bomb_scene.instance()
 		bomb.get_node("Sprite").set_texture(bombenemigo)

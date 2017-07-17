@@ -65,6 +65,8 @@ func _explode():
 	for body in get_node("AreaExplosion").get_overlapping_bodies():
 		if (!body.has_meta("arma") || body.has_meta("bomb")):
 			_hit(body)
+			if(global.arcade):
+				global.root.find_node("Arcade",true,false).increase_score(20)
 	if(global.sound):
 		get_node("Sample").play("Explosion")
 	self.queue_free()

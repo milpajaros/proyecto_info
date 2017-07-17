@@ -20,6 +20,10 @@ var phasetime = 5
 var dmg = 1
 
 func _ready():
+	if(global.arcade):
+		maxhp = 150 + 50 * global.root.find_node("Arcade",true,false).stage
+		dmg = global.root.find_node("Arcade",true,false).stage
+	hp = maxhp
 	sampler = get_node("Sample")
 	get_node("Center/ExplosionHolder").set_hidden(true)
 	set_fixed_process(true)
@@ -33,7 +37,7 @@ func _fixed_process(delta):
 		if(global.music):
 			get_node("BossMusic").play_loop(90)
 		global.wasplaying = get_node("BossMusic")
-		get_parent().get_node("BGMusic").set_paused(true)
+		global.root.find_node("BGMusic",true,false).set_paused(true)
 		bossmode = true
 		get_node("Center/BossExtendedHitbox").queue_free()
 		timer = get_node("BossTimer")
@@ -83,13 +87,16 @@ func _nextphase():
 	timer.start()
 
 func _die():
+	if(global.arcade):
+		global.root.find_node("Arcade",true,false).increase_score(1000)
+		global.root.find_node("Arcade",true,false).increase_mult(10)
+		
 	if(global.sound):
 		sampler.play("Explosion")
 		sampler.play("Explosion")
 		sampler.play("Explosion")
 		sampler.play("Explosion")
 	get_node("BossMusic").set_paused(true)
-	get_parent().victory()
 	global.root.find_node("HPBoss",true,false).set_hidden(true)
 	attackmode = 10
 	timer = get_node("BossTimer")
@@ -103,6 +110,7 @@ func _die():
 			N.play("default")
 
 func _timeout():
+	get_parent().victory(self)
 	queue_free()
 
 func _patron0():#circulo

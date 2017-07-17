@@ -6,6 +6,7 @@ var timer
 
 func _ready():
 	player = global.root.find_node("Player",true, false)
+	global.root.find_node("Score",true, false).set_hidden(true)
 	global.wasplaying = get_node("BGMusic")
 	if(global.music):
 		get_node("BGMusic").play()

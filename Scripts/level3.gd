@@ -7,6 +7,7 @@ var opacity =0
 
 func _ready():
 	get_node("Boss").set_hidden(true)
+	global.root.find_node("Score",true, false).set_hidden(true)
 	if global.music:
 		get_node("BGMusic").play()
 	global.wasplaying = get_node("BGMusic")

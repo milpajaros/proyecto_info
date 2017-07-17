@@ -39,7 +39,6 @@ func _input(event):
 		var tuto = global.root.find_node("Tutorial",true, false)
 		if (tuto != null):
 			tuto.set_hidden(true)
-			global.root.find_node("Guide", true, false).get_node("Sprite").set_hidden(false)
 	elif(get_tree().is_paused() && event.is_action_pressed("ui_exit")):
 		set_hidden(true)
 		get_tree().set_pause(false)
@@ -84,7 +83,10 @@ func _on_Music_pressed():
 		musicbutton.set_hover_texture(nomusichover)
 	elif(!global.music):
 		global.music=true
-		global.wasplaying.play()
+		if(global.wasplaying == null):
+			global.root.find_node("BGMusic",true,false).play()
+		else:
+			global.wasplaying.play()
 		musicbutton.set_normal_texture(music)
 		musicbutton.set_hover_texture(musichover)
 
