@@ -26,7 +26,7 @@ func change_pos():
 	boss = boss_scene.instance()
 	var direction = randi() % 360
 	direction = deg2rad(direction)
-	var distance = 1000 + randi() % 1001
+	var distance = 2000 + randi() % 2001
 	var x = player.get_pos().x + sin(direction) * distance
 	var y = player.get_pos().y + cos(direction) * distance
 	boss.set_pos(Vector2(x,y))

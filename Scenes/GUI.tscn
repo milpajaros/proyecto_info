@@ -124,7 +124,7 @@ custom_colors/default_color = Color( 0.78125, 1, 0, 1 )
 custom_colors/selection_color = Color( 0.828125, 1, 0, 1 )
 custom_colors/font_color_selected = Color( 0.851563, 1, 0, 1 )
 bbcode/enabled = false
-bbcode/bbcode = "0"
+bbcode/bbcode = "X1"
 visible_characters = -1
 
 [node name="Score" type="RichTextLabel" parent="CanvasLayer"]

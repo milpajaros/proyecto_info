@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=1]
+[gd_scene load_steps=29 format=1]
 
 [ext_resource path="res://Scripts/Background.gd" type="Script" id=1]
 [ext_resource path="res://Textures/fondo.png" type="Texture" id=2]
@@ -9,25 +9,28 @@
 [ext_resource path="res://Textures/Buttons/botonArcade.png" type="Texture" id=7]
 [ext_resource path="res://Textures/Buttons/botonArcadePress.png" type="Texture" id=8]
 [ext_resource path="res://Textures/Buttons/botonArcadeHover.png" type="Texture" id=9]
-[ext_resource path="res://Textures/Buttons/botonSalir.png" type="Texture" id=10]
-[ext_resource path="res://Textures/Buttons/botonSalirPress.png" type="Texture" id=11]
-[ext_resource path="res://Textures/Buttons/botonSalirHover.png" type="Texture" id=12]
-[ext_resource path="res://Textures/Buttons/botonCreditos.png" type="Texture" id=13]
-[ext_resource path="res://Textures/Buttons/botonCreditosPress.png" type="Texture" id=14]
-[ext_resource path="res://Textures/Buttons/botonCreditosHover.png" type="Texture" id=15]
-[ext_resource path="res://Music/Rolemusic_-_Itsumo_no_y_ni.ogg" type="AudioStream" id=16]
-[ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=17]
-[ext_resource path="res://Textures/Logo.png" type="Texture" id=18]
-[ext_resource path="res://Textures/Buttons/music.png" type="Texture" id=19]
-[ext_resource path="res://Textures/Buttons/musicpressed.png" type="Texture" id=20]
-[ext_resource path="res://Textures/Buttons/musichover.png" type="Texture" id=21]
-[ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=22]
-[ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=23]
-[ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=24]
+[ext_resource path="res://Textures/Buttons/botonCreditos.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Buttons/botonCreditosPress.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Buttons/botonCreditosHover.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Buttons/botonpuntuaciones.png" type="Texture" id=13]
+[ext_resource path="res://Textures/Buttons/botonpuntuacionespress.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Buttons/botonpuntuacioneshover.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Buttons/botonSalir.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Buttons/botonSalirPress.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Buttons/botonSalirHover.png" type="Texture" id=18]
+[ext_resource path="res://Music/Rolemusic_-_Itsumo_no_y_ni.ogg" type="AudioStream" id=19]
+[ext_resource path="res://Music/Blip_Select5.wav" type="Sample" id=20]
+[ext_resource path="res://Textures/Logo.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Buttons/music.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Buttons/musicpressed.png" type="Texture" id=23]
+[ext_resource path="res://Textures/Buttons/musichover.png" type="Texture" id=24]
+[ext_resource path="res://Textures/Buttons/sound.png" type="Texture" id=25]
+[ext_resource path="res://Textures/Buttons/soundpressed.png" type="Texture" id=26]
+[ext_resource path="res://Textures/Buttons/soundhover.png" type="Texture" id=27]
 
 [sub_resource type="SampleLibrary" id=1]
 
-samples/Bip = { "db":0.0, "pitch":1.0, "sample":ExtResource( 17 ) }
+samples/Bip = { "db":0.0, "pitch":1.0, "sample":ExtResource( 20 ) }
 
 [node name="MainMenu" type="Node"]
 
@@ -83,7 +86,7 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 361.0
+margin/right = 584.0
 margin/bottom = 182.0
 toggle_mode = false
 enabled_focus_mode = 2
@@ -100,7 +103,7 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 186.0
-margin/right = 361.0
+margin/right = 584.0
 margin/bottom = 368.0
 toggle_mode = false
 enabled_focus_mode = 2
@@ -109,7 +112,7 @@ textures/normal = ExtResource( 7 )
 textures/pressed = ExtResource( 8 )
 textures/hover = ExtResource( 9 )
 
-[node name="Exit" type="TextureButton" parent="ButtonContainer"]
+[node name="Credits" type="TextureButton" parent="ButtonContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -117,7 +120,7 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 372.0
-margin/right = 361.0
+margin/right = 584.0
 margin/bottom = 554.0
 toggle_mode = false
 enabled_focus_mode = 2
@@ -126,7 +129,7 @@ textures/normal = ExtResource( 10 )
 textures/pressed = ExtResource( 11 )
 textures/hover = ExtResource( 12 )
 
-[node name="Credits" type="TextureButton" parent="ButtonContainer"]
+[node name="Puntuaciones" type="TextureButton" parent="ButtonContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -134,7 +137,7 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 558.0
-margin/right = 361.0
+margin/right = 584.0
 margin/bottom = 740.0
 toggle_mode = false
 enabled_focus_mode = 2
@@ -143,7 +146,7 @@ textures/normal = ExtResource( 13 )
 textures/pressed = ExtResource( 14 )
 textures/hover = ExtResource( 15 )
 
-[node name="Puntuaciones" type="TextureButton" parent="ButtonContainer"]
+[node name="Exit" type="TextureButton" parent="ButtonContainer"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -151,18 +154,18 @@ size_flags/horizontal = 3
 size_flags/vertical = 3
 margin/left = 0.0
 margin/top = 744.0
-margin/right = 361.0
+margin/right = 584.0
 margin/bottom = 929.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 13 )
-textures/pressed = ExtResource( 14 )
-textures/hover = ExtResource( 15 )
+textures/normal = ExtResource( 16 )
+textures/pressed = ExtResource( 17 )
+textures/hover = ExtResource( 18 )
 
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 16 )
+stream/stream = ExtResource( 19 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 5.0
@@ -207,7 +210,7 @@ margin/bottom = 56.0
 
 transform/pos = Vector2( 270.296, 64.1759 )
 transform/scale = Vector2( 5.56904, 3.59878 )
-texture = ExtResource( 18 )
+texture = ExtResource( 21 )
 
 [node name="Container" type="Container" parent="."]
 
@@ -241,9 +244,9 @@ margin/bottom = 7.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 19 )
-textures/pressed = ExtResource( 20 )
-textures/hover = ExtResource( 21 )
+textures/normal = ExtResource( 22 )
+textures/pressed = ExtResource( 23 )
+textures/hover = ExtResource( 24 )
 
 [node name="Sound" type="TextureButton" parent="Container"]
 
@@ -262,9 +265,9 @@ margin/bottom = 4.0
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
-textures/normal = ExtResource( 22 )
-textures/pressed = ExtResource( 23 )
-textures/hover = ExtResource( 24 )
+textures/normal = ExtResource( 25 )
+textures/pressed = ExtResource( 26 )
+textures/hover = ExtResource( 27 )
 
 [node name="Credits" type="PopupPanel" parent="."]
 
@@ -295,7 +298,7 @@ margin/top = 56.0
 margin/right = 418.0
 margin/bottom = 177.0
 bbcode/enabled = false
-bbcode/bbcode = "Autores:\n\tÁngel Hamilton López: angehl@gmail.com\n\tHector Martín Armas: hector.martinar@gmail.com\n\t\nMúsica por:\n\tRolemusic: http://freemusicarchive.org/music/Rolemusic/\n"
+bbcode/bbcode = "Autores:\n\tÁngel Hamilton López: angehl@gmail.com\n\tHéctor Martín Armas: hector.martinar@gmail.com\n\t\nMúsica por:\n\tRolemusic: http://freemusicarchive.org/music/Rolemusic/\n"
 visible_characters = -1
 
 [node name="Scores" type="PopupPanel" parent="."]
@@ -338,10 +341,6 @@ visible_characters = -1
 
 [connection signal="pressed" from="ButtonContainer/Arcade" to="ButtonContainer" method="_on_Arcade_pressed"]
 
-[connection signal="mouse_enter" from="ButtonContainer/Exit" to="ButtonContainer" method="_on_Exit_mouse_enter"]
-
-[connection signal="pressed" from="ButtonContainer/Exit" to="ButtonContainer" method="_on_Exit_pressed"]
-
 [connection signal="mouse_enter" from="ButtonContainer/Credits" to="ButtonContainer" method="_on_Credits_mouse_enter"]
 
 [connection signal="pressed" from="ButtonContainer/Credits" to="ButtonContainer" method="_on_Credits_pressed"]
@@ -349,6 +348,10 @@ visible_characters = -1
 [connection signal="mouse_enter" from="ButtonContainer/Puntuaciones" to="ButtonContainer" method="_on_Puntuaciones_mouse_enter"]
 
 [connection signal="pressed" from="ButtonContainer/Puntuaciones" to="ButtonContainer" method="_on_Puntuaciones_pressed"]
+
+[connection signal="mouse_enter" from="ButtonContainer/Exit" to="ButtonContainer" method="_on_Exit_mouse_enter"]
+
+[connection signal="pressed" from="ButtonContainer/Exit" to="ButtonContainer" method="_on_Exit_pressed"]
 
 [connection signal="mouse_enter" from="Container/Music" to="ButtonContainer" method="_on_Music_mouse_enter"]
 

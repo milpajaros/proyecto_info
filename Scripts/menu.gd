@@ -37,6 +37,7 @@ func _on_Play_pressed():
 
 
 func _on_Credits_pressed():
+	get_parent().get_node("Scores").set_hidden(true)
 	var popup = get_parent().get_node("Credits")
 	if(popup.is_hidden()):
 		popup.set_hidden(false)
@@ -119,13 +120,14 @@ func _on_Puntuaciones_pressed():
 			var value = int(linea.split("\\s+")[0])
 			array = insert(array, linea, value)
 	else:
-		array.append("ERROR")
+		array.append("ERROR: FILE NOT FOUND")
 	var text = get_parent().get_node("Scores/RichTextLabel")
 	text.parse_bbcode("PUNTUACIONES:\n\n")
 	for s in array:
 		text.add_text(s + "\n")
 		
 	var popup = get_parent().get_node("Scores")
+	get_parent().get_node("Credits").set_hidden(true)
 	if(popup.is_hidden()):
 		popup.set_hidden(false)
 	else:

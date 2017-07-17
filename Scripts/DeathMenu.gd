@@ -75,5 +75,5 @@ func save_score():
 		file.seek_end()
 	else:
 		file.open("res://scores.dat", 2)
-	file.store_string(str(global.score) + " " + global.username + "\n")
+	file.store_string(str(global.score) + "\t" + global.username + "\n")
 	file.close()
